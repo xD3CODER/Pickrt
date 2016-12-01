@@ -1,0 +1,45 @@
+{
+  "name": "express-authentication",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "~1.15.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "^2.3.3",
+    "ejs": "^2.5.3",
+    "express": "~4.14.0",
+    "express-session": "^1.12.1",
+    "imagemagick-native": "^1.9.3",
+    "jquery": "^3.1.1",
+    "mongoose": "^4.7.1",
+    "morgan": "~1.7.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "~1.0.0",
+    "passport-twitter": "^1.0.3",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "serve-favicon": "^2.3.2",
+    "string": "^3.3.3"
+  },
+  "description": "Simple authentication app using express, node & passport.",
+  "main": "bin/www",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielgynn/express-authentication.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielgynn/express-authentication/issues"
+  },
+  "homepage": "https://github.com/danielgynn/express-authentication#readme"
+}

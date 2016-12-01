@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- ========== VIEWPORT META ========== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+	<!-- ========== PAGE TITLE ========== -->
+	<title>Salt - Login | Multipurpose Responsive HTML Site Template</title>
+
+	<!-- ========== META TAGS ========== -->
+	<meta name="description" content="Salt - Responsive Multipurpose HTML5 Template ">
+	<meta name="keywords" content="business, responsive, multi-purpose">
+	<meta name="author" content="ThemesEase">
+
+	<!-- ========== FAVICON & APPLE ICONS ========== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+	<!-- ========== MINIFIED VENDOR CSS ========== -->
+	<link rel="stylesheet" href="css/vendor.css">
+
+	<!-- ========== MAIN CSS ========== -->
+	<link rel="stylesheet" href="css/peterriver.css">
+	<link rel="stylesheet" href="vendor/animate/animate.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="vendor/tooltipster/tooltipster.custom.css"/>
+	<link rel="stylesheet" type="text/css" href="vendor/toastr/toastr.css"/>
+	<link rel="stylesheet" type="text/css" href="vendor/sweetalert/sweetalert.css">
+	<script src="vendor/modernizr/modernizr.js"></script>
+</head>
+
+<!-- ==================================================
+Body: Classes
+header-shadow - Set shadow for header & menu
+dark-menu - Change menu to dark [Don't use with light-header]
+light-header - Set light background to header [Don't use with dark-menu]
+dark-header - Set dark background to header
+bold-menu - For bolder links
+semi-trans-header - set transparency to header [Use with 'light-header' or 'dark-header']
+center-logo - Logo at center
+small-header - For lesser height
+nav-hidden - Open nav on icon click
+================================================== -->
+<body >
+
+<!-- ========== HEADER ========== -->
+
+
+<!-- ========== MAIN ========== -->
+<div class="main" >
+	<div class="video-background" style="min-height: 100vh;" data-vide-bg="images/backgrounds/test.mp4" data-vide-options="posterType: jpg, loop: true, muted: true, position: 0% 0%">
+
+			<div class="pt90">
+				</div>
+				<div class="col-md-3 login-box animated bounceIn" id="login_form">
+					<img src="images/logos/W_logo_black.png" alt="Salt" class="login-logo">
+					<form action="#" class="" id="login">
+
+						<h3 class="section-title text-center pb20 pt10">Connexion</h3>
+						<div class="form-group">
+							<label class="label-test" for="identifiant">Adresse mail </label>
+							<p class="fa fa-user input-icon"></p>
+							<input type="text" class="form-control icon-form" id="login_adresse" name="login_adresse"
+								   placeholder="Email">
+							<i></i>
+						</div>
+
+						<div class="form-group">
+							<label class="label-test" for="password">Password</label>
+							<p class="fa fa-lock input-icon"></p>
+							<input type="password" class="form-control icon-form" id="login_password"
+								   name="login_password" placeholder="Password">
+							<i></i>
+						</div>
+						<div class="form-group-lg">
+							<div class="checkbox">
+								<input id="checkbox-5" class="st-checkbox" name="checkbox-5" type="checkbox" checked="">
+								<label for="checkbox-5" class="st-checkbox-2-label">Se rappeller de moi</label>
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="submit"
+									class="st-btn primary-btn hvr-back hvr-sweep-to-right center-block text-center">
+								Connexion
+							</button>
+						</div>
+
+						<a onclick="getOutLogin()" class="hovered">
+							<div class="alert alert-info" role="alert"><strong>Not registred yet ?</strong> Click here
+								to register
+							</div>
+						</a>
+					</form>
+				</div>
+
+				<div class="col-md-5 login-box animated bounceIn" id="register_form">
+					<img src="images/logos/W_logo_black.png" alt="Salt" class="login-logo">
+					<form action="#" class="" id="register">
+						<h3 class="section-title text-center pb20 pt10">Inscription</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="label-test" for="identifiant">Lastname</label>
+									<p class="fa fa-user input-icon"></p>
+									<input type="text" class="form-control icon-form" id="register_lastname"
+										   name="register_lastname" placeholder="Lastname">
+									<i></i>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="label-test" for="email">Name</label>
+									<p class="fa fa-user input-icon"></p>
+									<input type="text" class="form-control icon-form" id="register_name"
+										   name="register_name" placeholder="Name">
+									<i></i>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="label-test" for="email">Password</label>
+									<p class="fa fa-lock input-icon"></p>
+									<input type="password" class="form-control icon-form" id="register_password"
+										   name="register_password" placeholder="Type your password">
+									<i></i>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="label-test" for="email">Password confirm</label>
+									<p class="fa fa-lock input-icon"></p>
+									<input type="password" class="form-control icon-form" id="register_password_confirm"
+										   name="register_password_confirm" placeholder="Retype your password">
+									<i></i>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="label-test" for="email">Mail adress</label>
+									<p class="fa fa-envelope input-icon"></p>
+									<input type="text" class="form-control icon-form" id="register_address"
+										   name="register_address" placeholder="Mail adress">
+									<i></i>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="label-test" for="email">Gender</label>
+									<p class="fa fa-intersex input-icon"></p>
+									<select class="form-control icon-form" id="register_gender" name="register_gender"
+											style="font-size: 14px">
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+									</select>
+									<i></i>
+								</div>
+							</div>
+
+						</div>
+						<div class="form-group-lg">
+							<div class="checkbox">
+								<input id="cgu" class="st-checkbox" name="cgu" type="checkbox" checked="">
+								<label for="cgu" class="st-checkbox-2-label">J'accepte les conditions générales
+									d'utiliation</label>
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="submit"
+									class="st-btn primary-btn hvr-back hvr-sweep-to-right center-block text-center">
+								S'inscrire
+							</button>
+						</div>
+						<a onclick="getOutRegister()" class="hovered">
+							<div class="alert alert-success" role="alert"><strong>Already registred ?</strong> Click
+								here to login
+							</div>
+						</a>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+
+</div> <!-- end row -->
+<style>
+	.effect7
+	{
+		-moz-box-shadow: 0px 0px 20px 0px #000000;
+		-webkit-box-shadow: 0px 0px 20px 0px #000000;
+		-o-box-shadow: 0px 0px 20px 0px #000000;
+		box-shadow: 0px 0px 20px 0px #000000;
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=20);
+	}
+
+</style>
+
+<!-- ==================================================
+Footer: Classes
+footer - Default footer
+dark-footer - Dark footer [Use with .footer]
+sticky-footer - Reveal footer on scroll
+================================================== -->
+
+
+<!-- ========== LOADER ========== -->
+<div class="page-loader">
+	<div class="spinner"></div>
+</div>
+
+
+<script src="vendor/jquery/jquery.js"></script>
+<script src="vendor/others/vendor.js"></script>
+
+<script src="vendor/validation/jquery-validate.js"></script>
+<script src="vendor/tooltipster/tooltipster.bundle.js"></script>
+<script src="vendor/others/plugins.js"></script>
+
+<script src="vendor/others/main.js"></script>
+<script src="vendor/others/custom.js"></script>
+<script src="vendor/es6-promise/es6-promise.js"></script>
+<script src="vendor/others/variables.js"></script>
+<script src="vendor/crypto-js/crypto-js.js"></script>
+<script src="vendor/crypto-js/md5.js"></script>
+<script src="vendor/crypto-js/enc-base64.js"></script>
+
+<script src="vendor/crypto-js/sha256.js"></script>
+<script src="vendor/crypto-js/mycrypt.js"></script>
+<script src="vendor/sweetalert/sweetalert.min.js"></script>
+<script src="vendor/vide/jquery.vide.js"></script>
+
+<!-- Page validation -->
+
+<script src="js/debugging/debug.js"><</script>
+<script src="js/validations/login.js"></script>
+<script src="js/validations/register.js"></script>
+
+<style>
+
+	.hovered:hover {
+		cursor: pointer;
+	}
+
+	.outLogin {
+		opacity: 1;
+		transition: opacity 0.2s ease-out, transform 0.6s;
+	}
+
+	.outRegister {
+		opacity: 1;
+		transition: opacity 0.2s ease-out, transform 0.6s;
+	}
+
+	.inLogin {
+		opacity: 1;
+		transition: opacity 0.2s ease-out, transform 0.6s;
+	}
+
+	.inRegister {
+		opacity: 1;
+		transition: opacity 0.2s ease-out, transform 0.6s;
+	}
+</style>
+
+<script>
+
+
+	function getOutLogin() {
+		$("#login_form").removeClass("bounceIn").addClass("hided");
+		$("#register_form").removeClass("bounceOut hided").addClass("bounceIn");
+		$('#login input').tooltipster('hide');
+	}
+
+	function getOutRegister() {
+
+		$("#register_form").removeClass("bounceIn").addClass("hided");
+		$("#login_form").removeClass("bounceOut hided").addClass("bounceIn");
+		$('#register input').tooltipster('hide');
+
+
+
+
+
+	}
+</script>
+<style>
+	.hided{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+
+
+
+	jQuery(document).ready(function () {
+		//  $("#register_form").fadeTo( 1, 0);
+
+		/*
+		 $('body').click(function(e) {
+		 for (var i=1; i<6; i++) {
+		 createRandomHeart(e);
+		 }
+
+		 });
+
+		 */
+	});
+
+	$(document).ready(function () {
+		$("#register_form").addClass("hided");
+	});
+
+</script>
+</body>
+
+
+</html>

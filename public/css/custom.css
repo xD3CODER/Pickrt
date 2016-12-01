@@ -1,0 +1,86 @@
+.error-textbox{
+
+    border-color: #ebccd1;
+
+}
+
+.valid-textbox{
+    border-color: #d6e9c6;
+
+}
+.valid-text{
+     color: #3c763d;
+ }
+.error-text{
+    color: #a94442;;
+}
+.statut-icon{
+
+position: absolute;  display :inline-block;  margin-left: 10px; margin-top: 10px
+}
+
+.animated-resize{
+    -moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;
+    transitition-duration:1s;
+}
+
+.input-icon{
+    position: absolute; display: inline-block; margin: 10px;
+
+}
+
+.form-control {
+    box-shadow: none;
+    font-size: 12px;
+    background: #f2f2f2;
+    transition: all .2s ease-in-out;
+
+}
+
+.form-control:focus {
+    border-color: #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px 0px #dfdfdf;
+    -webkit-box-shadow: 0px 0px 8px 0px #dfdfdf;
+    -o-box-shadow: 0px 0px 8px 0px #dfdfdf;
+    box-shadow: 0px 0px 8px 0px #dfdfdf;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=NaN, Strength=10);
+}
+
+.anime-label{
+    margin-left: 5%;
+
+
+}
+
+label{
+    transition: all .2s ease-in-out;
+
+}
+
+.icon-form{
+    display: inline!important;
+    padding-left: 30px!important;
+}
+
+.active{
+
+    border-bottom: 3px solid rgb(71, 180, 117);
+}
+
+
+.login-logo{
+    max-height: 90px!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: inherit!important;
+    padding-top: 8px!important;
+    margin-bottom: 20px!important;
+    margin-top: -85px!important;
+}
+
+.video-background{
+
+
+}
