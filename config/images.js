@@ -42,20 +42,18 @@ module.exports = {
                     resizeStyle: 'aspectfill',
                     quality: options.quality, // (best) to 1 (worst)
                 }));
+                callback(null, "saved");
             } catch (err) {
-                // If the type is not what you want, then just throw the error again.
-                callback(err);
-
-                // Handle a file-not-found error
+                callback(err, null);
             }
         }).catch(function (err) {
-            callback(err);
+            callback(err, null);
         });
+
+
     },
 
     imageFromFile: function (filePath, name) {
-
-
         fs.writeFileSync(name, imagemagick.convert({
             srcData: filePath,
             format: 'jpg',
@@ -75,9 +73,11 @@ module.exports = {
             'quality' : 100
         };
         switch (method){
-            case 'url' :  this.imageFromUrl(data, name, options, function(err){
-                if(err) callback(err);
-            });
+            case 'url' :
+                    var data = this.imageFromUrl(data, name, options, function(err, res){
+                        callback(err, res)
+                    });
+
                 break;
             case 'base64' :  this.imageFromUrl(data, name, dimensions);
                 break;

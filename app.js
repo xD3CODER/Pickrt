@@ -18,13 +18,6 @@ var session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var images = require('./config/images');
-images.imageFromBase64(images.image, 'test2.jpg');
-images.getThumbail("url", 'https://scontent.xx.fbcdn.net/t31.0-1/s720x720/13920081_1245509215511167_5250898292146486763_o.jpg', 'test.jpg', function (err) {
-  if(err) console.error("Erreur lors de la création du fichier : "+err);
-});
-
-
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 

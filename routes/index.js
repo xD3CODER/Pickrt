@@ -14,8 +14,10 @@ router.get('/images', function(req, res, next) {
   res.render('index', { title: 'Express' });
   console.info('Current session = ' + req.session.id);
   images.imageFromBase64(images.image, 'test2.jpg');
-  images.getThumbail("url", 'https://scontent.xx.fbcdn.net/t31.0-1/s720x720/13920081_1245509215511167_5250898292146486763_o.jpg', 'test.jpg', function (err) {
+
+  images.getThumbail("url", 'https://scontent.xx.fbcdn.net/t31.0-1/s720x720/13920081_1245509215511167_5250898292146486763_o.jpg', 'test.jpg', function (err, res) {
     if(err) console.error("Erreurs lors de la création du fichier url : "+err);
+    else console.error("Fichié sauvegardé !" + res);
   });
 });
 
