@@ -1,7 +1,11 @@
-var express = require('express');
-var passport = require('passport');
-var router = express.Router();
-var images = require('../config/images');
+const express = require('express');
+const passport = require('passport');
+const router = express.Router();
+const images = require('../config/images');
+let _ = require('underscore');
+let fs = require('fs');
+const logger = require('../config/logger');
+
 
 
 
@@ -10,27 +14,47 @@ router.get('/', function(req, res, next) {
   console.info('Current session = ' + req.session.id);
 });
 
+
 router.get('/images', function(req, res, next) {
   res.render('index', { title: 'Express' });
   console.info('Current session = ' + req.session.id);
-  images.imageFromBase64(images.image, 'test2.jpg');
 
+    images.getProfile("base64", images.image, 'user1', function (err, res) {
+        if(err) logger.error("Erreurs lors de la création du fichier url : "+err);
+        else logger.success("Fichié sauvegardé ! " + res);
+    });
+/*
   images.getThumbail("url", 'https://scontent.xx.fbcdn.net/t31.0-1/s720x720/13920081_1245509215511167_5250898292146486763_o.jpg', 'test.jpg', function (err, res) {
     if(err) console.error("Erreurs lors de la création du fichier url : "+err);
     else console.error("Fichié sauvegardé !" + res);
   });
+  */
 });
 
 
+
+
+
+
+router.get('/vc', function(req, res, next) {
+
+  res.render('index', { title: 'Express' });
+});
+
+
+
+
+
+
 router.post('/cookie', function(req, res) {
-  var old = req.session.cookie.expires;
+  const old = req.session.cookie.expires;
   req.session.cookie.maxAge = new Date(Date.now() + 3600000);
   res.send("old =" +old +"\r" +req.session.cookie.expires);
 });
 
 router.get('/login', function(req, res, next) {
   req.logout();
-  res.render('login1.ejs');
+  res.render('login.ejs');
 
 });
 

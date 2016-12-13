@@ -4,7 +4,7 @@ var TwitterStrategy = require('passport-twitter').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../models/user');
 var configAuth = require('./auth');
-
+var logger = require('./logger.js');
 
 
 
@@ -104,18 +104,15 @@ module.exports = function(passport) {
           newUser.facebook.firstname = profile.name.familyName;
           newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
           data.image.facebook(profile.id, function (err, result) {
-            if (err) console.log(err);
-            else console.log(result);
+            if (err) logger.error(err);
+            else logger.success(result);
             newUser.facebook.avatar = result;
-         /*   newUser.save(function(err) {
+            newUser.save(function(err) {
               if (err)
                 throw err;
               return done(null, newUser);
-            });*/
+            });
           });
-
-         // newUser.facebook.avatar = call("1321683084560446");
-
         }
       });
     });

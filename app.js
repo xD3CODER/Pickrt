@@ -4,14 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var ejs = require('ejs');
-
 var debug = require('debug');
-
+var error = debug('app:error');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var session = require('express-session');
@@ -20,8 +17,44 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
-
+var remote = require('./config/remotedata');
 var app = express();
+var print = require("./config/logger");
+var images = require("./config/images");
+
+
+
+
+/*
+ Complete example of getting profil image
+
+
+var fileToCheck = images.image;
+images.checkIfFaceExist('base64', fileToCheck, function(err ,res){
+  if(err) {print.error(err); return}
+  else{
+    print.debug(res);
+      remote.checkExplicit('base64', fileToCheck, function(err, res){
+          if(err){ print.error(err); return}
+          print.debug(res.message);
+          if (res.state==1){
+              remote.checkEmotion('base64', fileToCheck, function(err, res){
+                  if(err){ print.error(err); return}
+                  print.debug(res);
+              });
+              images.getProfile("base64", fileToCheck, 'finalTest', function (err, res) {
+                  if(err) {print.error("Erreurs lors de la création du fichier url : "+err); return;}
+                  print.debug("Fichié de profil sauvegardé ! " + res);
+              });
+              images.getThumbail("base64", fileToCheck, 'finalTest', function (err, res) {
+                  if(err) {print.error("Erreurs lors de la création du fichier url : "+err); return;}
+                  print.debug("Fichié thumbail sauvegardé ! " + res);
+              });
+          }
+      });
+  }
+});
+ */
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -41,7 +74,7 @@ app.use(session({
   store:new MongoStore({
     db: 'express',
     host: 'localhost',
-    url: 'mongodb://localhost:27017/database',
+    url: 'mongodb://localhost:27017/databases',
     port: 27017,
     //touchAfter: 24 * 3600,
     autoRemove: 'interval',
@@ -84,7 +117,5 @@ app.use(function(err, req, res, next) {
     error: {},
   });
 });
-
-///////////////
 
 module.exports = app;
