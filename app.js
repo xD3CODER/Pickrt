@@ -1,26 +1,26 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var ejs = require('ejs');
-var debug = require('debug');
-var error = debug('app:error');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var mongoose = require('mongoose');
-var flash = require('connect-flash');
-var session = require('express-session');
+const express = require('express');
+const path = require('path');
+let favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+let ejs = require('ejs');
+const debug = require('debug');
+let error = debug('app:error');
+const passport = require('passport');
+let LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
+const flash = require('connect-flash');
+const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var configDB = require('./config/database.js');
+const routes = require('./routes/index');
+const users = require('./routes/users');
+const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
-var remote = require('./config/remotedata');
-var app = express();
-var print = require("./config/logger");
-var images = require("./config/images");
+let remote = require('./config/remotedata');
+const app = express();
+let print = require("./config/logger");
+let images = require("./config/images");
 
 
 
@@ -28,29 +28,32 @@ var images = require("./config/images");
 /*
  Complete example of getting profil image
 
-
-var fileToCheck = images.image;
-images.checkIfFaceExist('base64', fileToCheck, function(err ,res){
+ var fileToCheck = "./sexy.jpg";
+ images.checkIfFaceExist('file', fileToCheck, function(err ,res){
   if(err) {print.error(err); return}
   else{
     print.debug(res);
-      remote.checkExplicit('base64', fileToCheck, function(err, res){
+ remote.checkExplicit('file', fileToCheck, function(err, res){
           if(err){ print.error(err); return}
           print.debug(res.message);
           if (res.state==1){
-              remote.checkEmotion('base64', fileToCheck, function(err, res){
+ remote.checkEmotion('file', fileToCheck, function(err, res){
                   if(err){ print.error(err); return}
                   print.debug(res);
               });
-              images.getProfile("base64", fileToCheck, 'finalTest', function (err, res) {
+ images.getProfile("file", fileToCheck, 'finalTest', function (err, res) {
                   if(err) {print.error("Erreurs lors de la création du fichier url : "+err); return;}
                   print.debug("Fichié de profil sauvegardé ! " + res);
               });
-              images.getThumbail("base64", fileToCheck, 'finalTest', function (err, res) {
+ images.getThumbail("file", fileToCheck, 'finalTest', function (err, res) {
                   if(err) {print.error("Erreurs lors de la création du fichier url : "+err); return;}
                   print.debug("Fichié thumbail sauvegardé ! " + res);
               });
           }
+ else if (res.state == 3)
+ {
+ print.error("You are banned for porn");
+ }
       });
   }
 });
@@ -95,7 +98,7 @@ app.use('/users', users);
 
 // Handling errors
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+    const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

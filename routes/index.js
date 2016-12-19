@@ -2,7 +2,6 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const images = require('../config/images');
-let _ = require('underscore');
 let fs = require('fs');
 const logger = require('../config/logger');
 
@@ -42,10 +41,6 @@ router.get('/vc', function(req, res, next) {
 });
 
 
-
-
-
-
 router.post('/cookie', function(req, res) {
   const old = req.session.cookie.expires;
   req.session.cookie.maxAge = new Date(Date.now() + 3600000);
@@ -53,8 +48,7 @@ router.post('/cookie', function(req, res) {
 });
 
 router.get('/login', function(req, res, next) {
-  req.logout();
-  res.render('login.ejs');
+    res.render('login.ejs', {message: req.flash('loginMessage')});
 
 });
 

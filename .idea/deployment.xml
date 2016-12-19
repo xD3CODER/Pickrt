@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="OrangePi" filePermissions="493" folderPermissions="493">
+  <component name="PublishConfigData" autoUpload="Always" serverName="OrangePi" uploadOnCheckin="af324129-2dca-4446-b026-18c35a8740d9" filePermissions="493" folderPermissions="493">
     <serverData>
       <paths name="OrangePi">
         <serverdata>
@@ -17,6 +17,7 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="OrangePi" />
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
