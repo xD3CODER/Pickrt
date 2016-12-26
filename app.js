@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 let ejs = require('ejs');
 const debug = require('debug');
 let error = debug('app:error');
-const passport = require('passport');
+let passport = require('passport');
 let LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
@@ -90,7 +90,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 require('./config/passport')(passport);
-
+app.use(function(req, res, next) {
+    res.setHeader('charset', 'utf-8');
+    next();
+});
 app.use('/', routes);
 app.use('/users', users);
 
@@ -102,7 +105,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
+app.enable('trust proxy');
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);

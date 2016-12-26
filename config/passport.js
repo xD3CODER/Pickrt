@@ -1,29 +1,15 @@
-var LocalStrategy = require('passport-local').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var User = require('../models/user');
-var configAuth = require('./auth');
-var logger = require('./logger.js');
+const LocalStrategy = require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
+const TwitterStrategy = require('passport-twitter').Strategy;
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const User = require('../models/user');
+const configAuth = require('./auth');
+const logger = require('./logger.js');
+const data = require('./remotedata');
+const jwtTokens = require ('../config/jwt-tokens');
+const passportJWT = require("passport-jwt");
+const JwtStrategy = passportJWT.Strategy;
 
-
-
-var data = require('./remotedata');
-
-
-
- // Ta-da
-
-
-
-/*
-remotes.image.facebook("1321683084560446", function (err, test) {
-  console.log(test);
-});
-
-
-*/
-//call("1321683084560446")
 
 module.exports = function(passport) {
 
@@ -36,6 +22,33 @@ module.exports = function(passport) {
       done(err, user);
     });
   });
+
+
+  passport.use(new JwtStrategy(jwtTokens.jwtOptions, function (jwt_payload, next) {
+
+      try {
+          User.findOne({'_id': jwt_payload._id}, function (err, user) {
+              if (err) {
+                  logger.debug("Error");
+                  return next(err, false);
+              }
+              else if (user) {
+                  logger.debug("Found");
+                  next(null, user);
+              }
+              else {
+                  logger.debug("Not found");
+                  return next(null, false);
+              }
+          });
+      }
+      catch (err) {
+          logger.debug(err);
+      }
+
+  }));
+
+
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',
@@ -50,7 +63,7 @@ module.exports = function(passport) {
         if (user) {
           return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
         } else {
-          var newUser = new User();
+          const newUser = new User();
           newUser.local.email = email;
           newUser.local.password = newUser.generateHash(password);
           newUser.save(function(err) {
@@ -97,7 +110,7 @@ module.exports = function(passport) {
         if (user) {
           return done(null, user);
         } else {
-          var newUser = new User();
+          const newUser = new User();
           newUser.facebook.id = profile.id;
           newUser.facebook.token = token;
           newUser.facebook.lastname = profile.name.givenName;
@@ -131,7 +144,7 @@ module.exports = function(passport) {
         if (user) {
           return done(null, user);
         } else {
-          var newUser = new User();
+          const newUser = new User();
           newUser.twitter.id          = profile.id;
           newUser.twitter.token       = token;
           newUser.twitter.username    = profile.username;
@@ -159,7 +172,7 @@ module.exports = function(passport) {
           if (user) {
             return done(null, user);
           } else {
-            var newUser = new User();
+            const newUser = new User();
             newUser.google.id = profile.id;
             newUser.google.token = token;
             newUser.google.name = profile.displayName;
@@ -175,3 +188,4 @@ module.exports = function(passport) {
     }));
 
 };
+
