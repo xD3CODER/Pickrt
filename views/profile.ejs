@@ -11,7 +11,8 @@
 
 
             <h2 class="fa fa-facebook"> User</h2><br>
-            <img src=<%= user.avatar %> class="img-circle"><br>
+            <img src=<%= user.avatar.url %> class="img-circle"><br>
+            <strong>image status</strong>: <%= user.avatar.status %><br>
             <strong>email</strong>: <%= user.email %><br>
             <strong>lastname</strong>: <%= user.lastname %><br>
             <strong>firstname</strong>: <%= user.firstname %>

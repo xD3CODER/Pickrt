@@ -36,10 +36,10 @@ function getFaces(image, callback) {
                 }
 
             }
-        }
+        }/*
         if (resp != null && resp != 1) {
             resp.save('./outG.jpg');
-        }
+        }*/
         callback(resp);
     });
 }

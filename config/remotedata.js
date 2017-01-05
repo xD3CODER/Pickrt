@@ -195,33 +195,32 @@ let checkExplicit = function(method, image){
         }
     });
 
-}
+};
+let images = {};
+
+    images.facebook = function (user_id) {
+        return new Promise(function(done, reject) {
+            rp({
+                uri: 'https://graph.facebook.com/' + user_id + '/picture?redirect=false&height=650',
+                json: true
+            }).then(function (remoteURL) {
+                if (S(remoteURL.data.url).count(".jpg") < 1) {
+                    reject(new Error("bad_extension"));
+                }
+                else {
+                    done(remoteURL.data.url);
+                }
+            }).catch(function (err) {
+                reject(new Error(err))
+            });
+        });
+    };
 
 
 module.exports = {
     checkEmotion,
     checkExplicit,
-    image : {
-         facebook: function (user_id, callback) {
-            rp({
-                uri: 'https://graph.facebook.com/' + user_id + '/picture?redirect=false&height=650',
-                json: true
-            }).then(function (test) {
-                if(S(test.data.url).count(".jpg")<1)
-                {
-                    callback("L'extension est mauvaise");
-                }
-                else
-                {
-                    callback(null, test.data.url);
-                }
-
-            }).catch(function (err) {
-                callback(err)
-            });
-        }
-    }
-
+    images
 };
 
 

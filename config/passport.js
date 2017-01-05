@@ -7,7 +7,8 @@ const data = require('./remotedata');
 const jwtTokens = require ('../config/jwt-tokens');
 const passportJWT = require("passport-jwt");
 const JwtStrategy = passportJWT.Strategy;
-let images = require("./config/images");
+let images = require("./images");
+let Promise = require("bluebird");
 
 module.exports = function(passport) {
 
@@ -97,8 +98,7 @@ module.exports = function(passport) {
     callbackURL: configAuth.facebookAuth.callbackURL,
     profileFields: ['id', 'email', 'first_name', 'last_name', 'picture.type(large)'],
   },
-
-
+      
   function(token, refreshToken, profile, done) {
     process.nextTick(function() {
       User.findOne({ 'facebook.id': profile.id }, function(err, user) {
@@ -113,16 +113,52 @@ module.exports = function(passport) {
           newUser.lastname = profile.name.givenName;
           newUser.firstname = profile.name.familyName;
           newUser.email = (profile.emails[0].value || '').toLowerCase();
-          data.image.facebook(profile.id, function (err, result) {
-            if (err) logger.error(err);
-            else logger.success(result);
-            newUser.avatar = result;
-            newUser.save(function(err) {
-              if (err)
-                throw err;
-              return done(null, newUser);
-            });
-          });
+            let url = null;
+            let status = null;
+
+            data.images.facebook(profile.id).then(function (res){
+                url = res;
+                return Promise.resolve(images.checkIfFaceExist('url', url));
+            }).then(function(face){
+                if (face == 1) {
+                    logger.debug("face found :" + face);
+                    data.checkEmotion('url', url).then(function (result) {
+                        logger.debug(result);
+                    });
+                    images.getProfile("url", url, 'finalTest').then(function (result) {
+                        logger.debug(result);
+                    }).catch(function (e) {
+                        logger.error("Erreurs lors de la création du fichier url : " + e);
+                    });
+                    images.getThumbail("url", url, 'finalTest').then(function (result) {
+                        logger.debug(result);
+                    });
+                    status = "content_verified";
+                }
+                else if (face == 2)
+                {
+                    status = "too_far";
+                }
+                else if (face == 3)
+                {
+                    status = "no_face";
+                }
+            }).then(function () {
+                logger.debug("all done");
+                newUser.avatar.url = url;
+                newUser.avatar.status = status;
+                newUser.save(function(err) {
+                    if (err)
+                        throw err;
+                    return done(null, newUser);
+                });
+            }) .error(function (e) {
+                logger.error("Error handler " + e)
+            })
+                .catch(function (e) {
+                    logger.error("Catch handler " + e)
+                });
+
         }
       });
     });
