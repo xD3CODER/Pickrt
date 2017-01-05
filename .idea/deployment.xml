@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="OrangePi" promptOnLocalOverwrite="false" uploadOnCheckin="af324129-2dca-4446-b026-18c35a8740d9" filePermissions="493" folderPermissions="493">
+  <component name="PublishConfigData" autoUpload="Always" serverName="OrangePi">
     <serverData>
       <paths name="OrangePi">
         <serverdata>
           <mappings>
-            <mapping deploy="/express-authentication" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -17,7 +17,6 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="OrangePi" />
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

@@ -8,8 +8,9 @@ let ejs = require('ejs');
 const debug = require('debug');
 let error = debug('app:error');
 let passport = require('passport');
-let LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
+let Promise = require("bluebird");
+mongoose.Promise = require('bluebird');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -22,75 +23,73 @@ const app = express();
 let print = require("./config/logger");
 let images = require("./config/images");
 
-
-
-
 /*
- Complete example of getting profil image
+console.time("yolo");
 
- var fileToCheck = "./sexy.jpg";
- images.checkIfFaceExist('file', fileToCheck, function(err ,res){
-  if(err) {print.error(err); return}
-  else{
-    print.debug(res);
- remote.checkExplicit('file', fileToCheck, function(err, res){
-          if(err){ print.error(err); return}
-          print.debug(res.message);
-          if (res.state==1){
- remote.checkEmotion('file', fileToCheck, function(err, res){
-                  if(err){ print.error(err); return}
-                  print.debug(res);
-              });
- images.getProfile("file", fileToCheck, 'finalTest', function (err, res) {
-                  if(err) {print.error("Erreurs lors de la création du fichier url : "+err); return;}
-                  print.debug("Fichié de profil sauvegardé ! " + res);
-              });
- images.getThumbail("file", fileToCheck, 'finalTest', function (err, res) {
-                  if(err) {print.error("Erreurs lors de la création du fichier url : "+err); return;}
-                  print.debug("Fichié thumbail sauvegardé ! " + res);
-              });
-          }
- else if (res.state == 3)
- {
- print.error("You are banned for porn");
- }
-      });
-  }
-});
- */
+let fileToCheck = "./sexy4.jpg";
 
+images.checkIfFaceExist('file', fileToCheck)
+    .then(function (result) {
+        print.debug(result);
+        return Promise.resolve(remote.checkExplicit('file', fileToCheck));
+    })
+    .then(function (result) {
+        print.debug(result);
+        if (result.state == 1) {
+            remote.checkEmotion('file', fileToCheck).then(function (result) {
+                print.debug(result);
+            });
+
+            images.getProfile("file", fileToCheck, 'finalTest').then(function (result) {
+                print.debug(result);
+            }).catch(function (e) {
+                print.error("Erreurs lors de la création du fichier url : " + e);
+            });
+
+            images.getThumbail("file", fileToCheck, 'finalTest').then(function (result) {
+                print.debug(result);
+            });
+        }
+    })
+    .error(function (e) {
+        console.log("Error handler " + e)
+    })
+    .catch(function (e) {
+        console.log("Catch handler " + e)
+    });
+*/
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'shhsecret',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 600000 },
-  store:new MongoStore({
-    db: 'express',
-    host: 'localhost',
-    url: 'mongodb://localhost:27017/databases',
-    port: 27017,
-    //touchAfter: 24 * 3600,
-    autoRemove: 'interval',
-    autoRemoveInterval: 60
-  })
+    secret: 'shhsecret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {maxAge: 600000},
+    store: new MongoStore({
+        db: 'express',
+        host: 'localhost',
+        url: 'mongodb://localhost:27017/databases',
+        port: 27017,
+        //touchAfter: 24 * 3600,
+        autoRemove: 'interval',
+        autoRemoveInterval: 60
+    })
 
 
-  }));
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 require('./config/passport')(passport);
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.setHeader('charset', 'utf-8');
     next();
 });
@@ -98,30 +97,29 @@ app.use('/', routes);
 app.use('/users', users);
 
 
-
 // Handling errors
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    err.status = 404;
+    next(err);
 });
 app.enable('trust proxy');
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err,
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err,
+        });
     });
-  });
 }
 
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {},
-  });
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {},
+    });
 });
 
 module.exports = app;

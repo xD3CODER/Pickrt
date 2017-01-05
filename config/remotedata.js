@@ -8,6 +8,7 @@ const oxford = require('project-oxford'),
     emotion = new oxford.Client('e4578efe8d664d70bb14f6361f48e0dd'),
     vision = new oxford.Client('adaafea50f804bf1afc4fb1ccd201bb7');
 const logger = require('./logger');
+let  Promise = require('bluebird');
 
 function base64ToBinary(base64Data){
     return new Buffer(base64Data.replace(/data.*base64,/, ''), 'base64');
@@ -109,86 +110,92 @@ function analyzeContent(jsonObject, callback)
         callback(null, result);
     }
 
-let checkEmotion = function(method, image, callback){
-    switch (method){
-        case 'url' :
-            emotion.emotion.analyzeEmotion({
-                url: image
-            }).then(function (response) {
-                analyseEmotion(response, function(err, res){
-
-                    callback(err, res);
+let checkEmotion = function(method, image){
+    return new Promise(function(done, reject) {
+        switch (method) {
+            case 'url' :
+                emotion.emotion.analyzeEmotion({
+                    url: image
+                }).then(function (response) {
+                    analyseEmotion(response, function (err, res) {
+                      done(res);
+                    });
+                }).catch(function (err) {
+                    reject(new Error(err))
                 });
-            }).catch(function(err){
-                callback(err);
-            });
-            break;
-        case 'base64' :
-            emotion.emotion.analyzeEmotion({
-                data: base64ToBinary(image)
-            }).then(function (response) {
-                analyseEmotion(response, function(err, res){
-                    callback(err, res);
+                break;
+            case 'base64' :
+                emotion.emotion.analyzeEmotion({
+                    data: base64ToBinary(image)
+                }).then(function (response) {
+                    analyseEmotion(response, function (err, res) {
+                        done(res);
+                    });
+                }).catch(function (err) {
+                    reject(new Error(err))
                 });
-            }).catch(function(err){
-                callback(err);
-            });
-            break;
-        case 'file' :
-            emotion.emotion.analyzeEmotion({
-                path: image
-            }).then(function (response) {
-                analyseEmotion(response, function(err, res){
-                    callback(err, res);
+                break;
+            case 'file' :
+                emotion.emotion.analyzeEmotion({
+                    path: image
+                }).then(function (response) {
+                    analyseEmotion(response, function (err, res) {
+                        done(res);
+                    });
+                }).catch(function (err) {
+                    reject(new Error(err))
                 });
-            }).catch(function(err){
-                callback(err);
-            });
-            break;
-    }
+                break;
+        }
+    });
 };
 
 
-let checkExplicit = function(method, image, callback){
-    switch (method){
-        case 'url' :
-            vision.vision.analyzeImage({
-                url: image,
-                Adult : true
-            }).then(function (response) {
-                analyzeContent(response, function(err, res){
-                    callback(err, res);
+let checkExplicit = function(method, image){
+
+    return new Promise(function(done, reject) {
+        switch (method){
+            case 'url' :
+                vision.vision.analyzeImage({
+                    url: image,
+                    Adult : true
+                }).then(function (response) {
+                    analyzeContent(response, function(err, res){
+                        done(res);
+                    });
+                }).catch(function(err){
+
+                    reject(new Error(err))
                 });
-            }).catch(function(err){
-                callback(err);
-            });
-            break;
-        case 'base64' :
-            vision.vision.analyzeImage({
-                data: base64ToBinary(image),
-                Adult : true
-            }).then(function (response) {
-                analyzeContent(response, function(err, res){
-                    callback(err, res);
+                break;
+            case 'base64' :
+                vision.vision.analyzeImage({
+                    data: base64ToBinary(image),
+                    Adult : true
+                }).then(function (response) {
+                    analyzeContent(response, function(err, res){
+                        done(res);
+                    });
+                }).catch(function(err){
+                    reject(new Error(err))
                 });
-            }).catch(function(err){
-                callback(err);
-            });
-            break;
-        case 'file' :
-            vision.vision.analyzeImage({
-                path: image,
-                Adult : true
-            }).then(function (response) {
-                analyzeContent(response, function(err, res){
-                    callback(err, res);
+                break;
+            case 'file' :
+                vision.vision.analyzeImage({
+                    path: image,
+                    Adult : true
+                }).then(function (response) {
+                    analyzeContent(response, function(err, res){
+                        done(res);
+                    });
+                }).catch(function(err){
+                    reject(new Error(err))
                 });
-            }).catch(function(err){
-                callback(err);
-            });
-            break;
-    }
-};
+                break;
+        }
+    });
+
+}
 
 
 module.exports = {

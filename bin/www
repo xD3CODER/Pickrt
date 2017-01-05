@@ -11,8 +11,8 @@ const fs = require('fs');
 const https = require('https');
 
 
-const SSLCert = fs.readFileSync('/srv/cert');
-const SSLKey = fs.readFileSync('/srv/key');
+const SSLCert = fs.readFileSync('/var/www/pickrt/conf/pickrt.com.cert');
+const SSLKey = fs.readFileSync('/var/www/pickrt/conf/pickrt.com.key');
 
 
 

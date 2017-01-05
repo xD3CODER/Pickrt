@@ -50,7 +50,6 @@ router.post('/login',
         jwtTokens.createJwt(req, function(token){
              const cookieAge = 1000 * 60 * 60 * 24 * 365;
              res.cookie('jwt', token, { maxAge: cookieAge, httpOnly: true, secure: true });
-
             res.json({success: true, token: 'JWT ' + token});
         });
 

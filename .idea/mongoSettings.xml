@@ -4,11 +4,13 @@
     <option name="serverConfigurations">
       <list>
         <ServerConfiguration>
-          <option name="connectOnIdeStartup" value="true" />
           <option name="serverUrls">
             <list>
               <option value="192.168.0.6:27017" />
             </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
           </option>
         </ServerConfiguration>
       </list>
