@@ -3,10 +3,13 @@ const passportJWT = require("passport-jwt");
 const logger = require('../config/logger');
 const ExtractJwt = passportJWT.ExtractJwt;
 const passport = require('passport');
+const jwtOptions = [];
+jwtOptions.cookieName = 'p_usr';
+
 const cookieExtractor = function (req) {
     let token = null;
-    if (req && req.cookies && req.cookies['jwt']) {
-        token = req.cookies['jwt'];
+    if (req && req.cookies && req.cookies[jwtOptions.cookieName]) {
+        token = req.cookies[jwtOptions.cookieName];
     }
     return token;
 };
@@ -22,8 +25,8 @@ const headerExtractor = function (req) {
         return token;
 };
 
-const jwtOptions = [];
-jwtOptions.jwtFromRequest = ExtractJwt.fromExtractors([ExtractJwt.fromAuthHeader(), cookieExtractor]);
+
+jwtOptions.jwtFromRequest = ExtractJwt.fromExtractors([cookieExtractor]);
 jwtOptions.secretOrKey = 'secretpass';
 
 
@@ -48,7 +51,7 @@ function isConnected (req, res, next){
             logger.error(info.message);
         }
         if (!user) {
-            return res.send("Redirect to login").end();
+            return res.redirect('/login');
         }
         req.user = user;
         next();

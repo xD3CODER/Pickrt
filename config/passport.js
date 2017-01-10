@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('../models/user');
+
 const configAuth = require('./auth');
 const logger = require('./logger.js');
 const data = require('./remotedata');
@@ -9,6 +10,9 @@ const passportJWT = require("passport-jwt");
 const JwtStrategy = passportJWT.Strategy;
 let images = require("./images");
 let Promise = require("bluebird");
+
+
+
 
 module.exports = function(passport) {
 
@@ -24,7 +28,6 @@ module.exports = function(passport) {
 
 
   passport.use(new JwtStrategy(jwtTokens.jwtOptions, function (jwt_payload, next) {
-
       try {
           User.findOne({'_id': jwt_payload._id}, function (err, user) {
               if (err) {
@@ -78,25 +81,27 @@ module.exports = function(passport) {
   passport.use('local-login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
-    passReqToCallback: true,
+    passReqToCallback: false,
   },
-  function(req, email, password, done) {
-    User.findOne({ 'email':  email }, function(err, user) {
-      if (err)
-          return done(err);
-      if (!user)
-          return done(null, false, req.flash('loginMessage', 'No user found.'));
-      if (!user.validPassword(password))
-          return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
-      return done(null, user);
-    });
-  }));
+      function(username, password, done) {
+          User.findOne({ email: username }, function (err, user) {
+              if (err) { return done(err); }
+              if (!user) {
+                  return done(null, false, { message: 'Incorrect username.' });
+              }
+              if (!user.validPassword(password)) {
+                  return done(null, false, { message: 'Incorrect password.' });
+              }
+              return done(null, user);
+          });
+      }
+  ));
 
   passport.use(new FacebookStrategy({
     clientID: configAuth.facebookAuth.clientID,
     clientSecret: configAuth.facebookAuth.clientSecret,
     callbackURL: configAuth.facebookAuth.callbackURL,
-    profileFields: ['id', 'email', 'first_name', 'last_name', 'picture.type(large)'],
+    profileFields: ['id', 'email', 'first_name', 'last_name', 'gender', 'birthday'],
   },
       
   function(token, refreshToken, profile, done) {
@@ -108,9 +113,12 @@ module.exports = function(passport) {
           return done(null, user);
         } else {
           const newUser = new User();
+            logger.debug(profile);
           newUser.facebook.id = profile.id;
           newUser.facebook.token = token;
           newUser.lastname = profile.name.givenName;
+            newUser.birth_date = new Date(profile._json.birthday).toISOString();;
+            newUser.gender = profile.gender;
           newUser.firstname = profile.name.familyName;
           newUser.email = (profile.emails[0].value || '').toLowerCase();
             let url = null;
