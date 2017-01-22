@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 let favicon = require('serve-favicon');
-const logger = require('morgan');
+const logging = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 let ejs = require('ejs');
@@ -18,10 +18,9 @@ const routes = require('./routes/index');
 const users = require('./routes/users');
 const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
-let remote = require('./config/remotedata');
 const app = express();
-let print = require("./config/logger");
-let images = require("./config/images");
+let logger = require("./config/logger");
+
 
 /*
 console.time("yolo");
@@ -62,7 +61,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logging('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -74,17 +73,17 @@ app.use(session({
     saveUninitialized: false,
     cookie: {maxAge: 600000},
     store: new MongoStore({
-        db: 'express',
-        host: 'localhost',
-        url: 'mongodb://localhost:27017/databases',
-        port: 27017,
+        url: configDB.url,
         //touchAfter: 24 * 3600,
         autoRemove: 'interval',
         autoRemoveInterval: 60
     })
 
-
 }));
+
+
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());

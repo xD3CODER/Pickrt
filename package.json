@@ -3,8 +3,8 @@
   "version": "0.0.0", 
   "private": true, 
   "scripts": { 
-    "start": "nodemon ./bin/www", 
-    "debug": "DEBUG=*,-opencv,-express:*,-nodemon:*,-morgan:* nodemon ./bin/www" 
+    "start": "nodemon ./bin/www --ignore 'public/*'",
+    "debug": "DEBUG=*,-opencv,-express:*,-nodemon:*,-morgan:* nodemon ./bin/www --ignore 'public/*'"
   }, 
   "dependencies": { 
     "bcrypt": "^1.0.1", 
@@ -16,11 +16,8 @@
     "debug": "^2.5.1", 
     "ejs": "^2.5.3", 
     "express": "~4.14.0", 
-    "express-session": "^1.12.1", 
-    "faced": "^1.2.0", 
-    "imagemagick-native": "^1.9.3", 
-    "indico.io": "^0.10.5", 
-    "install": "^0.8.2", 
+    "express-session": "^1.12.1",
+    "imagemagick-native": "^1.9.3",
     "jquery": "^3.1.1", 
     "jsonwebtoken": "latest", 
     "mongoose": "^4.7.4", 

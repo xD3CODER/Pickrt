@@ -1,0 +1,61 @@
+{
+  "name": "Pickrt",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "package.json",
+    "src"
+  ],
+  "install": {
+    "path": "testPlug",
+    "sources": {
+      "bootstrap": "bower_components/bootstrap/dist/**",
+      "crypto-js": "bower_components/crypto-js/*.js",
+
+      "font-awesome": [
+        "bower_components/font-awesome/**"
+      ]
+    }
+  },
+  "resolutions": {
+    "jquery": "~3.1.1"
+  },
+  "dependencies": {
+    "magnific-popup": "^1.1.0",
+    "vide": "^0.5.1",
+    "vegas": "^2.4.0",
+    "smoothscroll": "^0.3.4",
+    "Scrollify": "^1.0.11",
+    "particles.js": "^2.0.0",
+    "owl.carousel": "^2.2.0",
+    "multiscroll.js": "^0.1.7",
+    "moment": "^2.17.1",
+    "jrespond": "*",
+    "jquery-ui": "jquery.ui#^1.12.1",
+    "jquery.mb.ytplayer": "^3.0.10",
+    "jquery.easing": "^1.3.1",
+    "jquery-gmap": "^2.1.5",
+    "jquery": "^3.1.1",
+    "bower-jquery-easyPieChart": "^0.0.1",
+    "let-it-snow": "https://github.com/trevanhetzel/let-it-snow",
+    "animate.css": "^3.5.2",
+    "isotope": "^3.0.1",
+    "outlayer": "^2.1.0",
+    "matches-selector": "desandro-matches-selector#^2.0.1",
+    "jquery_appear": "^0.3.6",
+    "ev-emitter": "^1.0.3",
+    "jquery.countdown": "^2.2.0",
+    "fitvids": "^1.2.0",
+    "jquery-countTo": "^1.2.0",
+    "fizzy-ui-utils": "^2.0.3",
+    "masonry": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "get-size": "^2.0.2"
+  }
+}

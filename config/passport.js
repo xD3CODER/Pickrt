@@ -1,10 +1,10 @@
 const LocalStrategy = require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-const User = require('../models/user');
+const User = require('./../models/user');
 
 const configAuth = require('./auth');
 const logger = require('./logger.js');
-const data = require('./remotedata');
+const data = require('./../treatments/remotedata');
 const jwtTokens = require ('../config/jwt-tokens');
 const passportJWT = require("passport-jwt");
 const JwtStrategy = passportJWT.Strategy;
@@ -79,8 +79,8 @@ module.exports = function(passport) {
   }));
 
   passport.use('local-login', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
+    usernameField: 'login_adress',
+    passwordField: 'login_password',
     passReqToCallback: false,
   },
       function(username, password, done) {

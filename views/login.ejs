@@ -1,31 +1,199 @@
-<% include partials/head %>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-    <div class="col-sm-8 col-sm-offset-2">
-      <div class="jumbotron text-center">
-        <h1><span class="fa fa-sign-in"></span> Login</h1>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-        <% if (message != null) { %>
-        	<div class="alert-danger"><%= message %></div>
-        <% } %>
 
-        <form action="/login" method="post">
-          <div class="form-group">
-              <label>Email</label>
-              <input type="text" class="form-control" name="email">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password" />
-          </div>
-          <div>
-            <input type="submit" class="form-control" value="Submit" />
-          </div>
-        </form>
-      </div>
-      <hr>
-      <span class="fa fa-sign-in"> Don't have an account?<a href="/signup"> Signup</a></span>
-      <p>Or go <a href="/">home</a>.</p>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>POLO | The Multi-Purpose HTML5 Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="testPlug/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="testPlug/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/animateit/animate.min.css" rel="stylesheet">
+
+    <!-- Vendor css -->
+    <link href="testPlug/owl.carousel/owl.carousel.css" rel="stylesheet">
+    <link href="testPlug/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <!-- Template base -->
+    <link href="css/theme-base.css" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <!-- Template elements -->
+    <link href="css/theme-elements.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="testPlug/toolstipter/css/tooltipster.bundle.css"/>
+    <!-- Responsive classes -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+
+    <!-- Template color -->
+    <link href="css/color-variations/blue.css" rel="stylesheet" type="text/css" media="screen" title="blue">
+
+    <!-- LOAD GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+
+    <!-- CSS CUSTOM STYLE -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen" />
+    <!--VENDOR SCRIPT-->
+    <script src="testPlug/jquery/jquery.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script> -->
+
+
+    <script src="testPlug/bootstrap/js/bootstrap.js"></script>
+    <script src="testPlug/animsition/animsition.min.js"></script>
+    <script src="testPlug/jrespond/jRespond.js"></script>
+    <script src="testPlug/jquery.stellar/jquery.stellar.js"></script>
+    <script src="testPlug/jquery.countdown/jquery.countdown.js"></script>
+
+</head>
+
+<body class="wide" style="overflow-x: hidden">
+
+
+<!-- WRAPPER -->
+<div class="wrapper">
+
+    <!-- HEADER -->
+
+    <header id="header" class="header-dark header-mini" style="position: fixed;width: 100%;">
+        <div id="header-wrap">
+            <div class="container">
+
+                <!--LOGO-->
+                <div id="logo">
+                    <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png">
+                        <img src="images/logo-dark.png" alt="Polo Logo">
+                    </a>
+                </div>
+                <!--END: LOGO-->
+
+                <!--MOBILE MENU -->
+                <div class="nav-main-menu-responsive">
+                    <!--  <button class="lines-button x">
+                        <span class="lines"></span>
+                    </button>-->
+                    <button type="button" class="lines-button x">
+                        <span class="lines"></span>
+                    </button>
+
+                </div>
+                <!--END: MOBILE MENU -->
+
+                <!--NAVIGATION MENU-->
+                <div class="navigation-wrap">
+                    <nav id="mainMenu" class="style-1 main-menu mega-menu">
+                        <ul class="main-menu nav nav-pills">
+                            <li class="dropdown"><a href="#section-home" class="nav-to"><i class="fa fa-home"></i></a> </li>
+                            <li class="dropdown"> <a href="#section-about" class="nav-to">About</a> </li>
+                            <li class="dropdown"> <a href="#section-portfolio" class="nav-to">Portfolio</a> </li>
+                            <li class="dropdown"> <a href="#section-services" class="nav-to">Services</a> </li>
+                            <li class="dropdown"> <a href="#section-blog" class="nav-to">Blog</a> </li>
+                            <li class="dropdown"> <a href="#footer" class="nav-to">Contact</a> </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--END: NAVIGATION-->
+
+            </div>
+        </div>
+
+    </header>
+    <!-- END: HEADER -->
+    <div id="notifications" class="alert login-alert text-center animated visible" data-animation="fadeInDownBig" data-animation-delay="1000" role="alert" style="z-index: 198!important;">
     </div>
-  </body>
+
+    <!-- SECTION -->
+    <section class="parallax login-parallax"  style="min-height: 750px;">
+        <div class="container container-fullscreen" style="margin-top: 60px;" >
+            <div class="text-middle" >
+                <h3 class="login-header-text text-center">Sign in to Pickrt</h3>
+                <div id="getting-started"></div>
+
+                    <div class="col-md-3  center p-b-20 p-t-30 p-l-40 p-r-40 background-white row" id="login-block" >
+                        <form class="form-transparent-grey" id="login" action="#">
+                            <div class="form-group input-group">
+                                <label class="sr-only">Username or Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa icon-fixed fa-user"></i></span>
+                                    <input type="text" id="login_adress" name="login_adress" class="form-control iconic-input" placeholder="Username or Email">
+                                </div>
+                            </div>
+                            <div class="form-group input-group">
+                                <label class="sr-only">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa icon-fixed fa-lock"></i></span>
+                                    <input id="login_password" name="login_password"  type="password" class="form-control iconic-input" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <a href="#" class="pull-right" style="margin-top: -10px">
+                                    <small>Lost your Password?</small>
+                                </a>
+                                <div class="m-l-10 pull-left pull-left">
+                                    <input type="checkbox" id="test1" />
+                                    <label for="test1">Remember me</label>
+                                </div>
+
+                            </div>
+                            <div class="form-group input-group">
+                                <label class="sr-only">Password</label>
+                                <div class="input-group">
+                                <div id = "captcha"></div>
+                            </div>
+                            </div>
+                            <div class="form-group ">
+                                <button class="button medium btn-primary button-3d effect fill-vertical col-md-12" type="submit" href=""><span>Sign In</span></button>
+                                <button class="button medium btn-primary button-3d effect icon-top fill-vertical col-md-12" href="#"><span><i class="fa fa-facebook text-center"></i>Facebook</span></button>
+                            </div>
+
+                        </form>
+                        <div class="row">
+
+                        </div>
+                    </div>
+
+                  <p class="text-center" style="color: white; padding: 10px;">New to Pickrt ? <a style="color: #fff;text-decoration: underline!important;" href="#">Create an account</a></p>
+
+            </div>
+        </div>
+    </section>
+    <!-- END: SECTION -->
+
+</div>
+<!-- END: WRAPPER -->
+<footer class="background-dark text-grey" id="footer">
+    <div class="copyright-content">
+        <div class="container">
+            <div class="row">
+                <div class="copyright-text text-center"> &copy; 2016 POLO - Best HTML5 Template Ever. All Rights Reserved. <a target="_blank" href="http://www.inspiro-media.com">INSPIRO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Theme Base, Components and Settings -->
+<script src="/testPlug/crypto-js/crypto-js.js"></script>
+<script src="/testPlug/jquery-validation/jquery.validate.js"></script>
+<script src="/testPlug/toolstipter/js/tooltipster.bundle.js"></script>
+
+
+<script src="./js/theme-functions.js"></script>
+<script src="./js/validations/login.js"></script>
+<!-- Custom js file -->
+<script src="./js/custom.js"></script>
+
+
+
+</body>
+
 </html>
+

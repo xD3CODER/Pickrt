@@ -5,82 +5,9 @@ const images = require('../config/images');
 let fs = require('fs');
 const logger = require('../config/logger');
 const jwtTokens = require ('../config/jwt-tokens');
-const Spam = require('../models/spam');
-
-function checkSpam(req, res, next) {
-    try {
-        Spam.findOne({'ip_adress': req.headers['x-forwarded-for']}, function (err, user) {
-            logger.debug('authentication');
-            if (err) {
-                logger.error(err);
-                return next(err);
-            }
-            if (!user) {
-                logger.debug("No spam detected")
-            }
-            next();
-        });
-    }
-    catch (err) {
-        logger.debug(err);
-    }
-};
-
-function addSpam(req, res)
-{
-    return new Promise(function(done, reject) {
-        Spam.findOne({'ip_adress': req.headers['x-forwarded-for']}, function (err, user) {
-            logger.debug('authentication');
-            if (err) {
-                logger.error(err);
-                return reject(new Error(err));
-            }
-            if (!user) {
-               return done('no_user');
-            }
-            else
-            {
-                return done(user);
-            }
-        });
-    }).then(function(rep){
-        if (rep == 'no_user')
-        {
-            logger.success("This user have never spammed");
-            const newSpam = new Spam();
-            newSpam.ip_adress = req.headers['x-forwarded-for'];
-            newSpam.attempts = new Date();
-            newSpam.save(function(err) {
-                if (err)
-                    throw err;
-            });
-        }
-        else
-        {
-            logger.debug("This user have already spammed "+ rep);
-          /*  Spam.update({_id: rep._id}, {
-                attempts: rep.attempts +', '+ new Date()
-            }, function(err, affected, resp) {
-                console.log(resp);
-            })
-*/
-            Spam.findOneAndUpdate(
-                    {_id: rep.id},
-                    {$push: {attempts: new Date()}},
-                    {safe: true, upsert: true},
-                    function(err, model) {
-                        console.log(err);
-                    }
-                );
-        }
-    })
-
-
-
-}
-
+const spam = require("./../treatments/spam");
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index.ejs', { title: 'Express' });
   console.info('Current session = ' + req.session.id);
 });
 
@@ -115,22 +42,41 @@ router.post('/signup', passport.authenticate('local-signup', {
   failureFlash: true,
 }));
 
+function decryptRequest(req,res,next){
+    let finalReq = {};
+    for(var attributename in req.body){
+        var value = Buffer.from(req.body[attributename], 'base64').toString();
+        var attributename = Buffer.from(attributename, 'base64').toString();
+        finalReq[attributename] = value;
+    }
+    req.body = finalReq;
+    next();
+}
 
-router.post('/login', checkSpam,  function(req, res, next) {
+
+
+router.post('/login',decryptRequest, spam.checkSpam,  function(req, res, next) {
+    if(req.param("nextTest"))
+    {
+        return res.json({"_spam" : req.param('nextTest'), "_captcha" : req.param("needCaptcha")});
+    }
+    logger.debug(req.body.login_adress);
     passport.authenticate('local-login', function(err, user, info) {
-        if (err) { return next(err); }
-        if(info){logger.error(info)}
-
-            if (!user) {
-                addSpam(req,res);
-                return res.redirect('/login');
+        if (err) {  return res.json({"_error": err}); }
+        if(info){
+            logger.error(info);
+          //  return res.json({"_error": info});
         }
+            if (!user) {
+                spam.addSpam(req,res);
+                return res.json({"_state": "incorrect_username"});
+            }
             req.logIn(user, function(err) {
             if (err) { return next(err); }
                 jwtTokens.createJwt(req, function(token){
                     const cookieAge = 1000 * 60 * 60 * 24 * 365;
                     res.cookie(jwtTokens.jwtOptions.cookieName, token, { maxAge: cookieAge, httpOnly: true, secure: true });
-                    res.redirect('/profile');
+                    return res.json({"_state": "user_connected"});
                 });
             });
     })(req, res, next);
