@@ -185,7 +185,7 @@
 [type="checkbox"]:checked + label:after {
     content: '✔';
     position: absolute;
-    top: -4px; left: 2px;
+    top: -2px; left: 2px;
     font-size: 22px;
     font-weight: 100;
     line-height: 0.8;
@@ -493,86 +493,16 @@ label:hover:before {
     width: 100%;
 }
 
-.login-parallax {
-    background-image : url(../images/polygon/11.jpg);
-    height: 100vh;
-}
+
 .register-parallax {
     background-image : url(../images/backgrounds/girl.jpg);
+    height: 100vh;
 }
+
+
 /*
-LOGIN PAGE
+Generals Changes on Theme
  */
-
-#login-block{
-    border-radius: 3px;
-}
-
-.device-sm .device-xs .device-xss{
-    width: 40vw;
-}
-#login-block:not(.device-sm){
-
-}
-.device-lg #login-block{
-    max-width: 500px;
-}
-.login-header{
-    position: absolute!important;
-}
-
-.button{
-    border-radius: 3px;
-}
-.button.btn-primary.effect.fill-vertical:after {
-    background-color: #1a9ca7;
-}
-.button.btn-primary.effect.fill-vertical:hover {
-    color: #fff;
-}
-
-.button.effect.fill-vertical:after,
-.button.effect.fill-horizontal:after{
-    -webkit-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
-
-}
-.button.effect.fill-vertical:hover:after {
-    height: 600%;
-}
-
-.facebook-login{
-    cursor: pointer;
-    display: inline-block;
-    font-size: 6px;
-    font-weight: 100;
-    letter-spacing: 1px;
-    line-height: 100%;
-    margin: 10px 0;
-    outline: 0 none;
-    text-transform: uppercase;
-    border: 1px solid #ccc;
-}
-
-.login-icon{
-    position: absolute;
-    margin-top: -60px;
-    margin-left: -50px;
-    z-index: 1;
-}
-
-.login-separator{
-    margin:0!important;
-    margin-bottom: 20px!important;
-}
-
-.login-header-text{
-    font-weight: 600;
-color: white;
-    letter-spacing: -2px;
-
-}
-
 .button {
     cursor: pointer;
     display: inline-block;
@@ -587,7 +517,70 @@ color: white;
     text-transform: uppercase;
     white-space: nowrap;
     border: 1px solid #ccc;
+    border-radius: 3px;
 }
+
+.button.btn-primary.effect.fill-vertical:after {
+    background-color: #1a9ca7;
+}
+.button.btn-primary.effect.fill-vertical:hover {
+    color: #fff;
+}
+.button.effect.fill-vertical:after,
+.button.effect.fill-horizontal:after{
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+.button.effect.fill-vertical:hover:after {
+    height: 700%;
+}
+
+.center{
+    float: none;
+    margin: 0 auto;
+}
+
+
+
+/*
+LOGIN PAGE
+ */
+.login-parallax {
+    background-image : url(../images/polygon/11.jpg);
+    height: 100vh;
+}
+
+.bottom-clause{
+    font-weight: 400;
+    color: white;
+    padding: 15px;
+}
+
+.bottom-clause > .link{
+    font-weight: 600;
+    color: white;
+    text-decoration: underline!important;
+}
+
+.login-block{
+    border-radius: 3px;
+}
+
+.device-lg .login-block{
+    max-width: 500px;
+}
+
+.device-lg .register-block{
+    max-width: 800px;
+}
+
+
+.login-header-text{
+    font-weight: 600;
+    color: white;
+    letter-spacing: -2px;
+}
+
 
 
 .login-alert{
@@ -598,15 +591,20 @@ color: white;
     z-index: 198!important;
 }
 
-.device-xs .login-alert, .device-sm .login-alert{
-margin-top: 80px;
-}
-.device-xxs .login-alert{
-    margin-top: 90px;
+.device-xs .login-alert, .device-sm .login-alert,.device-xxs .login-alert{
+margin-top: 90px;
 }
 
+.login-container{
+    margin-top: 100px;
+}
 
-.center{
-    float: none;
-    margin: 0 auto;
+#captcha {
+    transform-origin:0 0;
+    position: absolute;
+    -webkit-transition-duration: 10ms;
+    -moz-transition-duration: 10ms;
+    -o-transition-duration: 10ms;
+    transition-duration: 10ms;
+
 }

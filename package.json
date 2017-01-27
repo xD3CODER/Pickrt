@@ -4,7 +4,7 @@
   "private": true, 
   "scripts": { 
     "start": "nodemon ./bin/www --ignore 'public/*'",
-    "debug": "DEBUG=*,-opencv,-express:*,-nodemon:*,-morgan:* nodemon ./bin/www --ignore 'public/*'"
+    "debug": "DEBUG=*,-opencv,-express:*,-nodemon:*,-morgan,-send,-body-parser:*,-morgan:* nodemon ./bin/www --ignore 'public/*'"
   }, 
   "dependencies": { 
     "bcrypt": "^1.0.1", 

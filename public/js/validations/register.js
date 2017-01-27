@@ -1,9 +1,8 @@
 /**
  * Created by xD3VHAX on 18/01/2017.
  */
-
-
 jQuery(document).ready(function () {
+
 
     $('#login input').tooltipster({
         trigger: 'custom', // default is 'hover' which is no good here
@@ -41,10 +40,10 @@ jQuery(document).ready(function () {
     $submitedForm.validate({
         ignore: ".ignore",
         rules: {
-            login_adress: {
+            birth_date: {
                 required: true,
-                minlength: 2,
-                maxlength: 32,
+                minlength: 10,
+                maxlength: 10,
                 noSpace: true
 
             },
@@ -60,7 +59,15 @@ jQuery(document).ready(function () {
             }
         },
 
-        messages: lang.messages,
+        messages: {
+            login_adress: {
+                required: "Entrez votre identifiant",
+                minlength: "Entrez votre identifiantd fg dfg dsfg sdfg sdfg sfh rth rtyhtrfghdfhfdtgh rth rth",
+                maxlength: "Entrez votre identifiant",
+                noSpace: "Entrez votre identifiant"
+
+            }
+        },
         errorPlacement: function (error, element) {
             let lastError = $(element).data('lastError');
             let newError = $(error).text();

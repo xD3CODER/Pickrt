@@ -20,7 +20,7 @@ const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 const app = express();
 let logger = require("./config/logger");
-
+var i18n = require('./i18n');
 
 /*
 console.time("yolo");
@@ -66,7 +66,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(i18n);
 app.use(session({
     secret: 'shhsecret',
     resave: false,
@@ -113,6 +113,10 @@ if (app.get('env') === 'development') {
     });
 }
 
+
+
+
+
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -120,5 +124,7 @@ app.use(function (err, req, res, next) {
         error: {},
     });
 });
+
+
 
 module.exports = app;

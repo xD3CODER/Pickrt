@@ -6,19 +6,20 @@ let fs = require('fs');
 const logger = require('../config/logger');
 const jwtTokens = require ('../config/jwt-tokens');
 const spam = require("./../treatments/spam");
+var CryptoJS = require("crypto-js");
+
 router.get('/', function(req, res, next) {
   res.render('index.ejs', { title: 'Express' });
   console.info('Current session = ' + req.session.id);
 });
 
-
-
 router.get('/vc', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
     router.get('/login', function(req, res, next) {
+
+
     res.render('login.ejs', {message: req.flash('loginMessage')});
 
 });
@@ -26,6 +27,7 @@ router.get('/vc', function(req, res, next) {
 router.get('/signup', function(req, res) {
   res.render('signup.ejs', { message: req.flash('registerMessage') });
 });
+
 
 router.get('/profile', jwtTokens.isConnected, function(req, res) {
   res.render('profile.ejs', { user: req.user });
@@ -36,7 +38,7 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-router.post('/signup', passport.authenticate('local-signup', {
+router.post('/signup',decryptRequest, passport.authenticate('local-signup', {
   successRedirect: '/profile',
   failureRedirect: '/signup',
   failureFlash: true,
@@ -45,20 +47,29 @@ router.post('/signup', passport.authenticate('local-signup', {
 function decryptRequest(req,res,next){
     let finalReq = {};
     for(var attributename in req.body){
-        var value = Buffer.from(req.body[attributename], 'base64').toString();
-        var attributename = Buffer.from(attributename, 'base64').toString();
-        finalReq[attributename] = value;
+        finalReq[CryptoJS.enc.Utf8.stringify(CryptoJS.enc.Base64.parse(attributename))] =
+            CryptoJS.enc.Utf8.stringify(CryptoJS.enc.Base64.parse(req.body[attributename]));
     }
     req.body = finalReq;
+    console.log(finalReq);
     next();
 }
 
+function e(array){
+    let finalReq = {};
+    for(var attributename in array){
+        finalReq[CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(attributename))] =
+            CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(array[attributename]));
+    }
 
+    return finalReq;
+}
 
 router.post('/login',decryptRequest, spam.checkSpam,  function(req, res, next) {
-    if(req.param("nextTest"))
+    if(req.params.nextTest)
     {
-        return res.json({"_spam" : req.param('nextTest'), "_captcha" : req.param("needCaptcha")});
+        spam.addSpam(req,res);
+        return res.json(e({"_spam" : req.params.nextTest, "_captcha" : req.params.needCaptcha}));
     }
     logger.debug(req.body.login_adress);
     passport.authenticate('local-login', function(err, user, info) {
@@ -66,10 +77,10 @@ router.post('/login',decryptRequest, spam.checkSpam,  function(req, res, next) {
         if(info){
             logger.error(info);
           //  return res.json({"_error": info});
-        }
+          }
             if (!user) {
                 spam.addSpam(req,res);
-                return res.json({"_state": "incorrect_username"});
+                return res.json(e({"_state": "user_notfound"}));
             }
             req.logIn(user, function(err) {
             if (err) { return next(err); }
@@ -81,7 +92,6 @@ router.post('/login',decryptRequest, spam.checkSpam,  function(req, res, next) {
             });
     })(req, res, next);
 });
-
 
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_birthday'] }));
 

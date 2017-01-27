@@ -10,7 +10,7 @@ Notify = function(text, callback, close_callback, style) {
   
 	$('<a>',{
 		text: '×',
-		class: 'button_close',
+		class: 'button close',
 		style: 'padding-left: 10px;',
 		href: '#',
 		click: function(e){

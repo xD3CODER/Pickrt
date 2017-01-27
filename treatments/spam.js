@@ -20,11 +20,25 @@ function checkSpam(req, res, next) {
                 return next();
             }
             req.params.spamID = spam._id;
+            logger.debug(spam._id);
             if (spam.attempts.length < 4 ) {
                 logger.success("No spam detected");
                 return next();
             }
-            logger.error("spam detected");
+            let waitTime = 10000;
+            if (spam.attempts.length == 4)
+            {
+                waitTime = 20000;
+            }
+            else if (spam.attempts.length == 5)
+            {
+                waitTime = 30000;
+            }
+            else if (spam.attempts.length > 5){
+                waitTime = 60000;
+                req.params.needCaptcha = true;
+            }
+            logger.error("spam detected ->" + spam.attempts.length);
 
             let diffMs = (new Date()-spam.attempts[spam.attempts.length - 1]);
             /*
@@ -32,24 +46,19 @@ function checkSpam(req, res, next) {
              var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
              var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
              */
-            if (diffMs < 120000) {
-                logger.debug(120000 - diffMs);
-                req.params.nextTest = 120000 - diffMs;
-
-                if(spam.attempts.length > 3)
-                {
-                    req.params.needCaptcha = true;
-                }
+            if (diffMs < 300000) { // Si le dernier spam date de -5 min
+                /*
+                 logger.debug(120000 - diffMs);
+                 req.params.nextTest = 120000 - diffMs;
+                 */              req.params.nextTest = waitTime;
             }
-
-             next();
+            next();
         });
     }
     catch (err) {
         logger.debug(err);
     }
 };
-
 
 
 
@@ -66,7 +75,7 @@ function addSpam(req, res)
                     throw err;
             });
         }
-        else if(!req.params.nextTest)
+        else
         {
             logger.debug("This user have already spammed "+ req.params.spamID);
             Spam.findOneAndUpdate(

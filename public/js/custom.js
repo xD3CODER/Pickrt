@@ -1,4 +1,3 @@
-/* Add your custom JavaScript code */
 /**
  * jQuery alterClass plugin
  *
@@ -53,21 +52,81 @@ $input.focusout(function () {
     $(this).closest('.form-group').find('i').removeClass('enter-rotate').addClass('exit-rotate');
 });
 
-$("#test").click(function () {
-    clearInputState($("#test2"));
-    $("#test2").closest('.form-group').addClass('has-error');
-    $('<span class="glyphicon glyphicon-remove form-control-feedback animated flipInY visible" data-animation="flipInY" data-animation-delay="3000" aria-hidden="true"></span>').insertAfter($("#test2").closest('.iconic-input'));
-});
-$("#test7").click(function () {
-    clearInputState($("#test2"));
-    $("#test2").closest('.form-group').addClass('has-success');
-    $('<span class="glyphicon glyphicon-ok form-control-feedback animated flipInY visible" data-animation="flipInY" data-animation-delay="3000" aria-hidden="true"></span>').insertAfter($("#test2").closest('.iconic-input'));
-});
-
 function clearInputState(input) {
     input.closest('.form-group').alterClass('has-*');
     input.next('.form-control-feedback').remove();
 }
 
+/*
+ReCaptcha
+ */
+function recaptchaCallback() {
+    $('#hiddenRecaptcha').valid();
+};
+
+function resizeCaptcha(){
+    let captchaScale = $('#captcha-container').width()/304;
+
+    if ($('#captcha-container').width()<300) {
+        $('#captcha').css({
+            'transform': 'scale(' + captchaScale + ')',
+        });
+    }
+    else
+    {
+        $('#captcha').css({
+            'transform': 'scale(0.9)'
+        });
+    }
+
+}
+
+$(function() {
+    $(window).resize(function(){
+        resizeCaptcha();
+    });
+});
 
 
+
+/*
+Custom Notify
+ */
+function Notify(options) {
+    let $NDiv = $("#notifications");
+    if ($NDiv.hasClass("fadeInDownBig")) {
+        $NDiv.alterClass("alert-*").removeClass("fadeInDownBig").addClass("fadeOutUp alert-" + options.type);
+        setTimeout(function () {
+            $NDiv.alterClass("alert-*").removeClass("fadeOutUp").addClass("fadeInDownBig alert-" + options.type).html(options.message);
+        }, 1000);
+    }
+    else {
+        $NDiv.alterClass("alert-*").removeClass("fadeOutUp").addClass("fadeInDownBig alert-" + options.type).html(options.message);
+    }
+    if (options.dismiss) {
+        setTimeout(function () {
+            $NDiv.alterClass("alert-*").removeClass("fadeInDownBig").addClass("fadeOutUp alert-" + options.type);
+        }, options.dismiss);
+    }
+}
+
+/*
+$(document).ready(function(){
+
+
+    var newdate = new Date();
+    newdate.setDate(newdate.getDate() - 7); // minus the date
+
+
+
+    $('#datetimepicker12').datetimepicker({
+        viewMode: 'years',
+        allowInputToggle: true,
+        useCurrent: false,
+        maxDate: moment().subtract(16, 'Y').toDate(),
+        minDate: moment().subtract(99, 'Y').toDate(),
+        format: 'DD/MM/YYYY'
+
+    });
+});
+*/

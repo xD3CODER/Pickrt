@@ -1,0 +1,20 @@
+{
+  "login": {
+    "static": {
+      "bloc_header" : "Sign In to Pickrt",
+      "form" : {
+        "adress_label" : "Email adress",
+        "adress_placeholder" : "Tap your email adress",
+        "password_label" : "Password",
+        "password_placeholder" : "Enter your password",
+        "password_lost" : "Lost your password ?",
+        "remember_me" : "Remember me",
+        "signin_button" : "Sign In",
+        "facebook_button" : "Sign In with Facebook"
+      },
+      "new_user" : "New on Pickrt ?",
+      "create_account" : "Create an account now"
+
+    }
+  }
+}
