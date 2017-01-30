@@ -8,21 +8,37 @@ const jwtTokens = require ('../config/jwt-tokens');
 const spam = require("./../treatments/spam");
 var CryptoJS = require("crypto-js");
 
+// Language switcher
+router.get('/*', function (req,res,next) {
+    let languages = ['en', 'fr'];
+    if (req.query.l) {
+        if (languages.indexOf(req.query.l) > -1) {
+            if (req.cookies.lang != req.query.l) {
+                logger.log("Cookie different");
+                res.cookie('lang', req.query.l, { expires: new Date(Date.now() + 99999999999), httpOnly: true, secure: true });
+            }
+        }
+    }
+    next();
+});
+
 router.get('/', function(req, res, next) {
   res.render('index.ejs', { title: 'Express' });
   console.info('Current session = ' + req.session.id);
+
 });
 
 router.get('/vc', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-    router.get('/login', function(req, res, next) {
 
+    router.get('/login', function(req, res, next) {
 
     res.render('login.ejs', {message: req.flash('loginMessage')});
 
 });
+
 
 router.get('/signup', function(req, res) {
   res.render('signup.ejs', { message: req.flash('registerMessage') });
@@ -100,7 +116,6 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook'), functio
         res.cookie(jwtTokens.jwtOptions.cookieName, token, { maxAge: 1000 * 60 * 60 * 24 * 365, httpOnly: true, secure: true });
         res.redirect('/profile');
     });
-
     //res.redirect('/profile');
 });
 

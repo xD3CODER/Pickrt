@@ -495,7 +495,7 @@ label:hover:before {
 
 
 .register-parallax {
-    background-image : url(../images/backgrounds/girl.jpg);
+    background-image : url(../images/backgrounds/test.jpg);
     height: 100vh;
 }
 
@@ -503,6 +503,9 @@ label:hover:before {
 /*
 Generals Changes on Theme
  */
+
+
+
 .button {
     cursor: pointer;
     display: inline-block;
@@ -574,6 +577,14 @@ LOGIN PAGE
     max-width: 800px;
 }
 
+.register-block{
+    -webkit-backface-visibility: hidden;
+    -webkit-transition-duration: 1000ms;
+    -moz-transition-duration: 1000ms;
+    -o-transition-duration: 1000ms;
+    transition-duration: 1000ms;
+}
+
 
 .login-header-text{
     font-weight: 600;
@@ -600,11 +611,88 @@ margin-top: 90px;
 }
 
 #captcha {
+    width: 10px;
     transform-origin:0 0;
+    position: inherit;
+}
+
+#captcha-container {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+.icon-round{
+    margin-left:120px;
+    height: 50px;
     position: absolute;
-    -webkit-transition-duration: 10ms;
-    -moz-transition-duration: 10ms;
-    -o-transition-duration: 10ms;
-    transition-duration: 10ms;
+    width: 50px;
+    margin-bottom: 16px;
+}
+.icon-round i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #26B8F3;
+    color: #fff;
+    z-index: 1;
+}
+
+
+
+
+/*
+Tiles
+ */
+
+.image-tile{
+    width: 100%;
+    min-width: 100px;
+    max-width: 200px;
+    transform: scale(1.01);
+    border-radius: 50%;
+    border: dotted #26b8f3 3px;
+    overflow: hidden;
+}
+.image-tile:hover{
+    cursor: pointer;
+}
+.image-tile> img{
+    -webkit-backface-visibility: hidden;
+    -webkit-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.image-tile:hover > img{
+    -webkit-filter: invert(1)!important;
+    filter: invert(1)!important;
+    transform: scale(1.3);
+}
+
+.text-tile{
+    display: none;
+    color: #fff;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition-duration: 1000ms;
+    -moz-transition-duration: 1000ms;
+    -o-transition-duration: 1000ms;
+    transition-duration: 1000ms;
+}
+
+.image-tile:hover > .text-tile{
+    display: block;
+    z-index: 50;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
 
 }

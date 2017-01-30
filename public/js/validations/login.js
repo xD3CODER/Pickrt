@@ -2,6 +2,10 @@
  * Created by xD3VHAX on 18/01/2017.
  */
 
+function recaptchaCallback() {
+    $('#hiddenRecaptcha').valid();
+};
+
 
 jQuery(document).ready(function () {
 
@@ -91,20 +95,15 @@ jQuery(document).ready(function () {
                 url: "login",
                 data: createRequest($submitedForm.serializeArray()),
                 success: function (rep) {
-
                     rep = (handleResponse((rep)));
-                    alert((rep));
+                  //  alert(JSON.stringify(rep));
                     if (rep._spam) {
                         if (rep._captcha) {
-                            if ($("#captcha").length) {
+                            if (!$("#captcha-container").hasClass('hide')) {
                                 grecaptcha.reset();
                             }
-
-                            $.when($("#captcha-container").append('<div id ="captcha"></div>')).then(function () {
+                            $.when($("#captcha-container").removeClass('hide')).then(function () {
                                 resizeCaptcha();
-                                grecaptcha.render('captcha', {
-                                    sitekey: '6LemuBIUAAAAAO70Ue0s0dmiZad2IwuM2GULZxRG'
-                                });
                                 $('input[name="hiddenRecaptcha"]').rules('add', {
                                     required: function () {
                                         if (grecaptcha.getResponse() == '') {
@@ -114,52 +113,32 @@ jQuery(document).ready(function () {
                                         }
                                     }
                                 });
-                                $("#buttons-block").css({"padding-top": "70px"});
-                                $("#captcha-container").css({"padding-top": "40px"});
                             });
                         }
                         Notify({
                             type: 'danger',
                             message: '<strong>Vous avez effectuer trop de tentatives</strong> Veuillez attendre <strong id="count"></strong>',
                             dismiss: Number(rep._spam) + 3000
-                        });
-                        let count = new Date().getTime()+Number(rep._spam) ;
-                        alert(count);
-                        $("#count").countdown(count, function (event) {
-                            $(this).text(
-                                event.strftime('%M:%S')
-                            );
+                        }, function(){
+                            let count = new Date().getTime()+Number(rep._spam) ;
+                            $("#count").countdown(count, function (event) {
+                                $(this).text(
+                                    event.strftime('%M:%S')
+                                );
+                            });
                         });
                     }
-
-                    switch (rep) {
-
-                        case (base64_encode(ajaxCrypt('OK'))).toString() :
-                            swal({
-                                title: "Connecté !",
-                                text: "Connexion réussie ! Redirection en cours...",
-                                timer: 2000,
-                                type: "success",
-                                showConfirmButton: false
-                            }, function () {
-
-                                window.location.href = "myaccount";
-                            });
-                            break;
-                        case (base64_encode(ajaxCrypt('PASSWORD_ERROR'))).toString() :
-                            swal("Erreur", "Mot de passe incorrect...", "error");
-                            break;
-                        case (base64_encode(ajaxCrypt('ACTIVATION_ERROR'))).toString() :
-                            swal("Erreur", "Vous n'avez pas activé votre compte...", "error");
-                            break;
-                        case (base64_encode(ajaxCrypt('USER_ERROR'))).toString() :
-                            swal("Erreur", "Cet utilisateur n\'existe pas...", "error");
-                            break;
-
-                        default :
-                            swal("Erreur", "Une erreur est survenue...", "error");
-                            break;
-                            break;
+                    if (rep._state == 'user_notfound'){
+                        Notify({
+                            type: 'danger',
+                            message: '<strong>Connexion échouée</strong>, identifiants incorrects<strong id="count"></strong>'
+                        });
+                    }
+                    else if (rep._state == 'user_connected'){
+                        Notify({
+                            type: 'success',
+                            message: '<strong>Connexion réussie !</strong>, redirection en cours...<strong id="count"></strong>'
+                        });
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {

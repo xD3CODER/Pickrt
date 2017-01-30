@@ -175,4 +175,16 @@ jQuery(document).ready(function () {
             });
         }
     });
+
+    $('#datepicker').datetimepicker({
+        viewMode: 'years',
+        allowInputToggle: true,
+        useCurrent: false,
+        locale: 'en',
+        maxDate: moment().subtract(16, 'Y').toDate(),
+        minDate: moment().subtract(99, 'Y').toDate(),
+        format: 'DD/MM/YYYY'
+
+    });
+
 });

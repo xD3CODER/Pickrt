@@ -109,6 +109,7 @@
     </header>
     <!-- END: HEADER -->
     <div id="notifications" class="alert login-alert text-center animated visible" data-animation="fadeInDownBig" data-animation-delay="1000" role="alert" style="z-index: 198!important;">
+
     </div>
     <!-- SECTION -->
     <section class="parallax login-parallax"  style="min-height: 800px;">
@@ -131,7 +132,7 @@
                                     <input id="login_password" name="login_password"  type="password" class="form-control iconic-input" placeholder="<%= __('login').static.form.password_placeholder %>">
                                 </div>
                             </div>
-                            <div class="form-inline m-b-20">
+                            <div class="form-inline m-b-40">
                                 <a href="#" class="pull-right" style="margin-top: -15px">
                                     <small><%= __('login').static.form.password_lost %></small>
                                 </a>
@@ -140,17 +141,26 @@
                                     <label for="test1"><%= __('login').static.form.remember_me %></label>
                                 </div>
                             </div>
-                            <div class="form-group" id='captcha-container'>
-                                <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
-                            </div>
 
-                            <div class="form-group" id="buttons-block">
-                                <button class="button medium btn-primary button-3d effect fill-vertical col-md-12" type="submit"><span><%= __('login').static.form.signin_button %></span></button>
-                                <button class="button medium btn-primary button-3d effect icon-top fill-vertical col-md-12" href=""><span><i class="fa fa-facebook text-center"></i><%= __('login').static.form.facebook_button %></span></button>
+                            <div class="row">
+                                <div class="form-group col-xs-10 center" id="buttons-block">
+                                    <div id='captcha-container' class="hide">
+                                        <div id="captcha" class="g-recaptcha"
+                                             data-sitekey="6LemuBIUAAAAAO70Ue0s0dmiZad2IwuM2GULZxRG"></div>
+                                        <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha"
+                                               id="hiddenRecaptcha">
+                                    </div>
+                                    <button class="button medium btn-primary button-3d effect fill-vertical col-xs-12"
+                                            type="submit"><span><%= __('login').static.form.signin_button %></span>
+                                    </button>
+                                    <button class="button medium btn-primary button-3d effect icon-top fill-vertical col-xs-12"
+                                            href=""><span><i
+                                                    class="fa fa-facebook text-center"></i><%= __('login').static.form.facebook_button %></span>
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
-
                   <p class="text-center bottom-clause"><%= __('login').static.new_user %> <a class="link" href="#"><%= __('login').static.create_account %></a></p>
 
             </div>
@@ -185,4 +195,8 @@
 </body>
 
 </html>
-
+<script type="text/javascript">
+    var RecaptchaOptions = {
+        lang : 'en',
+    };
+</script>

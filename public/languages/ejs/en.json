@@ -14,7 +14,37 @@
       },
       "new_user" : "New on Pickrt ?",
       "create_account" : "Create an account now"
-
     }
-  }
+  },
+  "register" :
+    {
+        "gender" : {
+          "base" : "You're ... ?",
+          "isGirl" : "You're a girl ?",
+          "isMan" : "You're a man ?",
+          "Girl" : "I'm a girl",
+          "Man" : "I'm a man",
+          "tileMan" : "a Man",
+          "tileGirl" : "a Girl"
+        },
+      "pagination" :  {
+        "next" : "Next",
+        "prev" : "Previous"
+      },
+      "form" : {
+        "firstname_label" : "First name",
+        "firstname_placeholder" : "Tap your first name",
+        "lastname_label" : "Last name",
+        "lastname_placeholder" : "Tap your last name",
+        "adress_label" : "Email adress",
+        "adress_placeholder" : "Tap your email adress",
+        "birthday_label" : "Birth date",
+        "birthday_placeholder" : "Tap your birth date",
+        "password_label" : "Choose a password",
+        "password_placeholder" : "Tap a password",
+        "passwordConfirm_label" : "Confirm password",
+        "passwordConfirm_placeholder" : "Retap the password",
+        "signup_button" : "Sign Up !"
+      }
+    }
 }

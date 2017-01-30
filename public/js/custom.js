@@ -60,24 +60,20 @@ function clearInputState(input) {
 /*
 ReCaptcha
  */
-function recaptchaCallback() {
-    $('#hiddenRecaptcha').valid();
-};
+
 
 function resizeCaptcha(){
     let captchaScale = $('#captcha-container').width()/304;
+        $('#captcha').css({
+            'transform': 'scale(' + captchaScale + ')'
+        });
 
-    if ($('#captcha-container').width()<300) {
-        $('#captcha').css({
-            'transform': 'scale(' + captchaScale + ')',
-        });
-    }
-    else
-    {
-        $('#captcha').css({
-            'transform': 'scale(0.9)'
-        });
-    }
+    var $height = $('#captcha')[0].getBoundingClientRect().height;
+    $('#captcha-container').css({
+        'height': $height+"px"
+    });
+
+
 
 }
 
@@ -92,41 +88,23 @@ $(function() {
 /*
 Custom Notify
  */
-function Notify(options) {
+function Notify(options, callback) {
     let $NDiv = $("#notifications");
-    if ($NDiv.hasClass("fadeInDownBig")) {
-        $NDiv.alterClass("alert-*").removeClass("fadeInDownBig").addClass("fadeOutUp alert-" + options.type);
+    if ($NDiv.hasClass("fadeInDown")) {
+        $NDiv.alterClass("alert-*").removeClass("fadeInDown").addClass("fadeOutUpBig alert-" + options.type);
         setTimeout(function () {
-            $NDiv.alterClass("alert-*").removeClass("fadeOutUp").addClass("fadeInDownBig alert-" + options.type).html(options.message);
+            $NDiv.alterClass("alert-*").removeClass("fadeOutUpBig").addClass("fadeInDown alert-" + options.type).html(options.message);
+            callback("done");
         }, 1000);
     }
     else {
-        $NDiv.alterClass("alert-*").removeClass("fadeOutUp").addClass("fadeInDownBig alert-" + options.type).html(options.message);
+        $NDiv.alterClass("alert-*").removeClass("fadeOutUpBig").addClass("fadeInDown alert-" + options.type).html(options.message);
+        callback("done");
     }
     if (options.dismiss) {
         setTimeout(function () {
-            $NDiv.alterClass("alert-*").removeClass("fadeInDownBig").addClass("fadeOutUp alert-" + options.type);
+            $NDiv.alterClass("alert-*").removeClass("fadeInDown").addClass("fadeOutUpBig alert-" + options.type);
         }, options.dismiss);
     }
 }
 
-/*
-$(document).ready(function(){
-
-
-    var newdate = new Date();
-    newdate.setDate(newdate.getDate() - 7); // minus the date
-
-
-
-    $('#datetimepicker12').datetimepicker({
-        viewMode: 'years',
-        allowInputToggle: true,
-        useCurrent: false,
-        maxDate: moment().subtract(16, 'Y').toDate(),
-        minDate: moment().subtract(99, 'Y').toDate(),
-        format: 'DD/MM/YYYY'
-
-    });
-});
-*/

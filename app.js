@@ -20,43 +20,8 @@ const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 const app = express();
 let logger = require("./config/logger");
-var i18n = require('./i18n');
+var i18n = require('./config/i18n');
 
-/*
-console.time("yolo");
-
-let fileToCheck = "./sexy4.jpg";
-
-images.checkIfFaceExist('file', fileToCheck)
-    .then(function (result) {
-        print.debug(result);
-        return Promise.resolve(remote.checkExplicit('file', fileToCheck));
-    })
-    .then(function (result) {
-        print.debug(result);
-        if (result.state == 1) {
-            remote.checkEmotion('file', fileToCheck).then(function (result) {
-                print.debug(result);
-            });
-
-            images.getProfile("file", fileToCheck, 'finalTest').then(function (result) {
-                print.debug(result);
-            }).catch(function (e) {
-                print.error("Erreurs lors de la création du fichier url : " + e);
-            });
-
-            images.getThumbail("file", fileToCheck, 'finalTest').then(function (result) {
-                print.debug(result);
-            });
-        }
-    })
-    .error(function (e) {
-        console.log("Error handler " + e)
-    })
-    .catch(function (e) {
-        console.log("Catch handler " + e)
-    });
-*/
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -124,7 +89,6 @@ app.use(function (err, req, res, next) {
         error: {},
     });
 });
-
 
 
 module.exports = app;
