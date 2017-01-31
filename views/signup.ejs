@@ -140,7 +140,7 @@
     <section class="parallax register-parallax" style="min-height: 800px;">
 
         <div class="container container-fullscreen login-container">
-            <div class="col-sm-6 p-b-20 p-t-30 p-l-40 p-r-40 row register-block background-white col-sm-push-6"
+            <div class="col-sm-6 p-t-30 p-l-40 p-r-40 row register-block background-white col-sm-push-6"
                  style="overflow: hidden">
                 <form class="form-transparent-grey" id="login" action="" style="">
                     <div id="gender" class="col-xs-12">
@@ -260,16 +260,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-right: -65px; margin-left: -65px;">
                         <div class="col-xs-12">
-                    <div class="pager pager-modern text-center">
+                            <div class="pager pager-modern text-center">
                         <a class="pager-prev pull-left" href="#" style="display: none;">
-                            <span style="padding-right: 20px;"><i class="fa fa-chevron-left"></i>Previous</span></a>
+                            <span style="padding-left: 25px; padding-right: 35px"><i class="fa fa-chevron-left"></i>Previous</span></a>
                         <a class="pager-next pull-right" href="#">
-                            <span style="padding-left: 20px;">Next<i class="fa fa-chevron-right"></i></span></a>
+                            <span style="padding-left: 35px; padding-right: 25px">Next<i class="fa fa-chevron-right"></i></span></a>
                     </div>
                         </div>
-                    </div>
+                        </div>
                 </form>
             </div>
             <p class="text-center bottom-clause">New to Pickrt ? <a class="link" href="#">Create an account</a></p>
@@ -357,11 +357,11 @@
         $animationCanStart = true;
             $('.pager-next').css("display", "none");
             $(".pager-prev").css("display", "block");
-            $("#gender").addClass("animated visible fadeOutLeft").css({'position': 'absolute'});
-            $('#form').css("display", "block").addClass("animated visible fadeInRight").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+            $("#gender").addClass("animated visible fadeOutDownBig").css({'position': 'absolute'});
+            $('#form').css("display", "block").addClass("animated visible fadeInDown").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
                 if ($animationCanStart == true) {
-                    $('#form').removeClass("animated visible fadeInRight");
-                    $("#gender").removeClass("animated  visible fadeOutLeft").css({'display': 'none', 'position' :'static'});
+                    $('#form').removeClass("animated visible fadeInDown");
+                    $("#gender").removeClass("animated  visible fadeOutDownBig").css({'display': 'none', 'position' :'static'});
                     $animationCanStart = false;
                 }
             });
@@ -371,11 +371,11 @@
         $animationCanStart2 = true;
             $(".pager-prev").css("display", "none");
             $(".pager-next").css("display", "block");
-            $("#form").addClass("animated visible fadeOutRight").css({'position': 'absolute'});
-            $('#gender').css({'display': 'block'}).addClass("animated visible fadeInLeft").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+            $("#form").addClass("animated visible fadeOutDownBig").css({'position': 'absolute'});
+            $('#gender').css({'display': 'block'}).addClass("animated visible fadeInDown").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
                 if ($animationCanStart2 == true) {
-                $('#gender').removeClass("animated visible fadeInLeft");
-                $("#form").removeClass("animated  visible fadeOutRight").css({'display': 'none', 'position' :'static'});
+                $('#gender').removeClass("animated visible fadeInDown");
+                $("#form").removeClass("animated  visible fadeOutDownBig").css({'display': 'none', 'position' :'static'});
                     $animationCanStart2 = false;
                 }
             });
