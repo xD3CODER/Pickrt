@@ -13,18 +13,23 @@
     "src"
   ],
   "install": {
-    "path": "testPlug",
+    "path": "vendor",
     "sources": {
       "bootstrap": "bower_components/bootstrap/dist/**",
       "crypto-js": "bower_components/crypto-js/*.js",
-
       "font-awesome": [
         "bower_components/font-awesome/**"
+      ],
+      "animate.css": [
+        "bower_components/animate.css/*.css"
+      ],
+      "tooltipster": [
+        "bower_components/tooltipster/dist/**"
       ]
     }
   },
   "resolutions": {
-    "jquery": "~3.1.1"
+    "jquery": "~2.2.4"
   },
   "dependencies": {
     "magnific-popup": "^1.1.0",
@@ -44,7 +49,7 @@
     "jquery": "^2.2.4",
     "bower-jquery-easyPieChart": "^0.0.1",
     "let-it-snow": "https://github.com/trevanhetzel/let-it-snow",
-    "animate.css": "^3.5.2",
+    "animate.css": "animate-css#^3.5.2",
     "isotope": "^3.0.1",
     "outlayer": "^2.1.0",
     "matches-selector": "desandro-matches-selector#^2.0.1",
@@ -56,6 +61,13 @@
     "fizzy-ui-utils": "^2.0.3",
     "masonry": "^4.1.1",
     "font-awesome": "^4.7.0",
-    "get-size": "^2.0.2"
+    "get-size": "^2.0.2",
+    "tooltipster": "^4.1.7",
+    "bootstrap": "^3.3.7",
+    "crypto-js": "^3.1.9",
+    "animsition": "^4.0.2",
+    "jquery-validation": "jquery-validate#^1.16.0",
+    "jquery.stellar": "^0.6.2",
+    "eonasdan-bootstrap-datetimepicker": "bootstrap3-datetimepicker#^4.17.45"
   }
 }

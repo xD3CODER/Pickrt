@@ -14,8 +14,7 @@ mongoose.Promise = require('bluebird');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const routes = require('./routes/index');
-const users = require('./routes/users');
+const routes = require('./config/routes');
 const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 const app = express();
@@ -52,13 +51,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-require('./config/passport')(passport);
+require('./controllers/passport')(passport);
 app.use(function (req, res, next) {
     res.setHeader('charset', 'utf-8');
     next();
 });
 app.use('/', routes);
-app.use('/users', users);
+
 
 
 // Handling errors
