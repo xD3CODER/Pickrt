@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>POLO | The Multi-Purpose HTML5 Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Vendor css -->
+    <link href="vendor/owl.carousel/owl.carousel.css" rel="stylesheet">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <!-- Template base -->
+    <link href="css/theme-base.css" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <!-- Template elements -->
+    <link href="css/theme-elements.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="vendor/tooltipster/css/tooltipster.bundle.custom.css"/>
+    <!-- Responsive classes -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+
+    <!-- Template color -->
+    <link href="css/color-variations/blue.css" rel="stylesheet" type="text/css" media="screen" title="blue">
+
+    <!-- LOAD GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800"
+          rel="stylesheet" type="text/css"/>
+
+    <!-- CSS CUSTOM STYLE -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen"/>
+    <!--VENDOR SCRIPT-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script> -->
+
+
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/jrespond/jRespond.js"></script>
+    <script src="vendor/jquery.stellar/jquery.stellar.js"></script>
+
+    <script src="vendor/jquery.countdown/jquery.countdown.js"></script>
+
+    <link href="/vendor/eonasdan-bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+</head>
+
+<body class="wide">
+
+
+<!-- WRAPPER -->
+<div class="wrapper">
+
+    <!-- HEADER -->
+
+    <header id="header" class="header-dark header-mini" style="position: fixed; width: 100%;">
+        <div id="header-wrap">
+            <div class="container">
+                <!--LOGO-->
+                <div id="logo">
+                    <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png">
+                        <img src="images/logo-dark.png" alt="Polo Logo">
+                    </a>
+                </div>
+                <!--END: LOGO-->
+
+                <!--MOBILE MENU -->
+                <div class="nav-main-menu-responsive">
+                    <!--  <button class="lines-button x">
+                        <span class="lines"></span>
+                    </button>-->
+                    <button type="button" class="lines-button x">
+                        <span class="lines"></span>
+                    </button>
+
+                </div>
+                <!--END: MOBILE MENU -->
+
+                <!--NAVIGATION MENU-->
+                <div class="navigation-wrap">
+                    <nav id="mainMenu" class="style-1 main-menu mega-menu">
+                        <ul class="main-menu nav nav-pills">
+                            <li class="dropdown"><a href="#section-home" class="nav-to"><i class="fa fa-home"></i></a>
+                            </li>
+                            <li class="dropdown"><a href="#section-about" class="nav-to">About</a></li>
+                            <li class="dropdown"><a href="#section-portfolio" class="nav-to">Portfolio</a></li>
+                            <li class="dropdown"><a href="#section-services" class="nav-to">Services</a></li>
+                            <li class="dropdown"><a href="#section-blog" class="nav-to">Blog</a></li>
+                            <li class="dropdown"><a href="#footer" class="nav-to">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--END: NAVIGATION-->
+
+            </div>
+        </div>
+    </header>
+    <section id="page-title" class="background-colored text-light" style="padding-top: 100px;">
+        <div class="container">
+            <div class="page-title col-md-8">
+                <h1>Colored page title version</h1>
+                <span>Subtext for page title. Lorem ipsum viverra a!</span>
+            </div>
+            <div class="breadcrumb col-md-4">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Page title</a>
+                    </li>
+                    <li class="active"><a href="#">Page title version</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- END: HEADER -->
+    <div id="notifications" class="alert login-alert text-center animated visible" data-animation="fadeInDownBig"
+         data-animation-delay="1000" role="alert" style="z-index: 198!important;">
+    </div>
+
+    <!-- SECTION -->
+    <section class="parallax register-parallax" style="min-height: 800px;">
+
+        <div class="container container-fullscreen login-container">
+            <div class="col-sm-6 p-t-30 p-l-40 p-r-40 row register-block background-white col-sm-push-6"
+                 style="overflow: hidden">
+                <form class="form-transparent-grey" id="login" action="" style="">
+                    <div id="gender" class="col-xs-12">
+                        <div class="row">
+                                <div class="form-group">
+                                <h3 id="gender-text" class="upper"><%= __('register').gender.base %></h3>
+                                <div class="col-xs-6 m-t-20 m-b-20">
+                                    <div class="image-tile" id="girl" style="float: right">
+                                        <h3 class="text-tile animated flipInX visible"
+                                            data-animation-delay="1000"><%= __('register').gender.tileGirl %></h3>
+                                        <img class="" src="images/avatars/girl.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 m-t-20 m-b-20">
+                                    <div class="image-tile" id="man" style="float: left">
+                                        <h3 class="text-tile animated flipInX visible"
+                                            data-animation-delay="1000"><%= __('register').gender.tileMan %></h3>
+                                        <img class="" src="images/avatars/man.svg" alt="">
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div id="form" class="col-xs-12" style="display: none;">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="upper" for="name"><%= __('register').form.firstname_label %>
+                                        <sup>*</sup></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa icon-fixed fa-user"></i></span>
+                                        <input id="login_password" name="login_password" type="text"
+                                               class="form-control iconic-input"
+                                               placeholder="<%= __('register').form.firstname_placeholder %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="upper" for="name"><%= __('register').form.lastname_label %>
+                                        <sup>*</sup></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa icon-fixed fa-user"></i></span>
+                                        <input id="login_password" name="login_password" type="text"
+                                               class="form-control iconic-input"
+                                               placeholder="<%= __('register').form.lastname_placeholder %>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="upper" for="name"><%= __('register').form.adress_label %> <sup>*</sup></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i
+                                                    class="fa icon-fixed  fa-envelope"></i></span>
+                                        <input id="login_password" name="login_password" type="text"
+                                               class="form-control iconic-input"
+                                               placeholder="<%= __('register').form.adress_placeholder %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="upper" for="name"><%= __('register').form.birthday_label %></label>
+                                    <div class="input-group" id='datepicker'>
+                                        <span class="input-group-addon"><i
+                                                    class="fa icon-fixed fa-birthday-cake"></i></span>
+                                        <input id="birth_date" name="birth_date" type="text"
+                                               class="form-control iconic-input"
+                                               placeholder="<%= __('register').form.birthday_placeholder %>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="upper" for="name"><%= __('register').form.password_label %>
+                                        <sup>*</sup></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i
+                                                    class="fa icon-fixed  fa-envelope"></i></span>
+                                        <input id="login_password" name="login_password" type="password"
+                                               class="form-control iconic-input"
+                                               placeholder="<%= __('register').form.password_placeholder %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="upper"
+                                           for="name"><%= __('register').form.passwordConfirm_label %></label>
+                                    <div class="input-group" id='datetimepicker12'>
+                                        <span class="input-group-addon"><i
+                                                    class="fa icon-fixed fa-birthday-cake"></i></span>
+                                        <input id="birth_date" name="birth_date" type="password"
+                                               class="form-control iconic-input"
+                                               placeholder="<%= __('register').form.passwordConfirm_placeholder %>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" id='captcha-container'>
+                            <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha"
+                                   id="hiddenRecaptcha">
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-8 center">
+                                <button class="button medium btn-primary button-3d effect fill-vertical col-xs-12"
+                                        type="submit"><span><%= __('login').static.form.signin_button %></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-right: -65px; margin-left: -65px;">
+                        <div class="col-xs-12">
+                            <div class="pager pager-modern text-center">
+                        <a class="pager-prev pull-left" href="#" style="display: none;">
+                            <span style="padding-left: 25px; padding-right: 35px"><i class="fa fa-chevron-left"></i>Previous</span></a>
+                        <a class="pager-next pull-right" href="#">
+                            <span style="padding-left: 35px; padding-right: 25px">Next<i class="fa fa-chevron-right"></i></span></a>
+                    </div>
+                        </div>
+                        </div>
+                </form>
+            </div>
+            <p class="text-center bottom-clause">New to Pickrt ? <a class="link" href="#">Create an account</a></p>
+        </div>
+    </section>
+    <!-- END: SECTION -->
+
+</div>
+<!-- END: WRAPPER -->
+<footer class="background-dark text-grey" id="footer">
+    <div class="copyright-content">
+        <div class="container">
+            <div class="row">
+                <div class="copyright-text text-center"> &copy; 2016 POLO - Best HTML5 Template Ever. All Rights
+                    Reserved. <a target="_blank" href="http://www.inspiro-media.com">INSPIRO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Theme Base, Components and Settings -->
+<script src="/vendor/crypto-js/crypto-js.js"></script>
+
+<% if (getLocale() == 'fr') { %>
+<script src="/bower_components/moment/locale/fr.js"></script>
+<% } %>
+
+<script src="/vendor/jquery-validation/jquery.validate.js"></script>
+<script src="/vendor/tooltipster/js/tooltipster.bundle.js"></script>
+<script src="/vendor/eonasdan-bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+
+<script src="./js/theme-functions.js"></script>
+<script src="./js/validations/register.js"></script>
+<!-- Custom js file -->
+<script src="./js/custom.js"></script>
+
+</body>
+
+</html>
+
+<script>
+    var $genderSelected = false;
+    var $clicked = "You're ... ?";
+    var $animationCanStart = false;
+    var $animationCanStart2 = false;
+    $("#girl").mouseover(function () {
+        $("#gender-text").html("You're a girl ?");
+
+    }).mouseout(function () {
+        $("#gender-text").html($clicked);
+    });
+
+    $("#man").mouseover(function () {
+        $("#gender-text").html("You're a man ?");
+    }).mouseout(function () {
+
+        $("#gender-text").html($clicked);
+
+    })
+
+
+    $("#girl").on("click", function () {
+        $genderSelected = true;
+        $animationCanStart = false;
+        $clicked = "I'm a girl";
+        $("#gender-text").html($clicked);
+        $(this).find("img").css({"-webkit-filter": "grayscale(0%)", "filter": "grayscale(0%)"});
+        $(this).css("border", "solid #26b8f3 3px");
+        $("#man").css({"border": "dotted #26b8f3 3px"});
+        $("#man").find("img").css({"-webkit-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
+    });
+    $("#man").on("click", function () {
+        $genderSelected = true;
+        $animationCanStart = false;
+        $clicked = "I'm a man";
+        $("#gender-text").html($clicked);
+        $(this).find("img").css({"-webkit-filter": "grayscale(0%)", "filter": "grayscale(0%)"});
+        $(this).css("border", "solid #26b8f3 3px");
+        $("#girl").css({"border": "dotted #26b8f3 3px"});
+        $("#girl").find("img").css({"-webkit-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
+    });
+
+
+    $(".pager-next").on("click", function () {
+        $animationCanStart = true;
+            $('.pager-next').css("display", "none");
+            $(".pager-prev").css("display", "block");
+            $("#gender").addClass("animated visible fadeOutDownBig").css({'position': 'absolute'});
+            $('#form').css("display", "block").addClass("animated visible fadeInDown").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+                if ($animationCanStart == true) {
+                    $('#form').removeClass("animated visible fadeInDown");
+                    $("#gender").removeClass("animated  visible fadeOutDownBig").css({'display': 'none', 'position' :'static'});
+                    $animationCanStart = false;
+                }
+            });
+        //  $("#gender").replaceWith($('#form'));
+    })
+    $(".pager-prev").on("click", function () {
+        $animationCanStart2 = true;
+            $(".pager-prev").css("display", "none");
+            $(".pager-next").css("display", "block");
+            $("#form").addClass("animated visible fadeOutDownBig").css({'position': 'absolute'});
+            $('#gender').css({'display': 'block'}).addClass("animated visible fadeInDown").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+                if ($animationCanStart2 == true) {
+                $('#gender').removeClass("animated visible fadeInDown");
+                $("#form").removeClass("animated  visible fadeOutDownBig").css({'display': 'none', 'position' :'static'});
+                    $animationCanStart2 = false;
+                }
+            });
+        // $("#gender").replaceWith($('#form'));
+    })
+</script>

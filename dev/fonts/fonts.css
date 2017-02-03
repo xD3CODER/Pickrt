@@ -5,19 +5,12 @@
 /*Google fonts */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Hind:400,500,600,700,300);
-@import url(https://fonts.googleapis.com/css?family=Nunito:400,500,600,700,300);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
 
 /*body*/
 body {
-     font-family: "Nunito",sans-serif ! important;
+     font-family: "Montserrat",sans-serif ! important;
 }
-
-p, p.lead {
-    font-family: "Nunito",sans-serif ! important;
-}
-
- 
 
 /*headings*/
 h1,
@@ -26,29 +19,26 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Nunito",sans-serif ! important;
+    
     
 }
 
 /*main menu*/
 #mainMenu ul > li, 
 #mainMenu ul > li > a {
-     font-family: "Nunito",sans-serif;
+     font-family: "Montserrat",sans-serif;
 }
 
 #mainMenu > ul ul > li > a,
 #mainMenu > ul ul > li > span {
-    font-family: "Nunito", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 13px;
     font-weight: 400;
 }
 
 
-/*inspiro slider*/
-.inspiro-slider .slide-captions h1,
-.inspiro-slider .slide-captions h2 {
-    font-family: "Hind", sans-serif;
-}
+
+
 
 
 
@@ -60,7 +50,7 @@ body h3,
 body h4,
 body h5,
 body h6 {
-    font-family: "Nunito",sans-serif !important;
+    font-family: "Montserrat",sans-serif !important;
 }
 
 
@@ -71,7 +61,7 @@ body h6 {
 
 
 .btn {
-    font-family: "Nunito",sans-serif !important;
+    font-family: "Montserrat",sans-serif !important;
 }
 
 
@@ -211,8 +201,6 @@ h3#comments,
 }
 
 
-
-
 @media only screen and (min-width: 690px) {
     .portfolio-items[data-ps="6"] .wide_tall .work-meta h4 {
         font-size: 51px!important;
@@ -250,7 +238,7 @@ html body, body h1, body h2, body h3, body h4, body h5, body h6 {
 p {
   color: #888;
   font-family: Hind;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 100;
   padding-bottom: 27px;
     

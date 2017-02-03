@@ -21,7 +21,7 @@ const app = express();
 let logger = require("./config/logger");
 var i18n = require('./config/i18n');
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/dev'));
 app.set('view engine', 'ejs');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -29,7 +29,7 @@ app.use(logging('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dev')));
 app.use(i18n);
 app.use(session({
     secret: 'shhsecret',

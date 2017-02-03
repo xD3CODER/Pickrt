@@ -8,7 +8,7 @@ i18n.configure({
     locales:['en', 'fr'],
 
     // where to store json files - defaults to './locales' relative to modules directory
-    directory: __dirname + '/../public/languages/ejs',
+    directory: __dirname + '/../dev/languages/ejs',
     defaultLocale: 'fr',
     autoReload: true,
     cookie: 'lang',
