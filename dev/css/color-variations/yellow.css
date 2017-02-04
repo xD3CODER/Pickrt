@@ -2,235 +2,235 @@
 /* CHANE IT BY REPLEACING THE VALUE ABOVE */
 
 ::-moz-selection {
- background: #fcd808;
- color: #333;
+ background: rgb(252, 216, 8);
+ color: rgb(51, 51, 51);
  text-shadow: none;
 }
 ::selection {
-	background: #fcd808;
+	background: rgb(252, 216, 8);
 	text-shadow: none;
-	color: #333;
+	color: rgb(51, 51, 51);
 }
 .text-colored, h1.text-colored, h2.text-colored, h3.text-colored, h4.text-colored, h5.text-colored, h6.text-colored, .color-font, .color-font a, .widget-tweeter li a, .widget-twitter li a, p.text-colored, .heading.heading-colored h1, .heading.heading-colored h2 {
-	color: #fcd808 !important;
+	color: rgb(252, 216, 8) !important;
 }
 .progress-bar-container.color .progress-bar {
-	background-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 .blockquote-color {
-	background-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 .blockquote-color > small {
-	color: #fff;
+	color: rgb(255, 255, 255);
 }
 /*buttons*/
 .button.color, .btn.btn-primary {
-	background-color: #fcd808;
-	border-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	border-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 /*go to top*/
 
 .gototop-button {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 .gototop-button {
-	color: #fff;
+	color: rgb(255, 255, 255);
 }
 nav .main-menu .dropdown-menu {
-	border-color: #fcd808;
+	border-color: rgb(252, 216, 8);
 }
 #topbar.topbar-colored {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 /*vertical-dot-menu */
 #vertical-dot-menu a:hover .cd-dot, #vertical-dot-menu a.active .cd-dot {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 /*scrollspy nav */
 /*.sidebar-menu ul.nav-tabs li, */
 .sidebar-menu ul.nav-tabs li:hover .sidebar-menu ul.nav-tabs li a, .sidebar-menu ul.nav-tabs li a:hover, .sidebar-menu ul.nav-tabs li.active a, .sidebar-menu ul.nav-tabs li.active a:hover {
-	color: #fff;
-	background: #fcd808;
-	border: 1px solid #fcd808;
+	color: rgb(255, 255, 255);
+	background: rgb(252, 216, 8);
+	border: 1px solid rgb(252, 216, 8);
 }
 /*Bootstrap defaults overrides*/
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-	background-color: #fcd808;
-	border-color: #fcd808;
+	background-color: rgb(252, 216, 8);
+	border-color: rgb(252, 216, 8);
 }
 .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-	color: #fff;
+	color: rgb(255, 255, 255);
 }
 .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 pre {
-	background-color: #fcfcfc;
-	border: 1px solid #ececec;
+	background-color: rgb(252, 252, 252);
+	border: 1px solid rgb(236, 236, 236);
 }
 .alert {
 	border-left-width: 10px;
 	border-radius: 0;
 }
 .alert-success {
-	background-color: #5cb85c;
-	border-color: #53af53;
+	background-color: rgb(92, 184, 92);
+	border-color: rgb(83, 175, 83);
 }
 .alert-info {
-	background-color: #2699c8;
-	border-color: #3aaddc;
+	background-color: rgb(38, 153, 200);
+	border-color: rgb(58, 173, 220);
 }
 .alert-warning {
-	background-color: #f6b63a;
-	border-color: #ffcd51;
+	background-color: rgb(246, 182, 58);
+	border-color: rgb(255, 205, 81);
 }
 .alert-danger {
-	background-color: #de4b37;
-	border-color: #f3604c;
+	background-color: rgb(222, 75, 55);
+	border-color: rgb(243, 96, 76);
 }
 .alert, .alert a.alert-link {
-	color: #fff;
+	color: rgb(255, 255, 255);
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-	background-color: #fcd808;
-	border-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	border-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 .pagination > li > a:hover i, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
-	color: #333;
+	color: rgb(51, 51, 51);
 }
 /*navs*/
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-	background-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 /*Typography*/
 
 a:hover {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 /*dropcat & highlight*/
 .dropcap.dropcap-colored, .dropcap.dropcap-colored a, .highlight.highlight-colored, .highlight.highlight-colored a {
-	background-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 /*timeline*/
 .timeline.timeline-colored .timeline-circles:before, .timeline.timeline-colored .timeline-circles:after, .timeline.timeline-colored .timeline-date, .timeline.timeline-colored:before {
-	background-color: #fcd808;
-	color: #fff;
+	background-color: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 .timeline.timeline-colored li .timeline-block:before {
-	border-color: transparent #fcd808;
+	border-color: transparent rgb(252, 216, 8);
 }
 .timeline.timeline-colored .timeline-block-image {
-	border-color: #fcd808;
+	border-color: rgb(252, 216, 8);
 }
 .timeline.timeline-colored.timeline-simple .timeline-date {
-	background-color: #fff;
-	border: 1px solid #fcd808;
-	color: #fcd808;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(252, 216, 8);
+	color: rgb(252, 216, 8);
 }
 /*tabs*/
 
 .border .tabs-navigation li.active a:after {
-	background: #fcd808;
+	background: rgb(252, 216, 8);
 }
 /*accordions*/
 
 .breadcrumb a:hover {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 /*color*/
 
 .accordion.color .ac-item .ac-title {
-	background: #fcd808;
-	color: #fff;
+	background: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 .accordion.color-border-bottom .ac-item .ac-title {
-	border-bottom: 1px dotted #fcd808;
+	border-bottom: 1px dotted rgb(252, 216, 8);
 }
 .accordion.color-border-bottom .ac-item .ac-title:before {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 /*ICONS*/
 
 .icon-box.color .icon i {
-	background: #fcd808;
-	color: #fff;
+	background: rgb(252, 216, 8);
+	color: rgb(255, 255, 255);
 }
 .icon-box.color .icon i:after {
-	box-shadow: 0 0 0 3px #fcd808;
+	box-shadow: 0 0 0 3px rgb(252, 216, 8);
 }
 .icon-box.border.color .icon, .icon-box.border.color .icon i {
-	color: #fcd808;
-	border-color: #fcd808;
+	color: rgb(252, 216, 8);
+	border-color: rgb(252, 216, 8);
 }
 .icon-box.fancy.color .icon i {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 	background-color: transparent;
 }
 /*FONT AWESOME ICONS*/
 
 .fontawesome-icon-list .fa-hover a:hover {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 /*lists icons*/
 
 ul.icon-list li i {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 /* ----------------------------------------------------------------
     Backgrounds
 -----------------------------------------------------------------*/
 
 .background-colored {
-	background-color: #fcd808 !important;
+	background-color: rgb(252, 216, 8) !important;
 }
 /* ----------------------------------------------------------------
     NPROGRESS
 -----------------------------------------------------------------*/
 
 #nanobar-progress div {
-	background: #fcd808 !important;
+	background: rgb(252, 216, 8) !important;
 }
 /* ----------------------------------------------------------------
     PORTFOLIO
 -----------------------------------------------------------------*/
 .portfolio-filter li.ptf-active, .portfolio-filter li:hover {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 .portfolio-filter li:not(.ptf-active):hover {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 /* ----------------------------------------------------------------
     HEADINGS
 -----------------------------------------------------------------*/
 .heading-title-border-color {
-	border-color: #fcd808;
+	border-color: rgb(252, 216, 8);
 }
 /* ----------------------------------------------------------------
     IMAGE BOX
 -----------------------------------------------------------------*/
 .image-box-links a {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 .image-box.effect.bleron {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 .image-block-content .feature-icon {
-	background-color: #fcd808;
+	background-color: rgb(252, 216, 8);
 }
 .image-box.effect.bleron p.image-box-links a {
-	color: #fcd808;
+	color: rgb(252, 216, 8);
 }
 /* ----------------------------------------------------------------
     SHOP PRODUCTS
 -----------------------------------------------------------------*/
 .product .product-wishlist a:hover {
-	border-color: #fcd808;
+	border-color: rgb(252, 216, 8);
 }

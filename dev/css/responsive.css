@@ -59,7 +59,7 @@ Desktops (≥992px)
 		width : 750px;
 	}
 	#topbar.topbar-dark {
-		background-color : #101010 !important;
+		background-color : rgb(16, 16, 16) !important;
 	}
 	#topbar .topbar-dropdown {
 		font-size : 12px;
@@ -81,19 +81,19 @@ Desktops (≥992px)
 		margin-bottom : 0px;
 	}
 	#header.header-transparent, #header.header-light-transparent {
-		background : #ffffff;
-		border-bottom : 1px solid #f5f5f5;
+		background : rgb(255, 255, 255);
+		border-bottom : 1px solid rgb(245, 245, 245);
 		z-index : auto;
 	}
 	#header.header-transparent.header-dark:not(.header-navigation-light), #header.header-dark-transparent.header-dark:not(.header-navigation-light) {
-		background-color : #101010;
+		background-color : rgb(16, 16, 16);
 		border-bottom : 1px solid rgba(0, 0, 0, 0.1);
 	}
 	#header.header-dark.header-navigation-light .main-menu > ul > li > a, #header.header-dark.header-navigation-light #top-search a, #header.header-dark.header-navigation-light #shopping-cart a, #header.header-dark.header-navigation-light #shopping-cart .shopping-cart-items, #header.header-dark.header-navigation-light .nav-main-menu-responsive > button, #header.header-dark.header-navigation-light #top-search form input {
-		color : #111111;
+		color : rgb(17, 17, 17);
 	}
 	#header.header-dark.header-navigation-light .lines, #header.header-dark.header-navigation-light .lines:before, #header.header-dark.header-navigation-light .lines:after {
-		background-color : #111111;
+		background-color : rgb(17, 17, 17);
 	}
 	#header.header-modern {
 		margin : 0;
@@ -226,20 +226,20 @@ Desktops (≥992px)
 		border-bottom : 0;
 	}
 	#mainMenu ul > li > a, #mainMenu ul > li > span, #mainMenu .mega-menu-title, #mainMenu .mega-menu-content a {
-		border-bottom : 1px solid #eeeeee !important;
+		border-bottom : 1px solid rgb(238, 238, 238) !important;
 	}
 	#header.header-dark:not(.header-navigation-light) #mainMenu ul > li > a, #header.header-dark:not(.header-navigation-light) #mainMenu ul > li > span, #header.header-dark:not(.header-navigation-light) .mega-menu-title, #header.header-dark:not(.header-navigation-light) .mega-menu-content a {
-		border-bottom : 1px solid #222222 !important;
-		color : #cccccc;
+		border-bottom : 1px solid rgb(34, 34, 34) !important;
+		color : rgb(204, 204, 204);
 	}
 	#header.header-dark:not(.header-navigation-light) .dropdown-menu a, #header.header-dark:not(.header-navigation-light) .dropdown-menu span:not(.label) {
-		color : #888888 !important;
+		color : rgb(136, 136, 136) !important;
 	}
 	#mainMenu ul li.dropdown:not(.mega-menu-item) li {
 		border-bottom : 0;
 	}
 	#header.header-dark:not(.header-navigation-light) #mainMenu.style-1 ul.dropdown-menu, #header.header-dark:not(.header-navigation-light) #mainMenu.style-1 ul.dropdown-submenu {
-		border : 3px solid #222222;
+		border : 3px solid rgb(34, 34, 34);
 	}
 	#mainMenu.style-1 ul.dropdown-menu, #mainMenu.style-1 ul.dropdown-submenu, #header.header-dark #mainMenu.style-1 ul.dropdown-menu, #header.header-dark #mainMenu.style-1 ul.dropdown-submenu {
 		border : 0px !important;
@@ -568,8 +568,8 @@ Tablets (≥768px)
 		line-height : 40px !important;
 	}
 	.hero-heading-3 {
-		background-color : #ffffff;
-		border : 30px solid #ffffff;
+		background-color : rgb(255, 255, 255);
+		border : 30px solid rgb(255, 255, 255);
 		padding : 30px;
 		width : 100%;
 		margin : 0;

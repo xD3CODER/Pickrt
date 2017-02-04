@@ -21,9 +21,9 @@ const SSLKey = fs.readFileSync('/var/www/pickrt/conf/pickrt.com.key');
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || 2096);
+const port = normalizePort(process.env.PORT || global.config.port);
 
-app.set('port', app.port);
+app.set('port', port);
 
 /**
  * Create HTTP server.

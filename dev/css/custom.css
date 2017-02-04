@@ -38,7 +38,7 @@
 }
 
 .block-process .__icon::before {
-	background : #99e3c1 none repeat scroll 0% 0%;
+	background : rgb(153, 227, 193) none repeat scroll 0% 0%;
 	content : '';
 	display : block;
 	position : absolute;
@@ -50,15 +50,15 @@
 }
 
 .block-process.active .__icon .circle-icon::before {
-	background-color : #00bfff;
+	background-color : rgb(0, 191, 255);
 }
 
 .block-process.active .__icon::before, .block-process.active ~ .block-process .__icon::before {
-	background-color : #dadada;
+	background-color : rgb(218, 218, 218);
 }
 
 .block-process.active ~ .block-process .__icon .circle-icon::before {
-	background-color : #a2a2a2;
+	background-color : rgb(162, 162, 162);
 }
 
 @media only screen and (min-width: 1020px) {
@@ -129,7 +129,7 @@
 
 .block-process-2 .__number {
 	bottom : 0px;
-	color : #333333;
+	color : rgb(51, 51, 51);
 	font-size : 200px;
 	height : 200px;
 	left : 6px;
@@ -214,8 +214,8 @@
 	top : 2px;
 	width : 17px;
 	height : 17px;
-	border : 1px solid #bbbbbb;
-	background : #ffffff;
+	border : 1px solid rgb(187, 187, 187);
+	background : rgb(255, 255, 255);
 	border-radius : 1px;
 	-webkit-box-shadow : inset 0 1px 3px rgba(0,0,0,0.1);
 	        box-shadow : inset 0 1px 3px rgba(0,0,0,0.1);
@@ -252,23 +252,23 @@
 [type='checkbox']:disabled:not(:checked) + label:before, [type='checkbox']:disabled:checked + label:before {
 	-webkit-box-shadow : none;
 	        box-shadow : none;
-	border-color : #bbbbbb;
-	background-color : #dddddd;
+	border-color : rgb(187, 187, 187);
+	background-color : rgb(221, 221, 221);
 }
 [type='checkbox']:disabled:checked + label:after {
-	color : #999999;
+	color : rgb(153, 153, 153);
 }
 [type='checkbox']:disabled + label {
-	color : #aaaaaa;
+	color : rgb(170, 170, 170);
 }
 /* accessibility */
 [type='checkbox']:checked:focus + label:before, [type='checkbox']:not(:checked):focus + label:before {
-	border : 1px dotted blue;
+	border : 1px dotted rgb(0, 0, 255);
 }
 
 /* hover style just for information */
 label:hover:before {
-	border : 1px solid #4778d9!important;
+	border : 1px solid rgb(71, 120, 217) !important;
 }
 
 
@@ -551,15 +551,15 @@ Generals Changes on Theme
 	position : relative;
 	text-transform : uppercase;
 	white-space : nowrap;
-	border : 1px solid #cccccc;
+	border : 1px solid rgb(204, 204, 204);
 	border-radius : 3px;
 }
 
 .button.btn-primary.effect.fill-vertical:after {
-	background-color : #1a9ca7;
+	background-color : rgb(26, 156, 167);
 }
 .button.btn-primary.effect.fill-vertical:hover {
-	color : #ffffff;
+	color : rgb(255, 255, 255);
 }
 .button.effect.fill-vertical:after, .button.effect.fill-horizontal:after {
 	-webkit-transition : all 0.4s ease-out;
@@ -587,13 +587,13 @@ LOGIN PAGE
 
 .bottom-clause {
 	font-weight : 400;
-	color : white;
+	color : rgb(255, 255, 255);
 	padding : 15px;
 }
 
 .bottom-clause > .link {
 	font-weight : 600;
-	color : white;
+	color : rgb(255, 255, 255);
 	text-decoration : underline!important;
 }
 
@@ -619,7 +619,7 @@ LOGIN PAGE
 
 .login-header-text {
 	font-weight : 600;
-	color : white;
+	color : rgb(255, 255, 255);
 	letter-spacing : -2px;
 }
 
@@ -672,8 +672,8 @@ LOGIN PAGE
 	text-align : center;
 	line-height : 50px;
 	border-radius : 50%;
-	background : #26b8f3;
-	color : #ffffff;
+	background : rgb(38, 184, 243);
+	color : rgb(255, 255, 255);
 	z-index : 1;
 }
 
@@ -693,7 +693,7 @@ Tiles
 	     -o-transform : scale(1.01);
 	        transform : scale(1.01);
 	border-radius : 50%;
-	border : dotted #26b8f3 3px;
+	border : dotted rgb(38, 184, 243) 3px;
 	overflow : hidden;
 }
 .image-tile:hover {
@@ -716,7 +716,7 @@ Tiles
 
 .text-tile {
 	display : none;
-	color : #ffffff;
+	color : rgb(255, 255, 255);
 	-webkit-backface-visibility : hidden;
 	-webkit-transition-duration : 1000ms;
 	     -o-transition-duration : 1000ms;

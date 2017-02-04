@@ -188,12 +188,12 @@ body h6, .row .col h6 {
 
 
 html body, body h1, body h2, body h3, body h4, body h5, body h6 {
-	color : #000000;
+	color : rgb(0, 0, 0);
 }
 
 
 p {
-	color : #888888;
+	color : rgb(136, 136, 136);
 	font-family : Hind;
 	font-size : 14px;
 	font-weight : 100;

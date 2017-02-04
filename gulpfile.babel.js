@@ -11,6 +11,9 @@ var csscomb = require('gulp-csscomb');
 var gutil = require('gulp-util');
 var useref = require('gulp-useref');
 var changed = require('gulp-changed');
+var hex2rgb = require('hex2rgb');
+var gs      = require('gulp-selectors');
+var closureCompiler = require('google-closure-compiler').gulp();
 
 
 gulp.task('optimize', function () {
@@ -28,13 +31,37 @@ gulp.task('optimize', function () {
         .pipe(gulp.dest("./dev/"));
 });
 
-gulp.task('updateStatics', () =>
+gulp.task('statics', () =>
      new Promise(function (resolve, reject) {
-        del(['public/**'])
+        del(['public/images/**', 'public/languages/**'])
             .then(function(){
             gulp.src('dev/images/**')
                 .pipe(gulp.dest('public/images'));
             console.log('Images duplicate');
+
+            })
+            .then(function(){
+                gulp.src('dev/js/**')
+                    .pipe(gulp.dest('public/js'));
+                console.log('js duplicate');
+
+            })
+            .then(function(){
+                gulp.src('dev/vendor/**')
+                    .pipe(gulp.dest('public/vendor'));
+                console.log('vendor duplicate');
+
+            })
+            .then(function(){
+                gulp.src('dev/vendor/font-awesome/fonts/**')
+                    .pipe(gulp.dest('public/fonts'));
+                console.log('fonts duplicate');
+
+            })
+            .then(function(){
+                gulp.src('dev/vendor/bootstrap/fonts/**')
+                    .pipe(gulp.dest('public/fonts'));
+                console.log('fonts duplicate');
 
             })
             .then(function(){
@@ -43,33 +70,81 @@ gulp.task('updateStatics', () =>
                 console.log('Languages duplicate');
                 resolve();
             })
-            .catch(e => {
+            .catch(function(){
                 reject();
             });
     })
 );
 
+function isHex(h) {
+    var a = parseInt(h,16);
+    return (a.toString(16) === h)
+}
+
+gulp.task('hexConvert', () => {
+    gulp.src('./public/css/combined-custom.css')
+        .pipe(find(new RegExp('^#(?:[0-9a-fA-F]{3}){1,2}$', 'g'))
+        .pipe($.replace(), ''))
+
+});
+
+gulp.task('muncher', () => {
+    return gulp.src(['./public/css/combined-custom.css', './views/public/**/*.ejs', './public/js/**/*.js'])
+        .pipe(gs.run({
+            'css':  ['scss', 'css'],
+            'html': ['ejs'],
+            'js-strings':   ['js']
+        }, {
+                classes: ['hidden', 'required', 'open'],   // ignore these class selectors,
+                ids:  ['hidden', 'required', 'open']                     // ignore all IDs
+            }))
+        .pipe(gulp.dest('./public/yolo/'));
+});
+
+
+gulp.task('mini', () => {
+    return gulp.src(['public/js/combined.js'])
+        .pipe($.babel())
+        .pipe($.uglify())
+        .pipe(gulp.dest('./public/yolo/98'));
+});
+
+
 gulp.task('clean', function () {
     return new Promise(function (resolve, reject) {
-        gulp.src(['public/css/**', 'views/public/**'], {read: false})
+        gulp.src(['public/**', 'views/public/**'], {read: false})
             .pipe($.clean());
         resolve();
     });
 });
 
 
-gulp.task('combine', function (done) {
-    gulp.src('./views/dev/**/*.ejs')
-        .pipe(useref())
-        .pipe(gulp.dest('./views/public/'));
-    done();
-});
+gulp.task('combine', () =>
+    new Promise(function (resolve, reject) {
+        del(['public/css/**','public/js/**', 'views/public/**'])
+            .then(function () {
+                gulp.src('./views/dev/**/*.ejs')
+                    .pipe($.useref())
+                    .pipe($.replace('../../public', ''))
+                    .pipe(gulp.dest('./views/public/'));
+                console.log('Css & JS combined !');
+                resolve();
+            })
+
+            .catch(function(){
+                reject();
+            });
+    })
+);
 
 gulp.task('minify', gulp.series('clean', 'combine', function (done) {
-    // do more stuff
     console.log('Minifying done');
     done();
 }));
+
+
+
+
 /*
  gulp.task('styles', function() {
  return gulp.src('./dev/css/*.css')

@@ -26,7 +26,7 @@
     right: 10px;
     display: block;
     padding: 3px 6px 2px;
-    color: #dddddd;
+    color: rgb(221, 221, 221);
     content: '\f054';
     font-size: 12px;
     line-height: 12px;
@@ -76,11 +76,11 @@
 /*border*/
 
 .accordion.border .ac-item .ac-title {
-    border: 1px solid #e7e7e7;
+    border: 1px solid rgb(231, 231, 231);
 }
 
 .accordion.border-bottom .ac-item .ac-title {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid rgb(231, 231, 231);
 }
 
 /*radius*/
@@ -96,8 +96,8 @@
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background-color: #ffffff;
-    border-color: #e7e7e7;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(231, 231, 231);
     border-style: solid;
     border-width: 1px 1px 0px 1px;
 }
@@ -107,7 +107,7 @@
 }
 
 .accordion.fancy .ac-item.ac-active .ac-title, .accordion.fancy .ac-item:last-child {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid rgb(231, 231, 231);
 }
 
 /*fancy clean*/
@@ -129,7 +129,7 @@
 /*color*/
 
 .accordion.color .ac-item .ac-title:before {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .accordion .ac-item.ac-open {
@@ -146,7 +146,7 @@
 }
 
 .accordion.accordion-transparent .ac-item .ac-title::before {
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .accordion.accordion-transparent.fancy .ac-item.ac-active .ac-title, .accordion.accordion-transparent .ac-item:last-child {
@@ -154,7 +154,7 @@
 }
 
 .accordion.accordion-transparent .ac-item p {
-    color: #111111;
+    color: rgb(17, 17, 17);
 }
 
 /* ----------------------------------------------------------------------
@@ -162,7 +162,7 @@
 -------------------------------------------------------------------------*/
 
 .alert > p {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .alert.animated {
@@ -191,88 +191,88 @@
 }
 
 .btn-primary, .btn-success, .btn-default, .btn-info, .btn-warning, .btn-danger, .btn-dark, .btn-purple, .btn-pink {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .btn-default {
-    background-color: #1abc9c;
-    border: 1px solid #1abc9c;
+    background-color: rgb(26, 188, 156);
+    border: 1px solid rgb(26, 188, 156);
 }
 
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .btn-default.focus {
-    background-color: #19ad90;
-    border: 1px solid #19ad90;
-    color: #ffffff;
+    background-color: rgb(25, 173, 144);
+    border: 1px solid rgb(25, 173, 144);
+    color: rgb(255, 255, 255);
 }
 
 .btn-white, .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active, .btn-white.focus, .btn-white:active, .btn-white:focus, .btn-white:hover, .open > .dropdown-toggle.btn-white {
-    background-color: #ffffff;
-    border: 1px solid #eaeaea ! important;
-    color: #4c5667;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(234, 234, 234) ! important;
+    color: rgb(76, 86, 103);
 }
 
 .btn-white .btn-label i {
-    color: #4c5667 !important;
+    color: rgb(76, 86, 103) !important;
 }
 
 .btn-white:hover, .btn-white:hover:hover, .btn-white:focus:hover, .btn-white:active:hover, .btn-white.active:hover, .btn-white.focus:hover, .btn-white:active:hover, .btn-white:focus:hover, .btn-white:hover:hover, .open > .dropdown-toggle.btn-white:hover {
-    background-color: #f9f9f9;
+    background-color: rgb(249, 249, 249);
 }
 
 .btn-white:focus, .btn-white:hover:focus, .btn-white:focus:focus, .btn-white:active:focus, .btn-white.active:focus, .btn-white.focus:focus, .btn-white:active:focus, .btn-white:focus:focus, .btn-white:hover:focus, .open > .dropdown-toggle.btn-white:focus {
-    background-color: #f9f9f9;
+    background-color: rgb(249, 249, 249);
 }
 
 .btn-white:active, .btn-white:hover:active, .btn-white:focus:active, .btn-white:active:active, .btn-white.active:active, .btn-white.focus:active, .btn-white:active:active, .btn-white:focus:active, .btn-white:hover:active, .open > .dropdown-toggle.btn-white:active {
-    background-color: #f9f9f9;
+    background-color: rgb(249, 249, 249);
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open > .dropdown-toggle.btn-primary {
-    background-color: #5d9cec ! important;
-    border: 1px solid #5d9cec ! important;
+    background-color: rgb(93, 156, 236) ! important;
+    border: 1px solid rgb(93, 156, 236) ! important;
 }
 
 .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success.focus, .btn-success:active, .btn-success:focus, .btn-success:hover, .open > .dropdown-toggle.btn-success {
-    background-color: #81c868 ! important;
-    border: 1px solid #81c868 ! important;
+    background-color: rgb(129, 200, 104) ! important;
+    border: 1px solid rgb(129, 200, 104) ! important;
 }
 
 .btn-info, .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open > .dropdown-toggle.btn-info {
-    background-color: #34d3eb ! important;
-    border: 1px solid #34d3eb ! important;
+    background-color: rgb(52, 211, 235) ! important;
+    border: 1px solid rgb(52, 211, 235) ! important;
 }
 
 .btn-warning, .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.focus, .btn-warning:active, .btn-warning:focus, .btn-warning:hover, .open > .dropdown-toggle.btn-warning {
-    background-color: #ffbd4a ! important;
-    border: 1px solid #ffbd4a ! important;
+    background-color: rgb(255, 189, 74) ! important;
+    border: 1px solid rgb(255, 189, 74) ! important;
 }
 
 .btn-danger, .btn-danger:active, .btn-danger:focus, .btn-danger:hover, .btn-danger.active, .btn-danger.focus, .btn-danger:active, .btn-danger:focus, .btn-danger:hover, .open > .dropdown-toggle.btn-danger {
-    background-color: #c30000 ! important;
-    border: 1px solid #c30000 ! important;
+    background-color: rgb(195, 0, 0) ! important;
+    border: 1px solid rgb(195, 0, 0) ! important;
 }
 
 .btn-dark, .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .btn-dark.focus, .btn-dark:active, .btn-dark:focus, .btn-dark:hover, .open > .dropdown-toggle.btn-dark {
-    background-color: #111111 ! important;
-    border: 1px solid #111111 ! important;
-    color: #ffffff;
+    background-color: rgb(17, 17, 17) ! important;
+    border: 1px solid rgb(17, 17, 17) ! important;
+    color: rgb(255, 255, 255);
 }
 
 .btn-purple, .btn-purple:hover, .btn-purple:focus, .btn-purple:active {
-    background-color: #7266ba ! important;
-    border: 1px solid #7266ba ! important;
-    color: #ffffff;
+    background-color: rgb(114, 102, 186) ! important;
+    border: 1px solid rgb(114, 102, 186) ! important;
+    color: rgb(255, 255, 255);
 }
 
 .btn-pink, .btn-pink:hover, .btn-pink:focus, .btn-pink:active {
-    background-color: #fb6d9d ! important;
-    border: 1px solid #fb6d9d ! important;
-    color: #ffffff;
+    background-color: rgb(251, 109, 157) ! important;
+    border: 1px solid rgb(251, 109, 157) ! important;
+    color: rgb(255, 255, 255);
 }
 
 .open > .dropdown-toggle.btn-primary.btn-outline, .open > .dropdown-toggle.btn-success.btn-outline, .open > .dropdown-toggle.btn-info.btn-outline, .open > .dropdown-toggle.btn-warning.btn-outline, .open > .dropdown-toggle.btn-danger.btn-outline, .open > .dropdown-toggle.btn-default.btn-outline {
     border-width: 2px ! important;
-    color: #ffffff ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .open > .dropdown-toggle.btn-white.btn-outline {
@@ -280,48 +280,48 @@
 }
 
 .btn-outline.btn-default {
-    color: #5fbeaa ! important;
+    color: rgb(95, 190, 170) ! important;
 }
 
 .btn-outline.btn-primary {
-    color: #5d9cec ! important;
+    color: rgb(93, 156, 236) ! important;
 }
 
 .btn-outline.btn-success {
-    color: #81c868 ! important;
+    color: rgb(129, 200, 104) ! important;
 }
 
 .btn-outline.btn-info {
-    color: #34d3eb ! important;
+    color: rgb(52, 211, 235) ! important;
 }
 
 .btn-outline.btn-warning {
-    color: #ffbd4a ! important;
+    color: rgb(255, 189, 74) ! important;
 }
 
 .btn-outline.btn-danger {
-    color: #f05050 ! important;
+    color: rgb(240, 80, 80) ! important;
 }
 
 .btn-outline.btn-dark {
-    color: #111111 ! important;
+    color: rgb(17, 17, 17) ! important;
 }
 
 .btn-outline.btn-purple {
-    color: #7266ba ! important;
+    color: rgb(114, 102, 186) ! important;
 }
 
 .btn-outline.btn-white, .btn-outline.btn-white:not(:hover) .btn-label i {
-    color: #ffffff !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .btn-outline.btn-white:hover, .btn-outline.btn-white:focus, .btn-outline.btn-white:active {
-    background-color: #f4f8fb ! important;
-    color: #4c5667 ! important;
+    background-color: rgb(244, 248, 251) ! important;
+    color: rgb(76, 86, 103) ! important;
 }
 
 .btn-outline.btn-pink {
-    color: #fb6d9d ! important;
+    color: rgb(251, 109, 157) ! important;
 }
 
 .btn-rounded {
@@ -360,12 +360,12 @@
 
 .btn-outline:hover {
     border-width: 2px ! important;
-    color: #ffffff ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-outline:focus {
     border-width: 2px ! important;
-    color: #ffffff ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-label {
@@ -381,7 +381,7 @@
 }
 
 .btn-label > i {
-    color: #ffffff !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .btn-group.open .dropdown-toggle {
@@ -406,68 +406,68 @@
 }
 
 .btn-facebook {
-    background-color: #3b5998 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(59, 89, 152) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-twitter {
-    background-color: #00aced ! important;
-    color: #ffffff ! important;
+    background-color: rgb(0, 172, 237) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-linkedin {
-    background-color: #007bb6 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(0, 123, 182) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-dribbble {
-    background-color: #ea4c89 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(234, 76, 137) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-googleplus {
-    background-color: #dd4b39 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(221, 75, 57) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-instagram {
-    background-color: #517fa4 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(81, 127, 164) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-pinterest {
-    background-color: #cb2027 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(203, 32, 39) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-dropbox {
-    background-color: #007ee5 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(0, 126, 229) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-flickr {
-    background-color: #ff0084 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(255, 0, 132) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-tumblr {
-    background-color: #32506d ! important;
-    color: #ffffff ! important;
+    background-color: rgb(50, 80, 109) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-skype {
-    background-color: #00aff0 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(0, 175, 240) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-youtube {
-    background-color: #bb0000 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(187, 0, 0) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn-github {
-    background-color: #171515 ! important;
-    color: #ffffff ! important;
+    background-color: rgb(23, 21, 21) ! important;
+    color: rgb(255, 255, 255) ! important;
 }
 
 .btn {
@@ -497,7 +497,7 @@
     position: relative;
     text-transform: uppercase;
     white-space: nowrap;
-    border: 1px solid #cccccc;
+    border: 1px solid rgb(204, 204, 204);
 }
 
 .button:hover:not, a.button:hover {
@@ -517,22 +517,22 @@ button:focus {
 }
 
 .button-light {
-    background-color: #ffffff;
-    border: 1px solid #eeeeee;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(238, 238, 238);
 }
 
 .button-light, .button-light span {
-    color: #111111 !important;
+    color: rgb(17, 17, 17) !important;
 }
 
 .button-dark {
-    background-color: #111111;
-    color: #ffffff;
+    background-color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
 }
 
 .button-dark:hover {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
 }
 
 /*Button icons*/
@@ -593,7 +593,7 @@ button:focus {
 }
 
 .button.transparent:hover, .button.transparent:hover span, .button.transparent:hover i {
-    color: #333333 !important;
+    color: rgb(51, 51, 51) !important;
 }
 
 .button.full-rounded {
@@ -625,39 +625,39 @@ button:focus {
 /*Border buttons*/
 
 .button.border {
-    color: #333333;
-    border: 2px solid #333333;
+    color: rgb(51, 51, 51);
+    border: 2px solid rgb(51, 51, 51);
 }
 
 .button.border:hover {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
 }
 
 .button.border.light {
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .button.border.light:hover {
-    background-color: #ffffff;
-    color: #252525;
+    background-color: rgb(255, 255, 255);
+    color: rgb(37, 37, 37);
 }
 
 .button.border.light:hover:hover i {
-    color: #252525;
+    color: rgb(37, 37, 37);
 }
 
 /*Transparent*/
 
 .button.transparent {
     background-color: transparent;
-    border-color: #ffffff;
+    border-color: rgb(255, 255, 255);
     border-style: solid;
     border-width: 2px;
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     letter-spacing: 2px;
     opacity: 1;
     padding: 16px 36px;
@@ -667,8 +667,8 @@ button:focus {
 }
 
 .button.transparent:hover, .button.transparent:active {
-    background-color: #ffffff;
-    color: #333333;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
 }
 
 .button.fullwidth {
@@ -680,127 +680,127 @@ button:focus {
 /*Colors*/
 
 .button.blue, .button.blue-dark, .button.aqua, .button.purple-light, .button.purple, .button.purple-dark, .button.red-dark, .button.red, .button.red-light, .button.red-light, .button.pink-dark, .button.pink, .button.orange-dark, .button.orange, .button.orange-light, .button.yellow, .button.green, .button.amber, .button.brown, .button.brown-light, .button.black, .button.black-light, .button.grey-dark {
-    border-color: #000000;
-    color: #ffffff;
+    border-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .button.blue {
-    background-color: #41a5db;
-    border-color: #3ca0d6;
+    background-color: rgb(65, 165, 219);
+    border-color: rgb(60, 160, 214);
 }
 
 .button.blue-dark {
-    background-color: #2b6baa;
-    border-color: #25629f;
+    background-color: rgb(43, 107, 170);
+    border-color: rgb(37, 98, 159);
 }
 
 .button.aqua {
-    background-color: #40c0cb;
-    border-color: #3eb5bf;
+    background-color: rgb(64, 192, 203);
+    border-color: rgb(62, 181, 191);
 }
 
 .button.purple-light {
-    background-color: #903090;
-    border-color: #892689;
+    background-color: rgb(144, 48, 144);
+    border-color: rgb(137, 38, 137);
 }
 
 .button.purple {
-    background-color: #9b175e;
-    border-color: #901155;
+    background-color: rgb(155, 23, 94);
+    border-color: rgb(144, 17, 85);
 }
 
 .button.purple-dark {
-    background-color: #5d4157;
-    border-color: #55384f;
+    background-color: rgb(93, 65, 87);
+    border-color: rgb(85, 56, 79);
 }
 
 .button.red-dark {
-    background-color: #ca0027;
-    border-color: #b20022;
+    background-color: rgb(202, 0, 39);
+    border-color: rgb(178, 0, 34);
 }
 
 .button.red {
-    background-color: #e42d3f;
-    border-color: #d42b3c;
-    color: #ffffff;
+    background-color: rgb(228, 45, 63);
+    border-color: rgb(212, 43, 60);
+    color: rgb(255, 255, 255);
 }
 
 .button.red-light {
-    background-color: #f05761;
-    border-color: #ed4b55;
-    color: #ffffff;
+    background-color: rgb(240, 87, 97);
+    border-color: rgb(237, 75, 85);
+    color: rgb(255, 255, 255);
 }
 
 .button.red-light {
-    background-color: #f05761;
-    border-color: #ed4b55;
-    color: #ffffff;
+    background-color: rgb(240, 87, 97);
+    border-color: rgb(237, 75, 85);
+    color: rgb(255, 255, 255);
 }
 
 .button.pink-dark {
-    background-color: #f51e70;
-    border-color: #e31865;
+    background-color: rgb(245, 30, 112);
+    border-color: rgb(227, 24, 101);
 }
 
 .button.pink {
-    background-color: #f772a3;
-    border-color: #f2689b;
+    background-color: rgb(247, 114, 163);
+    border-color: rgb(242, 104, 155);
 }
 
 .button.orange-dark {
-    background-color: #e57200;
-    border-color: #d66b00;
+    background-color: rgb(229, 114, 0);
+    border-color: rgb(214, 107, 0);
 }
 
 .button.orange {
-    background-color: #f59017;
-    border-color: #e5820b;
+    background-color: rgb(245, 144, 23);
+    border-color: rgb(229, 130, 11);
 }
 
 .button.orange-light {
-    background-color: #f7d137;
-    border-color: #edc72b;
-    color: #774f38;
+    background-color: rgb(247, 209, 55);
+    border-color: rgb(237, 199, 43);
+    color: rgb(119, 79, 56);
 }
 
 .button.yellow {
-    background-color: #ffec00;
-    border-color: #e6d500;
-    color: #333333;
+    background-color: rgb(255, 236, 0);
+    border-color: rgb(230, 213, 0);
+    color: rgb(51, 51, 51);
 }
 
 .button.green {
-    background-color: #77a600;
-    border-color: #6e9a00;
+    background-color: rgb(119, 166, 0);
+    border-color: rgb(110, 154, 0);
 }
 
 .button.amber {
-    background-color: #eb9c4d;
-    border-color: #d88d42;
+    background-color: rgb(235, 156, 77);
+    border-color: rgb(216, 141, 66);
 }
 
 .button.brown {
-    background-color: #774f38;
-    border-color: #714a34;
+    background-color: rgb(119, 79, 56);
+    border-color: rgb(113, 74, 52);
 }
 
 .button.brown-light {
-    background-color: #935d3f;
-    border-color: #8b583b;
+    background-color: rgb(147, 93, 63);
+    border-color: rgb(139, 88, 59);
 }
 
 .button.black {
-    background-color: #111111;
+    background-color: rgb(17, 17, 17);
     border: 0;
 }
 
 .button.black-light {
-    background-color: #2a2a2a;
+    background-color: rgb(42, 42, 42);
 }
 
 .button.grey-dark {
-    background-color: #404051;
+    background-color: rgb(64, 64, 81);
 }
 
 /*Effects*/
@@ -1063,11 +1063,11 @@ button:focus {
 }
 
 .button.effect.fill-vertical:after {
-    background-color: #252525;
+    background-color: rgb(37, 37, 37);
 }
 
 .button.effect.fill-vertical:hover {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*Effect fill horizontal*/
@@ -1097,61 +1097,61 @@ button:focus {
 }
 
 .button.effect.fill-horizontal:after {
-    background-color: #252525;
+    background-color: rgb(37, 37, 37);
 }
 
 .button.effect.fill-horizontal:hover {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*Effect fill*/
 
 .button.effect.fill:hover {
-    background-color: #252525;
-    color: #ffffff;
+    background-color: rgb(37, 37, 37);
+    color: rgb(255, 255, 255);
 }
 
 /*aqua effect fill-vertical*/
 
 .button.aqua.effect.fill-vertical:after {
-    background-color: #1a9ca7;
+    background-color: rgb(26, 156, 167);
 }
 
 .button.aqua.effect.fill-vertical:hover {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*aqua effect fill-horizontal*/
 
 .button.aqua.effect.fill-horizontal:after {
-    background-color: #1a9ca7;
+    background-color: rgb(26, 156, 167);
 }
 
 .button.aqua.effect.fill-horizontal:hover {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*aqua effect fill*/
 
 .button.aqua.effect.fill:hover {
-    background-color: #087680;
+    background-color: rgb(8, 118, 128);
 }
 
 /*transparent effect fill-vertical*/
 
 .button.transparent.effect.fill-vertical:after, .button.transparent.effect.fill-horizontal:after {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 .button.transparent.effect.fill-vertical:hover, .button.transparent.effect.fill-horizontal:hover {
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 /*transparent effect fill*/
 
 .button.transparent.effect.fill:hover {
-    background-color: #ffffff;
-    color: #333333;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
 }
 
 /*Read more button*/
@@ -1177,7 +1177,7 @@ Headings
 }
 
 .heading-fancy h1, .heading-fancy h2, .heading-fancy h3, .heading-fancy h4, .heading-fancy h5, .heading-fancy h6 {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     padding-right: 15px;
     margin-bottom: 0;
     position: relative;
@@ -1195,7 +1195,7 @@ Headings
     position: absolute;
     width: 100%;
     height: 0;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid rgb(229, 229, 229);
     left: auto;
     top: 49%;
     right: 0;
@@ -1229,7 +1229,7 @@ Headings
 
 .heading-title-border-bottom {
     border-bottom: 1px solid;
-    border-bottom-color: #e7e7e7;
+    border-bottom-color: rgb(231, 231, 231);
 }
 
 .heading-title-simple h1, .heading-title-simple h2, .heading-title-simple h3, .heading-title-simple h4, .heading-title-simple h5, .heading-title-simple h6 {
@@ -1240,7 +1240,7 @@ Headings
 /*HR TITLE*/
 
 .hr-title abbr {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 .hr-title {
@@ -1252,7 +1252,7 @@ Headings
     line-height: 20px;
     margin: 10px 0;
     height: auto;
-    color: #bbbbbb;
+    color: rgb(187, 187, 187);
 }
 
 .hr-title abbr {
@@ -1309,7 +1309,7 @@ Headings
 }
 
 .hr-title.hr-double {
-    border-top: 4px double #ebebeb;
+    border-top: 4px double rgb(235, 235, 235);
 }
 
 .hr-title.hr-double abbr {
@@ -1323,7 +1323,7 @@ Headings
 }
 
 .heading h1, .heading h2, .heading h3, .heading h4 {
-    color: #303030;
+    color: rgb(48, 48, 48);
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1331,7 +1331,7 @@ Headings
 }
 
 .heading:after {
-    border-top: 3px solid #303030;
+    border-top: 3px solid rgb(48, 48, 48);
     display: block;
     margin-top: 10px;
     width: 30px;
@@ -1340,7 +1340,7 @@ Headings
 
 .heading > span {
     display: block;
-    color: #888888;
+    color: rgb(136, 136, 136);
 }
 
 .heading h1 {
@@ -1397,18 +1397,18 @@ Headings
 /*heading light*/
 
 .heading.heading-light, .text-light .heading, .heading.heading-light p, .heading.heading-light .lead, .heading.heading-light h2, .heading.heading-light h3 {
-    color: #ffffff !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .heading.heading-light:after, .text-light .heading:after {
-    border-top: 4px solid #ffffff;
+    border-top: 4px solid rgb(255, 255, 255);
 }
 
 /*hero headings*/
 
 .heading-hero {
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-family: Raleway;
     font-size: 50px;
     font-style: normal;
@@ -1605,11 +1605,11 @@ Tabs
 }
 
 .tabs-navigation li.active a, .tabs-navigation li.active a:focus, .tabs-navigation li.active a:hover {
-    background: #ffffff;
-    border-color: #dddddd #dddddd rgba(0, 0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgba(0, 0, 0, 0);
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: #2e343c;
+    color: rgb(46, 52, 60);
 }
 
 .tabs-navigation-transparent li.active a, .tabs-navigation-transparent li.active a:focus, .tabs-navigation-transparent li.active a:hover {
@@ -1679,8 +1679,8 @@ Tabs
 }
 
 .simple .tabs-navigation li.active a, .simple .tabs-navigation li.active a:focus, .simple .tabs-navigation li.active a:hover {
-    border-color: #00c0e9;
-    color: #2e343c;
+    border-color: rgb(0, 192, 233);
+    color: rgb(46, 52, 60);
 }
 
 .simple .tabs-content {
@@ -1787,7 +1787,7 @@ Tabs
 }
 
 .linetriangle .tabs-navigation > li.active > a:after {
-    border-top-color: #fafafa;
+    border-top-color: rgb(250, 250, 250);
     border-width: 10px;
     margin-left: -10px;
 }
@@ -1799,8 +1799,8 @@ Tabs
 }
 
 .linetriangle.triangle-simple .tabs-content {
-    background: #ffffff;
-    border-color: #dddddd;
+    background: rgb(255, 255, 255);
+    border-color: rgb(221, 221, 221);
     border-width: 1px 0 0;
 }
 
@@ -1850,13 +1850,13 @@ Tabs
     }
 
     .tabs-navigation li.active a, .tabs-navigation li.active a:hover, .tabs-vertical .tabs-navigation li.active a, .tabs-vertical .tabs-navigation li.active a:hover {
-        border-right-color: #d1d7d9;
-        border-bottom-color: #d1d7d9;
+        border-right-color: rgb(209, 215, 217);
+        border-bottom-color: rgb(209, 215, 217);
     }
 
     .tabs-navigation li.active a, .tabs-navigation li.active a:hover, .tabs-vertical .tabs-navigation li.active a, .tabs-vertical .tabs-navigation li.active a:hover {
-        border-right-color: #dde1e1;
-        border-bottom-color: #dde1e1;
+        border-right-color: rgb(221, 225, 225);
+        border-bottom-color: rgb(221, 225, 225);
     }
 
     .tabs-vertical.tabs-right .tabs-navigation {
@@ -1921,7 +1921,7 @@ SOCIAL ICONS
     border-radius: 4px;
     border: 0;
     background: transparent;
-    color: #333333;
+    color: rgb(51, 51, 51);
     overflow: hidden;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -1931,167 +1931,167 @@ SOCIAL ICONS
 /*Colored*/
 
 .social-icons.social-icons-colored a, .social-icons.social-icons-colored-hover a:hover {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     border: 0;
 }
 
 .social-icons.social-icons-colored .social-rss a, .social-icons.social-icons-colored-hover .social-rss a:hover {
-    background-color: #faa33d;
+    background-color: rgb(250, 163, 61);
 }
 
 .social-icons.social-icons-colored .social-facebook a, .social-icons.social-icons-colored-hover .social-facebook a:hover {
-    background-color: #5d82d1;
+    background-color: rgb(93, 130, 209);
 }
 
 .social-icons.social-icons-colored .social-twitter a, .social-icons.social-icons-colored-hover .social-twitter a:hover {
-    background-color: #40bff5;
+    background-color: rgb(64, 191, 245);
 }
 
 .social-icons.social-icons-colored .social-vimeo a, .social-icons.social-icons-colored-hover .social-vimeo a:hover {
-    background-color: #35c6ea;
+    background-color: rgb(53, 198, 234);
 }
 
 .social-icons.social-icons-colored .social-myspace a, .social-icons.social-icons-colored-hover .social-myspace a:hover {
-    background-color: #008dde;
+    background-color: rgb(0, 141, 222);
 }
 
 .social-icons.social-icons-colored .social-youtube a, .social-icons.social-icons-colored-hover .social-youtube a:hover {
-    background-color: #ef4e41;
+    background-color: rgb(239, 78, 65);
 }
 
 .social-icons.social-icons-colored .social-instagram a, .social-icons.social-icons-colored-hover .social-instagram a:hover {
-    background-color: #548bb6;
+    background-color: rgb(84, 139, 182);
 }
 
 .social-icons.social-icons-colored .social-gplus a, .social-icons.social-icons-colored-hover .social-gplus a:hover {
-    background-color: #d68400;
+    background-color: rgb(214, 132, 0);
 }
 
 .social-icons.social-icons-colored .social-stumbleupon a, .social-icons.social-icons-colored-hover .social-stumbleupon a:hover {
-    background-color: #ff5c30;
+    background-color: rgb(255, 92, 48);
 }
 
 .social-icons.social-icons-colored .social-lastfm a, .social-icons.social-icons-colored-hover .social-lastfm a:hover {
-    background-color: #f34320;
+    background-color: rgb(243, 67, 32);
 }
 
 .social-icons.social-icons-colored .social-pinterest a, .social-icons.social-icons-colored-hover .social-pinterest a:hover {
-    background-color: #e13138;
+    background-color: rgb(225, 49, 56);
 }
 
 .social-icons.social-icons-colored .social-google a, .social-icons.social-icons-colored-hover .social-google a:hover {
-    background-color: #eb5e4c;
+    background-color: rgb(235, 94, 76);
 }
 
 .social-icons.social-icons-colored .social-evernote a, .social-icons.social-icons-colored-hover .social-evernote a:hover {
-    background-color: #9acf4f;
+    background-color: rgb(154, 207, 79);
 }
 
 .social-icons.social-icons-colored .social-dribbble a, .social-icons.social-icons-colored-hover .social-dribbble a:hover {
-    background-color: #f7659c;
+    background-color: rgb(247, 101, 156);
 }
 
 .social-icons.social-icons-colored .social-skype a, .social-icons.social-icons-colored-hover .social-skype a:hover {
-    background-color: #13c1f3;
+    background-color: rgb(19, 193, 243);
 }
 
 .social-icons.social-icons-colored .social-forrst a, .social-icons.social-icons-colored-hover .social-forrst a:hover {
-    background-color: #45ad76;
+    background-color: rgb(69, 173, 118);
 }
 
 .social-icons.social-icons-colored .social-linkedin a, .social-icons.social-icons-colored-hover .social-linkedin a:hover {
-    background-color: #238cc8;
+    background-color: rgb(35, 140, 200);
 }
 
 .social-icons.social-icons-colored .social-wordpress a, .social-icons.social-icons-colored-hover .social-wordpress a:hover {
-    background-color: #2592c3;
+    background-color: rgb(37, 146, 195);
 }
 
 .social-icons.social-icons-colored .social-grooveshark a, .social-icons.social-icons-colored-hover .social-grooveshark a:hover {
-    background-color: #ffb21d;
+    background-color: rgb(255, 178, 29);
 }
 
 .social-icons.social-icons-colored .social-delicious a, .social-icons.social-icons-colored-hover .social-delicious a:hover {
-    background-color: #377bda;
+    background-color: rgb(55, 123, 218);
 }
 
 .social-icons.social-icons-colored .social-behance a, .social-icons.social-icons-colored-hover .social-behance a:hover {
-    background-color: #1879fd;
+    background-color: rgb(24, 121, 253);
 }
 
 .social-icons.social-icons-colored .social-dropbox a, .social-icons.social-icons-colored-hover .social-dropbox a:hover {
-    background-color: #17a3eb;
+    background-color: rgb(23, 163, 235);
 }
 
 .social-icons.social-icons-colored .social-soundcloud a, .social-icons.social-icons-colored-hover .social-soundcloud a:hover {
-    background-color: #ff7e30;
+    background-color: rgb(255, 126, 48);
 }
 
 .social-icons.social-icons-colored .social-deviantart a, .social-icons.social-icons-colored-hover .social-deviantart a:hover {
-    background-color: #6a8a7b;
+    background-color: rgb(106, 138, 123);
 }
 
 .social-icons.social-icons-colored .social-yahoo a, .social-icons.social-icons-colored-hover .social-yahoo a:hover {
-    background-color: #ab47ac;
+    background-color: rgb(171, 71, 172);
 }
 
 .social-icons.social-icons-colored .social-flickr a, .social-icons.social-icons-colored-hover .social-flickr a:hover {
-    background-color: #ff48a3;
+    background-color: rgb(255, 72, 163);
 }
 
 .social-icons.social-icons-colored .social-digg a, .social-icons.social-icons-colored-hover .social-digg a:hover {
-    background-color: #75788d;
+    background-color: rgb(117, 120, 141);
 }
 
 .social-icons.social-icons-colored .social-blogger a, .social-icons.social-icons-colored-hover .social-blogger a:hover {
-    background-color: #ff9233;
+    background-color: rgb(255, 146, 51);
 }
 
 .social-icons.social-icons-colored .social-tumblr a, .social-icons.social-icons-colored-hover .social-tumblr a:hover {
-    background-color: #426d9b;
+    background-color: rgb(66, 109, 155);
 }
 
 .social-icons.social-icons-colored .social-quora a, .social-icons.social-icons-colored-hover .social-quora a:hover {
-    background-color: #ea3d23;
+    background-color: rgb(234, 61, 35);
 }
 
 .social-icons.social-icons-colored .social-github a, .social-icons.social-icons-colored-hover .social-github a:hover {
-    background-color: #3f91cb;
+    background-color: rgb(63, 145, 203);
 }
 
 .social-icons.social-icons-colored .social-amazon a, .social-icons.social-icons-colored-hover .social-amazon a:hover {
-    background-color: #ff8e2e;
+    background-color: rgb(255, 142, 46);
 }
 
 .social-icons.social-icons-colored .social-xing a, .social-icons.social-icons-colored-hover .social-xing a:hover {
-    background-color: #1a8e8c;
+    background-color: rgb(26, 142, 140);
 }
 
 .social-icons.social-icons-colored .social-wikipedia a, .social-icons.social-icons-colored-hover .social-wikipedia a:hover {
-    background-color: #b3b5b8;
+    background-color: rgb(179, 181, 184);
 }
 
 /* Border */
 
 .social-icons.social-icons-border li a {
-    border: 1px solid #eeeeee;
+    border: 1px solid rgb(238, 238, 238);
     background: transparent;
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 /* Dark */
 
 .social-icons.social-icons-dark li a {
-    background: #888888;
-    color: #ffffff;
+    background: rgb(136, 136, 136);
+    color: rgb(255, 255, 255);
 }
 
 /* Light */
 
 .social-icons.social-icons-light li a {
-    background: #ffffff;
-    color: #333333;
-    border: 1px solid #eeeeee;
+    background: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
+    border: 1px solid rgb(238, 238, 238);
 }
 
 /* Rounded */
@@ -2121,7 +2121,7 @@ SOCIAL ICONS
 }
 
 .social-icons:not(.social-icons-colored):not(.social-icons-colored-hover) li a:hover {
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
 }
 
 .social-icons li:hover i {
@@ -2196,7 +2196,7 @@ Icon Box
 .icon-box .icon a, .icon-box .icon i {
     width: 100%;
     height: 100%;
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .icon-box .icon i {
@@ -2246,8 +2246,8 @@ Icon Box
     top: -4px;
     left: -4px;
     padding: 4px;
-    -webkit-box-shadow: 0 0 0 3px #333333;
-    box-shadow: 0 0 0 3px #333333;
+    -webkit-box-shadow: 0 0 0 3px rgb(51, 51, 51);
+    box-shadow: 0 0 0 3px rgb(51, 51, 51);
     -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
     -webkit-transform: scale(0.8);
     -moz-transition: -moz-transform 0.2s, opacity 0.2s;
@@ -2267,12 +2267,12 @@ Icon Box
 }
 
 .icon-box.effect.dark .icon i:after {
-    -webkit-box-shadow: 0 0 0 3px #1abc9c;
-    box-shadow: 0 0 0 3px #1abc9c;
+    -webkit-box-shadow: 0 0 0 3px rgb(26, 188, 156);
+    box-shadow: 0 0 0 3px rgb(26, 188, 156);
 }
 
 .icon-box.effect.dark .icon i:hover, .icon-box.effect.dark:hover .icon i {
-    background-color: #1abc9c;
+    background-color: rgb(26, 188, 156);
 }
 
 .icon-box.effect .icon i:hover:after, .icon-box.effect:hover .icon i:after {
@@ -2398,7 +2398,7 @@ Icon Box
 /* Icon Box - Border */
 
 .icon-box.border .icon {
-    border: 3px solid #333333;
+    border: 3px solid rgb(51, 51, 51);
     text-align: center;
     border-radius: 50%;
     background-color: transparent;
@@ -2418,7 +2418,7 @@ Icon Box
 
 .icon-box.border .icon i {
     background-color: transparent !important;
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .icon-box.border.small .icon {
@@ -2490,20 +2490,20 @@ Icon Box
 /* Icon Box - Light */
 
 .icon-box.light .icon i:after {
-    -webkit-box-shadow: 0 0 0 3px #e5e5e5;
-    box-shadow: 0 0 0 3px #e5e5e5;
+    -webkit-box-shadow: 0 0 0 3px rgb(229, 229, 229);
+    box-shadow: 0 0 0 3px rgb(229, 229, 229);
 }
 
 .icon-box.light .icon i {
-    background-color: #e5e5e5;
+    background-color: rgb(229, 229, 229);
 }
 
 .icon-box.light .icon i {
-    color: #808080;
+    color: rgb(128, 128, 128);
 }
 
 .icon-box.light.border .icon {
-    border: 3px solid #e5e5e5;
+    border: 3px solid rgb(229, 229, 229);
 }
 
 .icon-box.light.large .icon i {
@@ -2518,7 +2518,7 @@ Icon Box
 
 .icon-box.fancy .icon i {
     background-color: transparent;
-    color: #222222;
+    color: rgb(34, 34, 34);
     font-size: 110px;
     opacity: 0.09;
     -webkit-transition: all ease 0.5s;
@@ -2557,7 +2557,7 @@ Icon Box
 
 .icon-box.clean .icon i {
     background-color: none;
-    color: #333333;
+    color: rgb(51, 51, 51);
     font-size: 50px;
 }
 
@@ -2573,7 +2573,7 @@ Icon Box
 /* Icon Box - process */
 
 .icon-box.process {
-    border: 1px solid #888888;
+    border: 1px solid rgb(136, 136, 136);
     margin-top: 45px;
     padding: 0 30px 10px;
     border-radius: 4px;
@@ -2595,8 +2595,8 @@ Icon Box
 /* Icon Box - box type */
 
 .icon-box.box-type {
-    background: #fafafa;
-    border: 1px solid #ececec;
+    background: rgb(250, 250, 250);
+    border: 1px solid rgb(236, 236, 236);
     border-radius: 4px;
     padding: 20px;
 }
@@ -2680,11 +2680,11 @@ Image Boxes
 }
 
 .image-box-description > p {
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .image-box-description > p.subtitle {
-    color: #888888;
+    color: rgb(136, 136, 136);
 }
 
 .image-box-description .post-date {
@@ -2702,7 +2702,7 @@ Image Boxes
 }
 
 .image-box-description .post-rate {
-    color: #ffc300;
+    color: rgb(255, 195, 0);
     float: right;
     list-style: outside none none;
     margin: 9px 0;
@@ -2714,9 +2714,9 @@ Image Boxes
 }
 
 .image-box-links a {
-    background-color: #252525;
+    background-color: rgb(37, 37, 37);
     border-radius: 2px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 12px;
     margin: 5px;
     padding: 9px 15px;
@@ -2727,13 +2727,13 @@ Image Boxes
 
 .image-box-links a:hover {
     opacity: 0.8;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*circle image*/
 
 .image-box.circle-image {
-    border: 6px solid #eeeeee;
+    border: 6px solid rgb(238, 238, 238);
     border-radius: 100%;
     margin: 0 auto -6px;
     z-index: 1;
@@ -2760,8 +2760,8 @@ Image Boxes
 /*Image box Card*/
 
 .image-box.card .image-box-content {
-    background: #383838;
-    color: #ffffff;
+    background: rgb(56, 56, 56);
+    color: rgb(255, 255, 255);
     padding: 20px;
 }
 
@@ -2770,7 +2770,7 @@ Image Boxes
 }
 
 .image-box.card .image-box-content h3, .image-box.card .image-box-content p {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .image-box-description.card {
@@ -2802,7 +2802,7 @@ Image Boxes
 }
 
 .image-box.effect .image-box-content, .image-box.effect .image-box-content h3, .image-box.effect .image-box-content p {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .image-box h3 > span {
@@ -2820,7 +2820,7 @@ Image Boxes
     bottom: 0;
     padding: 1em;
     height: auto;
-    background: #252d31;
+    background: rgb(37, 45, 49);
     -webkit-transition: -webkit-transform 0.35s;
     transition: -webkit-transform 0.35s;
     -o-transition: -o-transform 0.35s;
@@ -2848,7 +2848,7 @@ Image Boxes
 .image-box.effect.dia p.icon-links a {
     float: left;
     font-size: 1.4em;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .image-box.effect.dia p.icon-links i:hover {
@@ -2856,7 +2856,7 @@ Image Boxes
 }
 
 .image-box.effect.dia:hover p.icon-links a:hover, .image-box.effect.dia:hover p.icon-links a:focus, .image-box.effect.dia .image-box-content h3 {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .image-box.effect.dia h3, .image-box.effect.dia p.icon-links a {
@@ -2978,7 +2978,7 @@ Image Boxes
 }
 
 .image-box.effect.juna p {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     opacity: 0;
     -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
     transition: opacity 0.2s, -webkit-transform 0.35s;
@@ -3072,7 +3072,7 @@ Image Boxes
     left: 0;
     width: 100%;
     height: 4px;
-    background: #ffffff;
+    background: rgb(255, 255, 255);
     content: '';
     -webkit-transform: translate3d(0, 40px, 0);
     transform: translate3d(0, 40px, 0);
@@ -3135,7 +3135,7 @@ Image Boxes
     left: 50%;
     width: 80%;
     height: 1px;
-    background: #ffffff;
+    background: rgb(255, 255, 255);
     content: '';
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -3220,8 +3220,8 @@ Image Boxes
     right: 30px;
     bottom: 50px;
     left: 30px;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
     -webkit-transform: scale(0, 1);
     -ms-transform: scale(0, 1);
     -o-transform: scale(0, 1);
@@ -3237,8 +3237,8 @@ Image Boxes
     right: 50px;
     bottom: 30px;
     left: 50px;
-    border-right: 1px solid #ffffff;
-    border-left: 1px solid #ffffff;
+    border-right: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
     -webkit-transform: scale(1, 0);
     -ms-transform: scale(1, 0);
     -o-transform: scale(1, 0);
@@ -3335,7 +3335,7 @@ Image Boxes
     left: 30px;
     height: -webkit-calc(50% - 30px);
     height: calc(50% - 30px);
-    border: 4px solid #ffffff;
+    border: 4px solid rgb(255, 255, 255);
     content: '';
     -webkit-transition: -webkit-transform 0.35s;
     transition: -webkit-transform 0.35s;
@@ -3530,7 +3530,7 @@ Image Boxes
 /*---------------*/
 
 .image-box.effect.erdi {
-    background: #2f3238;
+    background: rgb(47, 50, 56);
 }
 
 .image-box.effect.erdi img {
@@ -3559,7 +3559,7 @@ Image Boxes
     margin: 0 0 0.25em;
     padding: 0.4em 1em;
     background: rgba(255, 255, 255, 0.9);
-    color: #2f3238;
+    color: rgb(47, 50, 56);
     text-transform: none;
     font-weight: 500;
     font-size: 75%;
@@ -3632,7 +3632,7 @@ Image Boxes
 /*-----------------*/
 
 .image-box.effect.tini {
-    background: #303fa9;
+    background: rgb(48, 63, 169);
 }
 
 .image-box.effect.tini h3, .image-box.effect.tini p {
@@ -3658,7 +3658,7 @@ Image Boxes
     left: 50%;
     width: 170px;
     height: 170px;
-    border: 2px solid #ffffff;
+    border: 2px solid rgb(255, 255, 255);
     content: '';
     opacity: 0;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -3682,7 +3682,7 @@ Image Boxes
 }
 
 .image-box.effect.tini p a {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     margin-right: 6px;
 }
 
@@ -3769,7 +3769,7 @@ Image Boxes
 /*-----------------*/
 
 .image-box.effect.bleron {
-    background: #df4e4e;
+    background: rgb(223, 78, 78);
 }
 
 .image-box.effect.bleron img, .image-box.effect.bleron h3 {
@@ -3826,7 +3826,7 @@ Image Boxes
 }
 
 .image-box.effect.bleron p.image-box-links a {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 /*----------------------*/
@@ -3871,7 +3871,7 @@ Image Boxes
 
 .effect.social-links a i {
     margin: 0 4px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 146%;
 }
 
@@ -3895,7 +3895,7 @@ Image Boxes
     height: 42px;
     width: 42px;
     line-height: 44px;
-    background: hsla(0, 0%, 0%, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     -webkit-transition: opacity 0.25s, -webkit-transform 0.25s;
     transition: opacity 0.25s, -webkit-transform 0.25s;
@@ -3952,7 +3952,7 @@ Image Boxes
 /*---------------*/
 
 .image-box.effect.retro {
-    background: #030c17;
+    background: rgb(3, 12, 23);
     text-align: center;
 }
 
@@ -3969,7 +3969,7 @@ Image Boxes
     right: 30px;
     bottom: 30px;
     left: 30px;
-    border: 2px solid #ffffff;
+    border: 2px solid rgb(255, 255, 255);
     -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
     content: '';
@@ -4121,14 +4121,14 @@ Carousel Nav
     height: 100%;
     outline: none;
     border-radius: 50%;
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
     text-indent: -999em;
     cursor: pointer;
     position: absolute;
     overflow: hidden;
     background-color: transparent;
-    -webkit-box-shadow: inset 0 0 0 1px #bbbbbb;
-    box-shadow: inset 0 0 0 1px #bbbbbb;
+    -webkit-box-shadow: inset 0 0 0 1px rgb(187, 187, 187);
+    box-shadow: inset 0 0 0 1px rgb(187, 187, 187);
     -webkit-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
@@ -4145,7 +4145,7 @@ Carousel Nav
     height: 100%;
     left: 0;
     border-radius: 50%;
-    background-color: #aaaaaa;
+    background-color: rgb(170, 170, 170);
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
@@ -4189,12 +4189,12 @@ Carousel Nav
 }
 
 .owl-theme.pagination-top .owl-dots .owl-dot span {
-    -webkit-box-shadow: inset 0 0 0 1px #ffffff;
-    box-shadow: inset 0 0 0 1px #ffffff;
+    -webkit-box-shadow: inset 0 0 0 1px rgb(255, 255, 255);
+    box-shadow: inset 0 0 0 1px rgb(255, 255, 255);
 }
 
 .owl-theme.pagination-top .owl-dots .owl-dot span::after {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 /*owl nav*/
@@ -4246,7 +4246,7 @@ Carousel Nav
 
 .owl-carousel .owl-controls .owl-nav .owl-next, .owl-carousel .owl-controls .owl-nav .owl-prev {
     background: rgba(0, 0, 0, 0.4);
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 18px;
     height: 75px;
     position: absolute;
@@ -4301,8 +4301,8 @@ Carousel Nav
 }
 
 .carousel-description-style .owl-carousel .owl-controls .owl-nav .owl-next, .carousel-description-style .owl-carousel .owl-controls .owl-nav .owl-prev {
-    background: #00c0e9;
-    color: #ffffff;
+    background: rgb(0, 192, 233);
+    color: rgb(255, 255, 255);
     font-size: 15px;
     height: 36px;
 }
@@ -4405,7 +4405,7 @@ Countdown timer
 -------------------------------------------------------------------------*/
 
 .countdown {
-    color: #333333;
+    color: rgb(51, 51, 51);
     overflow: hidden;
 }
 
@@ -4444,7 +4444,7 @@ Countdown timer
 }
 
 .countdown span:before {
-    background: none repeat scroll 0 0 #333333;
+    background: none repeat scroll 0 0 rgb(51, 51, 51);
     content: '';
     display: block;
     height: 2px;
@@ -4460,9 +4460,9 @@ Countdown timer
 /*circle style*/
 
 .countdown.circle .countdown-box {
-    border: 3px solid #333333;
+    border: 3px solid rgb(51, 51, 51);
     border-radius: 50%;
-    color: #333333;
+    color: rgb(51, 51, 51);
     height: 160px;
     padding: 34px 5px 0 0;
     width: 160px;
@@ -4546,29 +4546,29 @@ Countdown timer
 /*Light & Dark*/
 
 .countdown.light .countdown-box {
-    border-color: #ffffff;
-    color: #ffffff;
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
 .countdown.countdown-light span:before {
-    background: #ffffff;
+    background: rgb(255, 255, 255);
 }
 
 .countdown.countdown-light span, .countdown.countdown-light .number {
-    color: #ffffff !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .countdown.countdown-light.circle .countdown-box {
-    border-color: #ffffff;
+    border-color: rgb(255, 255, 255);
 }
 
 .countdown.countdown-light.rectangle .countdown-box {
-    border-color: #ffffff;
+    border-color: rgb(255, 255, 255);
 }
 
 .countdown.countdown-dark span, .countdown.countdown-dark .number {
-    color: #000000 !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 /* ----------------------------------------------------------------------
@@ -4580,7 +4580,7 @@ ProgressBar
     height: 40px;
     margin: 20px 0 20px 0;
     overflow: hidden;
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
 }
 
 .progress-bar {
@@ -4592,7 +4592,7 @@ ProgressBar
 }
 
 .progress-title {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 13px;
     font-weight: 600;
     position: absolute;
@@ -4604,7 +4604,7 @@ ProgressBar
 }
 
 .progress-bar .progress-number, .progress-bar .progress-type {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     float: right;
     margin-top: -2px;
 }
@@ -4618,7 +4618,7 @@ ProgressBar
 /*title-up style*/
 
 .progress-bar-container.title-up .progress-title {
-    color: #333333;
+    color: rgb(51, 51, 51);
     margin-left: -10px;
     margin-top: -32px;
 }
@@ -4628,14 +4628,14 @@ ProgressBar
 }
 
 .progress-bar-container.title-up .progress-bar .progress-number, .progress-bar-container.title-up .progress-bar .progress-type {
-    color: #333333;
+    color: rgb(51, 51, 51);
     margin-top: -32px;
     position: absolute;
     right: 15px;
 }
 
 .progress-bar-container.title-up .progress-bar .progress-number, .progress-bar-container.title-up .progress-bar .progress-type {
-    color: #333333;
+    color: rgb(51, 51, 51);
     margin-top: -32px;
     position: absolute;
     right: 15px;
@@ -4719,189 +4719,189 @@ ProgressBar
 }
 
 .progress-bar-container.transparent.title-up .progress-bar .progress-title, .progress-bar-container.transparent.title-up .progress-bar .progress-number, .progress-bar-container.transparent.title-up .progress-bar .progress-type {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /* Colors */
 
 .progress-bar-container.color-turquoise {
-    border-color: #1abc9c;
-    background: #1abc9c;
+    border-color: rgb(26, 188, 156);
+    background: rgb(26, 188, 156);
 }
 
 .progress-bar-container.color-green-sea {
-    border-color: #16a085;
-    background: #16a085;
+    border-color: rgb(22, 160, 133);
+    background: rgb(22, 160, 133);
 }
 
 .progress-bar-container.color-emerald {
-    border-color: #2ecc71;
-    background: #2ecc71;
+    border-color: rgb(46, 204, 113);
+    background: rgb(46, 204, 113);
 }
 
 .progress-bar-container.color-nephritis {
-    border-color: #27ae60;
-    background: #27ae60;
+    border-color: rgb(39, 174, 96);
+    background: rgb(39, 174, 96);
 }
 
 .progress-bar-container.color-peter-river {
-    border-color: #3498db;
-    background: #3498db;
+    border-color: rgb(52, 152, 219);
+    background: rgb(52, 152, 219);
 }
 
 .progress-bar-container.color-belize-hole {
-    border-color: #2980b9;
-    background: #2980b9;
+    border-color: rgb(41, 128, 185);
+    background: rgb(41, 128, 185);
 }
 
 .progress-bar-container.color-amethyst {
-    border-color: #9b59b6;
-    background: #9b59b6;
+    border-color: rgb(155, 89, 182);
+    background: rgb(155, 89, 182);
 }
 
 .progress-bar-container.color-wisteria {
-    border-color: #8e44ad;
-    background: #8e44ad;
+    border-color: rgb(142, 68, 173);
+    background: rgb(142, 68, 173);
 }
 
 .progress-bar-container.color-wet-asphalt {
-    border-color: #34495e;
-    background: #34495e;
+    border-color: rgb(52, 73, 94);
+    background: rgb(52, 73, 94);
 }
 
 .progress-bar-container.color-midnight-blue {
-    border-color: #2c3e50;
-    background: #2c3e50;
+    border-color: rgb(44, 62, 80);
+    background: rgb(44, 62, 80);
 }
 
 .progress-bar-container.color-sun-flower {
-    border-color: #f1c40f;
-    background: #f1c40f;
+    border-color: rgb(241, 196, 15);
+    background: rgb(241, 196, 15);
 }
 
 .progress-bar-container.color-orange {
-    border-color: #f39c12;
-    background: #f39c12;
+    border-color: rgb(243, 156, 18);
+    background: rgb(243, 156, 18);
 }
 
 .progress-bar-container.color-carrot {
-    border-color: #e67e22;
-    background: #e67e22;
+    border-color: rgb(230, 126, 34);
+    background: rgb(230, 126, 34);
 }
 
 .progress-bar-container.color-pumpkin {
-    border-color: #d35400;
-    background: #d35400;
+    border-color: rgb(211, 84, 0);
+    background: rgb(211, 84, 0);
 }
 
 .progress-bar-container.color-alizarin {
-    border-color: #e74c3c;
-    background: #e74c3c;
+    border-color: rgb(231, 76, 60);
+    background: rgb(231, 76, 60);
 }
 
 .progress-bar-container.color-pomegranate {
-    border-color: #c0392b;
-    background: #c0392b;
+    border-color: rgb(192, 57, 43);
+    background: rgb(192, 57, 43);
 }
 
 .progress-bar-container.color-clouds {
-    border-color: #ecf0f1;
-    background: #ecf0f1;
+    border-color: rgb(236, 240, 241);
+    background: rgb(236, 240, 241);
 }
 
 .progress-bar-container.color-silver {
-    border-color: #bdc3c7;
-    background: #bdc3c7;
+    border-color: rgb(189, 195, 199);
+    background: rgb(189, 195, 199);
 }
 
 .progress-bar-container.color-concrete {
-    border-color: #95a5a6;
-    background: #95a5a6;
+    border-color: rgb(149, 165, 166);
+    background: rgb(149, 165, 166);
 }
 
 .progress-bar-container.color-asbestos {
-    border-color: #7f8c8d;
-    background: #7f8c8d;
+    border-color: rgb(127, 140, 141);
+    background: rgb(127, 140, 141);
 }
 
 .progress-bar.color-turquoise {
-    background: #1abc9c;
+    background: rgb(26, 188, 156);
 }
 
 .progress-bar.color-green-sea {
-    background: #16a085;
+    background: rgb(22, 160, 133);
 }
 
 .progress-bar.color-emerald {
-    background: #2ecc71;
+    background: rgb(46, 204, 113);
 }
 
 .progress-bar.color-nephritis {
-    background: #27ae60;
+    background: rgb(39, 174, 96);
 }
 
 .progress-bar.color-peter-river {
-    background: #3498db;
+    background: rgb(52, 152, 219);
 }
 
 .progress-bar.color-belize-hole {
-    background: #2980b9;
+    background: rgb(41, 128, 185);
 }
 
 .progress-bar.color-amethyst {
-    background: #9b59b6;
+    background: rgb(155, 89, 182);
 }
 
 .progress-bar.color-wisteria {
-    background: #8e44ad;
+    background: rgb(142, 68, 173);
 }
 
 .progress-bar.color-wet-asphalt {
-    background: #34495e;
+    background: rgb(52, 73, 94);
 }
 
 .progress-bar.color-midnight-blue {
-    background: #2c3e50;
+    background: rgb(44, 62, 80);
 }
 
 .progress-bar.color-sun-flower {
-    background: #f1c40f;
+    background: rgb(241, 196, 15);
 }
 
 .progress-bar.color-orange {
-    background: #f39c12;
+    background: rgb(243, 156, 18);
 }
 
 .progress-bar.color-carrot {
-    background: #e67e22;
+    background: rgb(230, 126, 34);
 }
 
 .progress-bar.color-pumpkin {
-    background: #d35400;
+    background: rgb(211, 84, 0);
 }
 
 .progress-bar.color-alizarin {
-    background: #e74c3c;
+    background: rgb(231, 76, 60);
 }
 
 .progress-bar.color-pomegranate {
-    background: #c0392b;
+    background: rgb(192, 57, 43);
 }
 
 .progress-bar.color-clouds {
-    background: #ecf0f1;
+    background: rgb(236, 240, 241);
 }
 
 .progress-bar.color-silver {
-    background: #bdc3c7;
+    background: rgb(189, 195, 199);
 }
 
 .progress-bar.color-concrete {
-    background: #95a5a6;
+    background: rgb(149, 165, 166);
 }
 
 .progress-bar.color-asbestos {
-    background: #7f8c8d;
+    background: rgb(127, 140, 141);
 }
 
 /* ----------------------------------------------------------------------
@@ -4946,7 +4946,7 @@ Pie charts
 /*transparent*/
 
 .pie-chart.transparent span, .pie-chart.transparent span.percent, .pie-chart.transparent i {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /* ----------------------------------------------------------------------
@@ -5022,7 +5022,7 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
 -------------------------------------------------------------------------*/
 
 .seperator, .separator {
-    color: #cccccc;
+    color: rgb(204, 204, 204);
     width: 100%;
     margin: 30px auto;
     overflow: hidden;
@@ -5035,7 +5035,7 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
 }
 
 .seperator::before, .seperator::after, .separator::before, .separator::after {
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid rgb(238, 238, 238);
     content: '';
     display: inline-block;
     height: 0.65em;
@@ -5045,11 +5045,11 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
 }
 
 .seperator.seperator-dark::before, .seperator.seperator-dark::after, .separator.seperator-dark::before, .separator.seperator-dark::after {
-    border-bottom: 1px solid #333333 !important;
+    border-bottom: 1px solid rgb(51, 51, 51) !important;
 }
 
 .seperator.seperator-grey::before, .seperator.seperator-grey::after, .separator.seperator-grey::before, .separator.seperator-grey::after {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 
 .seperator.seperator-light::before, .seperator.seperator-light::after, .separator.seperator-light::before, .separator.seperator-light::after {
@@ -5072,7 +5072,7 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
 /*dotted style*/
 
 .seperator.dotted:before, .seperator.dotted:after, .separator.dotted:before, .separator.dotted:after {
-    border-bottom: 2px dotted #cccccc;
+    border-bottom: 2px dotted rgb(204, 204, 204);
 }
 
 /*seperator left icon*/
@@ -5113,7 +5113,7 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
 }
 
 .text-seperator {
-    background-color: #111111;
+    background-color: rgb(17, 17, 17);
     display: block;
     height: 4px;
     margin: 20px 0;
@@ -5195,12 +5195,12 @@ Blockquotes
 }
 
 .blockquote-dark {
-    background-color: #333333;
+    background-color: rgb(51, 51, 51);
 }
 
 .blockquote-color, .blockquote-dark {
     padding: 28px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /* ----------------------------------------------------------------------
@@ -5231,11 +5231,11 @@ Forms
 }
 
 .form-control, .input-group-addon {
-    border: 2px solid #ebebeb;
+    border: 2px solid rgb(235, 235, 235);
 }
 
 .form-group label {
-    color: #444444;
+    color: rgb(68, 68, 68);
     cursor: pointer;
     display: inline-block;
     margin-top: 8px;
@@ -5257,13 +5257,13 @@ Forms
 }
 
 .form-gray-fields .form-control {
-    background-color: #f2f2f2;
-    border-color: #e9e9e9;
-    color: #333333;
+    background-color: rgb(242, 242, 242);
+    border-color: rgb(233, 233, 233);
+    color: rgb(51, 51, 51);
 }
 
 .form-gray-fields .form-control:focus {
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
 }
 
 .form-transparent-fields .form-control {
@@ -5285,36 +5285,36 @@ Forms
 }
 
 label.error {
-    color: #b71828;
+    color: rgb(183, 24, 40);
     display: none !important;
     font-weight: 400;
 }
 
 .form-control.error, .sm-form-control.error {
-    border-color: #b71828;
+    border-color: rgb(183, 24, 40);
 }
 
 .form-control.error {
-    color: #b71828;
+    color: rgb(183, 24, 40);
 }
 
 .form-control::-moz-placeholder {
-    color: #bbbbbb;
+    color: rgb(187, 187, 187);
 }
 
 .form-control::-ms-input-placeholder {
-    color: #bbbbbb;
+    color: rgb(187, 187, 187);
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #bbbbbb;
+    color: rgb(187, 187, 187);
 }
 
 /*form select*/
 
 select {
-    border: 1px solid #e3e3e3;
-    color: #777777;
+    border: 1px solid rgb(227, 227, 227);
+    color: rgb(119, 119, 119);
     cursor: pointer;
     display: block;
     line-height: 14px;
@@ -5332,8 +5332,8 @@ select {
 }
 
 .button-search {
-    background-color: #ffffff;
-    border-color: #e9e9e9 #e9e9e9 #e9e9e9;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(233, 233, 233) rgb(233, 233, 233) rgb(233, 233, 233);
     border-style: solid;
     border-width: 1px 1px 1px 0 !important;
     -webkit-box-shadow: none;
@@ -5354,9 +5354,9 @@ select {
 }
 
 .reservation-form {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
-    border: 1px solid #eeeeee;
+    border: 1px solid rgb(238, 238, 238);
     min-height: 160px;
     padding: 30px;
     position: relative;
@@ -5364,14 +5364,14 @@ select {
 }
 
 .reservation-form label {
-    color: #555555;
+    color: rgb(85, 85, 85);
 }
 
 .reservation-form input, .reservation-form select {
     border: 0px;
     border-radius: 4px;
-    background-color: #ffffff;
-    border: 2px solid #dddddd;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(221, 221, 221);
     width: 100%;
 }
 
@@ -5385,8 +5385,8 @@ select {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background-color: #ffffff !important;
-    border-color: #dddddd;
+    background-color: rgb(255, 255, 255) !important;
+    border-color: rgb(221, 221, 221);
     -o-border-image: none;
     border-image: none;
     border-style: solid;
@@ -5394,7 +5394,7 @@ select {
 }
 
 .reservation-form input, .reservation-form select {
-    color: #555555;
+    color: rgb(85, 85, 85);
     display: block;
     font-size: 15px;
     line-height: 1.42857;
@@ -5412,7 +5412,7 @@ select {
 }
 
 #book label {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 #book .date input {
@@ -5420,7 +5420,7 @@ select {
 }
 
 #book input, #book select {
-    color: #555555;
+    color: rgb(85, 85, 85);
     display: block;
     font-size: 15px;
     line-height: 1.42857;
@@ -5429,7 +5429,7 @@ select {
 }
 
 #book .input-group-addon {
-    background-color: #ffffff !important;
+    background-color: rgb(255, 255, 255) !important;
     border: 0 none;
 }
 
@@ -5442,10 +5442,10 @@ Labels & Badgets
 -------------------------------------------------------------------------*/
 
 .label-default {
-    background: -webkit-linear-gradient(top, #f37054 0px, #e66346 100%) repeat scroll 0 0 #e66346;
-    background: -o-linear-gradient(top, #f37054 0px, #e66346 100%) repeat scroll 0 0 #e66346;
-    background: linear-gradient(to bottom, #f37054 0px, #e66346 100%) repeat scroll 0 0 #e66346;
-    color: #ffffff;
+    background: -webkit-linear-gradient(top, rgb(243, 112, 84) 0px, rgb(230, 99, 70) 100%) repeat scroll 0 0 rgb(230, 99, 70);
+    background: -o-linear-gradient(top, rgb(243, 112, 84) 0px, rgb(230, 99, 70) 100%) repeat scroll 0 0 rgb(230, 99, 70);
+    background: linear-gradient(to bottom, rgb(243, 112, 84) 0px, rgb(230, 99, 70) 100%) repeat scroll 0 0 rgb(230, 99, 70);
+    color: rgb(255, 255, 255);
 }
 
 .main-menu .label, .sidebar-menu .label {
@@ -5467,7 +5467,7 @@ Lightbox
 }
 
 .mfp-ajax-holder .mfp-content {
-    background: #f8f8f8;
+    background: rgb(248, 248, 248);
     max-width: 1000px;
 }
 
@@ -5476,7 +5476,7 @@ Lightbox
 }
 
 .mfp-ajax-holder .ajax-quick-view .quick-view-title {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid rgb(221, 221, 221);
     margin-bottom: 30px;
     position: relative;
 }
@@ -5486,7 +5486,7 @@ Lightbox
 }
 
 .mfp-ajax-holder .mfp-close {
-    background: none repeat scroll 0 0 #ffffff !important;
+    background: none repeat scroll 0 0 rgb(255, 255, 255) !important;
     margin-right: -45px;
     margin-top: 0;
 }
@@ -5572,7 +5572,7 @@ ol.list {
 }
 
 .list-lines li {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid rgb(221, 221, 221);
     padding: 10px 0 10px 2px;
 }
 
@@ -5620,7 +5620,7 @@ ol.list {
 }
 
 .list-check li::before {
-    color: #333333;
+    color: rgb(51, 51, 51);
     content: '\f00c';
     display: inline-block;
     font-family: fontawesome;
@@ -5635,18 +5635,18 @@ ol.list {
 }
 
 .list-check.default li::before {
-    border: 2px solid #fe5e3e;
-    color: #fe5e3e;
+    border: 2px solid rgb(254, 94, 62);
+    color: rgb(254, 94, 62);
 }
 
 .list-check.blue li::before {
-    border: 2px solid #00d2ed;
-    color: #00d2ed;
+    border: 2px solid rgb(0, 210, 237);
+    color: rgb(0, 210, 237);
 }
 
 .list-check.green li::before {
-    border: 2px solid #00e095;
-    color: #00e095;
+    border: 2px solid rgb(0, 224, 149);
+    color: rgb(0, 224, 149);
 }
 
 .list-arrow {
@@ -5665,7 +5665,7 @@ ol.list {
 
 .list-arrow li::before {
     border-radius: 50%;
-    color: #333333;
+    color: rgb(51, 51, 51);
     content: '';
     display: inline-block;
     font-family: fontawesome;
@@ -5721,13 +5721,13 @@ Pagination & Pager
 }
 
 .pagination > li > a, .pagination > li > span {
-    color: #b0b0b0;
+    color: rgb(176, 176, 176);
     padding: 8px 14px;
 }
 
 .pagination i {
     font-size: 18px;
-    color: #b9b9b9;
+    color: rgb(185, 185, 185);
 }
 
 /*pagination simple style*/
@@ -5744,12 +5744,12 @@ Pagination & Pager
 .pagination.pagination-simple > li > a:hover i, .pagination.pagination-simple > li > a:hover, .pagination.pagination-simple > li > span:hover, .pagination.pagination-simple > li > a:focus, .pagination.pagination-simple > li > span:focus {
     background-color: transparent !important;
     border-color: transparent !important;
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .pagination.pagination-simple > .active > a, .pagination.pagination-simple > .active > span, .pagination.pagination-simple > .active > a:hover, .pagination.pagination-simple > .active > span:hover, .pagination.pagination-simple > .active > a:focus, .pagination.pagination-simple > .active > span:focus {
     background: rgba(0, 0, 0, 0);
-    color: #646464;
+    color: rgb(100, 100, 100);
     font-size: 130%;
     font-weight: 600;
     padding-top: 3px;
@@ -5801,19 +5801,19 @@ Pagination & Pager
 /*PAGER*/
 
 .pager > li > a, .pager > li > span {
-    color: #b0b0b0;
+    color: rgb(176, 176, 176);
     padding: 8px 14px;
 }
 
 .pager i {
     font-size: 18px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .pager.pager-fancy > li a {
-    background-color: #00c0e9;
-    border-color: #00c0e9;
-    color: #ffffff;
+    background-color: rgb(0, 192, 233);
+    border-color: rgb(0, 192, 233);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -5840,9 +5840,9 @@ Pagination & Pager
 }
 
 .pager.pager-rounded > li a {
-    background-color: #00c0e9;
-    border-color: #00c0e9;
-    color: #ffffff;
+    background-color: rgb(0, 192, 233);
+    border-color: rgb(0, 192, 233);
+    color: rgb(255, 255, 255);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -5863,7 +5863,7 @@ Pagination & Pager
 /*navigations*/
 
 .pager-modern {
-    background-color: #fbfbfb;
+    background-color: rgb(251, 251, 251);
     text-transform: uppercase;
     width: 100%;
     margin: 0;
@@ -5875,11 +5875,11 @@ Pagination & Pager
 }
 
 .pager-modern a, .pager-modern a:visited {
-    color: #555555;
+    color: rgb(85, 85, 85);
 }
 
 .pager-modern a:hover {
-    color: #111111;
+    color: rgb(17, 17, 17);
 }
 
 .pager-modern a span {
@@ -5894,11 +5894,11 @@ Pagination & Pager
 }
 
 .pager-modern span:hover {
-    background-color: #f6f6f6;
+    background-color: rgb(246, 246, 246);
 }
 
 .pager.pager-modern i {
-    color: #222222;
+    color: rgb(34, 34, 34);
 }
 
 .pager-prev {
@@ -5961,7 +5961,7 @@ Breadcrumbs
 }
 
 .breadcrumb a {
-    color: #888888;
+    color: rgb(136, 136, 136);
 }
 
 .breadcrumb li + li:before {
@@ -5996,15 +5996,15 @@ Breadcrumbs
 }
 
 .breadcrumb.fancy a {
-    background: #eeeeee;
+    background: rgb(238, 238, 238);
     padding: 0.7em 1em;
     text-decoration: none;
     position: relative;
 }
 
 .breadcrumb.fancy a:hover, .breadcrumb.fancy .active a {
-    background: #dddddd;
-    color: #333333;
+    background: rgb(221, 221, 221);
+    color: rgb(51, 51, 51);
 }
 
 .breadcrumb.fancy a::before {
@@ -6014,7 +6014,7 @@ Breadcrumbs
     margin-top: -1.5em;
     border-width: 1.5em 0 1.5em 1.1em;
     border-style: solid;
-    border-color: #eeeeee #eeeeee #eeeeee transparent;
+    border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(238, 238, 238) transparent;
     left: -1em;
 }
 
@@ -6027,7 +6027,7 @@ Breadcrumbs
 }
 
 .breadcrumb.fancy a:hover::before, .breadcrumb.fancy .active a:before {
-    border-color: #dddddd #dddddd #dddddd transparent;
+    border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgb(221, 221, 221) transparent;
 }
 
 .breadcrumb.fancy a::after {
@@ -6037,12 +6037,12 @@ Breadcrumbs
     margin-top: -1.5em;
     border-top: 1.5em solid transparent;
     border-bottom: 1.5em solid transparent;
-    border-left: 1em solid #eeeeee;
+    border-left: 1em solid rgb(238, 238, 238);
     right: -1em;
 }
 
 .breadcrumb.fancy a:hover::after, .breadcrumb.fancy .active a:after {
-    border-left-color: #dddddd;
+    border-left-color: rgb(221, 221, 221);
 }
 
 /*radius breadcrumb*/
@@ -6058,23 +6058,23 @@ Breadcrumbs
 }
 
 .breadcrumb.radius a:hover, .breadcrumb.radius .active a {
-    background: #dddddd;
-    color: #333333;
+    background: rgb(221, 221, 221);
+    color: rgb(51, 51, 51);
 }
 
 .breadcrumb.radius a, .breadcrumb.radius .active a {
-    background: #eeeeee;
+    background: rgb(238, 238, 238);
     padding: 4px 8px;
     text-decoration: none;
     position: relative;
 }
 
 .breadcrumb.radius a:hover {
-    background: #dddddd;
+    background: rgb(221, 221, 221);
 }
 
 .breadcrumb.radius a::before, .breadcrumb.radius a::after {
-    background: none repeat scroll 0 0 #eeeeee;
+    background: none repeat scroll 0 0 rgb(238, 238, 238);
     bottom: 0;
     content: '';
     height: 25px;
@@ -6093,7 +6093,7 @@ Breadcrumbs
 }
 
 .breadcrumb.radius a:hover::before {
-    background: #dddddd;
+    background: rgb(221, 221, 221);
 }
 
 .breadcrumb.radius a::after {
@@ -6102,11 +6102,11 @@ Breadcrumbs
 }
 
 .breadcrumb.radius a:hover::after, .breadcrumb.radius .active:hover {
-    background: #dddddd;
+    background: rgb(221, 221, 221);
 }
 
 .breadcrumb.radius a:hover::after, .breadcrumb.radius .active a:after {
-    border-left-color: #dddddd;
+    border-left-color: rgb(221, 221, 221);
 }
 
 body.device-sm .breadcrumb, body.device-xs .breadcrumb, body.device-xxs .breadcrumb {
@@ -6184,8 +6184,8 @@ Nav & Navbar
 /*jumbotron styles */
 
 .jumbotron.jumbotron-border {
-    background: #ffffff;
-    border: 1px solid #eeeeee;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(238, 238, 238);
 }
 
 .jumbotron.jumbotron-transparent {
@@ -6290,10 +6290,10 @@ Tooltips & Popover
 .popover {
     border-radius: 0;
     border: none;
-    background-color: #fcfcfc;
+    background-color: rgb(252, 252, 252);
     -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    color: #666677;
+    color: rgb(102, 102, 119);
     padding: 3px 3px 8px;
 }
 
@@ -6315,7 +6315,7 @@ Tooltips & Popover
 }
 
 .popover-title::after {
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid rgb(238, 238, 238);
     content: '';
     display: block;
     height: 1px;
@@ -6347,7 +6347,7 @@ Tooltips & Popover
 }
 
 .modal-title::after {
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid rgb(238, 238, 238);
     content: '';
     display: block;
     height: 1px;
@@ -6422,7 +6422,7 @@ Tooltips & Popover
 
 .grid li:hover {
     cursor: pointer;
-    background-color: #f8f8f8;
+    background-color: rgb(248, 248, 248);
 }
 
 .grid li a, .grid li img {
@@ -6445,7 +6445,7 @@ Tooltips & Popover
     height: 100%;
     top: 0;
     left: -1px;
-    border-left: 1px solid #eeeeee;
+    border-left: 1px solid rgb(238, 238, 238);
 }
 
 .grid li:after {
@@ -6454,25 +6454,25 @@ Tooltips & Popover
     top: auto;
     left: 0;
     bottom: -1px;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid rgb(238, 238, 238);
 }
 
 /*client options*/
 
 .grid.clients-grey {
-    border: 1px solid #dddddd;
+    border: 1px solid rgb(221, 221, 221);
 }
 
 .grid.clients-grey li {
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
 }
 
 .grid.clients-grey li:before {
-    border-left: 1px solid #cccccc;
+    border-left: 1px solid rgb(204, 204, 204);
 }
 
 .grid.clients-grey li:after {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 
 .grid.clients-border {
@@ -6508,7 +6508,7 @@ Dropcat & Highlight
 -------------------------------------------------------------------------*/
 
 .dropcap {
-    background: none repeat scroll 0 0 #eeeeee;
+    background: none repeat scroll 0 0 rgb(238, 238, 238);
     border-radius: 4px;
     display: inline-block;
     float: left;
@@ -6541,7 +6541,7 @@ Dropcat & Highlight
 
 .highlight {
     border-radius: 3px;
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
 }
 
 span.highlight {
@@ -6549,7 +6549,7 @@ span.highlight {
 }
 
 .highlight a {
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .highlight.highlight-large {
@@ -6607,14 +6607,14 @@ PRICING TABLE
 
 .pricing-table .plan .plan-header {
     position: relative;
-    background: #34495e;
+    background: rgb(52, 73, 94);
     padding: 22px 22px;
     text-align: center;
 }
 
 .pricing-table .plan .plan-header {
-    background-color: #fbfbfb;
-    border-color: #e3e3e3;
+    background-color: rgb(251, 251, 251);
+    border-color: rgb(227, 227, 227);
     border-style: solid;
     border-width: 1px;
     padding: 22px;
@@ -6638,16 +6638,16 @@ PRICING TABLE
     font-size: 24px;
     position: relative;
     top: -30px;
-    color: #bdc3c7;
+    color: rgb(189, 195, 199);
 }
 
 .pricing-table .plan .plan-header .plan-price span {
     font-size: 16px;
-    color: #bdc3c7;
+    color: rgb(189, 195, 199);
 }
 
 .pricing-table .plan-list {
-    border-color: #e3e3e3;
+    border-color: rgb(227, 227, 227);
     border-style: solid;
     border-width: 0 1px 1px;
     padding: 20px 0 40px;
@@ -6661,7 +6661,7 @@ PRICING TABLE
 
 .pricing-table .plan-list ul li {
     list-style: none;
-    border-bottom: 1px solid #eaeceb;
+    border-bottom: 1px solid rgb(234, 236, 235);
     font-size: 16px;
     line-height: 42px;
 }
@@ -6675,7 +6675,7 @@ PRICING TABLE
 }
 
 .pricing-table .plan-list ul li span {
-    color: #34495e;
+    color: rgb(52, 73, 94);
 }
 
 .pricing-table .plan.featured {
@@ -6690,8 +6690,8 @@ PRICING TABLE
 }
 
 .pricing-table .plan .plan-featured-item {
-    background-color: #f8f8f8;
-    border: 1px solid #e3e3e3 !important;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgb(227, 227, 227) !important;
     font-weight: 600;
     margin-top: 21px;
     padding: 0 20px;
@@ -6704,17 +6704,17 @@ PRICING TABLE
 /*colored*/
 
 .pricing-table.colored .plan-header {
-    background-color: #00c0e9;
+    background-color: rgb(0, 192, 233);
     border-color: rgba(0, 0, 0, 0.05);
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .pricing-table.colored .text-muted {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .pricing-table.colored .plan-header h4, .pricing-table.colored .plan-header .plan-price sup, .pricing-table.colored .plan-header .plan-price span {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*transparent*/
@@ -6735,7 +6735,7 @@ PRICING TABLE
 /*full-width section grey*/
 
 .section-grey .pricing-table .plan-list {
-    background-color: #f8f8f8;
+    background-color: rgb(248, 248, 248);
 }
 
 section .pricing-table.full-width {
@@ -6762,7 +6762,7 @@ TESTIMONIALS
 }
 
 .testimonial .testimonial-description {
-    background-color: #f8f8f8;
+    background-color: rgb(248, 248, 248);
     border-radius: 4px;
     min-height: 160px;
     padding: 0px;
@@ -6781,7 +6781,7 @@ TESTIMONIALS
 }
 
 .testimonial .testimonial-image img {
-    border: 4px solid #e3e3e3;
+    border: 4px solid rgb(227, 227, 227);
     float: left;
     margin-right: 18px !important;
     margin-top: -18px !important;
@@ -6833,7 +6833,7 @@ TESTIMONIALS
 }
 
 .testimonial-video-button i {
-    color: #444444;
+    color: rgb(68, 68, 68);
     font-size: 50px;
 }
 
@@ -6846,15 +6846,15 @@ TESTIMONIALS
 /*card*/
 
 .testimonial.testimonial-card {
-    border: 1px solid #e3e3e3;
+    border: 1px solid rgb(227, 227, 227);
     border-radius: 2px;
     position: relative;
     margin-bottom: 20px;
 }
 
 .testimonial.testimonial-card .testimonial-image {
-    background-color: #fbfbfb;
-    border-bottom: 1px solid #dddddd;
+    background-color: rgb(251, 251, 251);
+    border-bottom: 1px solid rgb(221, 221, 221);
     margin-left: 0;
     margin-top: 0;
     padding: 20px 20px 10px;
@@ -6862,7 +6862,7 @@ TESTIMONIALS
 }
 
 .testimonial.testimonial-card .testimonial-image img {
-    border: 4px solid #e3e3e3;
+    border: 4px solid rgb(227, 227, 227);
     float: none;
     margin-right: 0 !important;
     margin-top: 0 !important;
@@ -6875,7 +6875,7 @@ TESTIMONIALS
 }
 
 .testimonial.testimonial-card .testimonial-description {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 .carousel .testimonial.testimonial-card .testimonial-video-button > a {
@@ -6889,7 +6889,7 @@ TESTIMONIALS
 }
 
 .testimonial.testimonial-transparent .testimonial-video-button i {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 /*simple*/
@@ -6928,7 +6928,7 @@ TESTIMONIALS
 }
 
 .text-light .testimonial .testimonial-video-button a i, .text-light .testimonial .testimonial-description p:before, .text-light .testimonial .testimonial-description p:after {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 #testimonials .testimonial-item {
@@ -6951,7 +6951,7 @@ TESTIMONIALS
 }
 
 #testimonials .testimonial-item > span {
-    color: #cccccc;
+    color: rgb(204, 204, 204);
 }
 
 /*Left aligned*/
@@ -6985,7 +6985,7 @@ TIMELINE
 }
 
 .timeline:before {
-    background-color: #cccccc;
+    background-color: rgb(204, 204, 204);
     bottom: 0;
     content: ' ';
     left: 50%;
@@ -6996,7 +6996,7 @@ TIMELINE
 }
 
 .timeline-circles:before, .timeline-circles:after {
-    background-color: #cccccc;
+    background-color: rgb(204, 204, 204);
     border-radius: 10px;
     content: ' ';
     height: 20px;
@@ -7039,9 +7039,9 @@ body.device-sm .timeline li:not(.timeline-date) {
 }
 
 .timeline-date {
-    background-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
     border-radius: 6px;
-    color: #888888;
+    color: rgb(136, 136, 136);
     display: block;
     font-size: 16px;
     line-height: 32px;
@@ -7057,7 +7057,7 @@ body.device-sm .timeline li:not(.timeline-date) {
 }
 
 .timeline.timeline-transparent .timeline-block .post-item {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
 }
 
@@ -7069,8 +7069,8 @@ body.device-sm .timeline li:not(.timeline-date) {
     right: -4%;
     display: inline-block;
     border-top: 15px solid transparent;
-    border-right: 15px solid #cccccc;
-    border-left: 0 solid #cccccc;
+    border-right: 15px solid rgb(204, 204, 204);
+    border-left: 0 solid rgb(204, 204, 204);
     border-bottom: 15px solid transparent;
     content: ' ';
 }
@@ -7085,7 +7085,7 @@ body.device-sm .timeline li:not(.timeline-date) {
 }
 
 .timeline-block-image, .timeline-block-embed {
-    border-bottom: 5px solid #dddddd;
+    border-bottom: 5px solid rgb(221, 221, 221);
     margin-bottom: 20px;
     overflow: hidden;
     position: relative;
@@ -7195,7 +7195,7 @@ body.device-xs .timeline.timeline-simple .timeline-date, body.device-xxs .timeli
 }
 
 .portfolio-item .portfolio-description {
-    color: #999999;
+    color: rgb(153, 153, 153);
     float: left;
     font-size: 11px;
     text-align: left;
@@ -7224,7 +7224,7 @@ body.device-xs .timeline.timeline-simple .timeline-date, body.device-xxs .timeli
 }
 
 .portfolio-item .portfolio-date a, .portfolio-item .portfolio-date i {
-    color: #999999;
+    color: rgb(153, 153, 153);
 }
 
 .portfolio-item .portfolio-details {
@@ -7235,7 +7235,7 @@ body.device-xs .timeline.timeline-simple .timeline-date, body.device-xxs .timeli
 /*portfolio options*/
 
 .background-grey .portfolio-item {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     -webkit-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.11);
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.11);
 }
@@ -7256,7 +7256,7 @@ body.device-xs .timeline.timeline-simple .timeline-date, body.device-xxs .timeli
 
 .portfolio [data-isotope-col='1'] .portfolio-item {
     margin-bottom: 50px !important;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid rgb(238, 238, 238);
     padding-bottom: 46px;
 }
 
@@ -7315,11 +7315,11 @@ body.device-lg .portfolio [data-isotope-col='6'] .portfolio-item .portfolio-desc
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .portfolio-filter li.ptf-active, .portfolio-filter li:hover {
-    color: #ffffff !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 /*Responsive filter*/
@@ -7342,7 +7342,7 @@ body:not(.device-lg):not(.device-md) .filter-active-title {
 }
 
 .portfolio-filter.portfolio-filter-transparent, .portfolio-filter.portfolio-filter-transparent li {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .portfolio-filter.portfolio-filter-transparent li.ptf-active, .portfolio-filter.portfolio-filter-transparent .portfolio-filter li:hover, .portfolio-filter.portfolio-filter-transparent .filter-active-title, .portfolio-filter.portfolio-filter-transparent li.ptf-active, .portfolio-filter.portfolio-filter-transparent li:hover {
@@ -7358,13 +7358,13 @@ body:not(.device-lg):not(.device-md) .filter-active-title {
 
 .portfolio-filter.portfolio-filter-classic li, .portfolio-filter.portfolio-filter-classic li.ptf-active, .portfolio-filter.portfolio-filter-classic li:hover {
     background: none;
-    color: #333333 !important;
+    color: rgb(51, 51, 51) !important;
     padding: 6px 0;
     margin-right: 20px;
 }
 
 .portfolio-filter.portfolio-filter-classic li:after {
-    background: #333333;
+    background: rgb(51, 51, 51);
     content: '';
     height: 2px;
     left: 0;
@@ -7404,7 +7404,7 @@ Portfolio Carousel
 -------------------------------------------------------------------------*/
 
 .portfolio-client-info ul {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid rgb(231, 231, 231);
     padding-bottom: 20px;
 }
 
@@ -7420,7 +7420,7 @@ Portfolio Carousel
 }
 
 .portfolio-client-info ul li a {
-    color: #333333;
+    color: rgb(51, 51, 51);
 }
 
 .portfolio-client-description {
@@ -7531,7 +7531,7 @@ Portfolio Carousel
     font-size: 28px;
     font-weight: 800;
     text-transform: uppercase;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .text-center a .title, .text-right a .title {
@@ -7709,14 +7709,14 @@ Responsive utilities
 -------------------------------------------------------------------------*/
 
 .responsive-utilities th small {
-    color: #999999;
+    color: rgb(153, 153, 153);
     display: block;
     font-weight: 400;
 }
 
 .responsive-utilities td.is-visible {
-    background-color: #dff0d8 !important;
-    color: #468847;
+    background-color: rgb(223, 240, 216) !important;
+    color: rgb(70, 136, 71);
 }
 
 /* ----------------------------------------------------------------------
@@ -7766,7 +7766,7 @@ Responsive utilities
 }
 
 .product .product-wishlist a {
-    border: 2px solid #333333;
+    border: 2px solid rgb(51, 51, 51);
     border-radius: 50%;
     height: 30px;
     left: 12px;
@@ -7813,7 +7813,7 @@ Responsive utilities
 }
 
 .product .product-price ins {
-    color: #444444;
+    color: rgb(68, 68, 68);
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 4px;
@@ -7831,18 +7831,18 @@ Responsive utilities
 .product .product-rate {
     height: 23px;
     float: left;
-    color: #ffc300;
+    color: rgb(255, 195, 0);
 }
 
 .product .product-reviews, .product .product-reviews a {
-    color: #73848e;
+    color: rgb(115, 132, 142);
     float: right;
     font-size: 13px;
 }
 
 .product .product-sale, .product .product-new, .product .product-hot, .product .product-out-stock {
     border-radius: 50%;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 11px;
     font-weight: 600;
     height: 42px;
@@ -7857,19 +7857,19 @@ Responsive utilities
 }
 
 .product .product-sale, .product .product-sale-off {
-    background: #ffc300;
+    background: rgb(255, 195, 0);
 }
 
 .product .product-new {
-    background: #00c0e9;
+    background: rgb(0, 192, 233);
 }
 
 .product .product-hot {
-    background: #d6284b;
+    background: rgb(214, 40, 75);
 }
 
 .product .product-out-stock {
-    background: #a5a5a5 none repeat scroll 0 0;
+    background: rgb(165, 165, 165) none repeat scroll 0 0;
     border-radius: 4px;
     padding: 0 18px;
     width: auto;
@@ -7878,7 +7878,7 @@ Responsive utilities
 .product .product-sale-off {
     border-radius: 12px 0 0;
     bottom: 0px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 16px;
     font-weight: 600;
     height: 42px;
@@ -7913,7 +7913,7 @@ Responsive utilities
 }
 
 .product .product-overlay a {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     display: block;
     font-size: 13px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -7921,8 +7921,8 @@ Responsive utilities
 }
 
 .product .product-overlay a:hover {
-    background-color: #111111;
-    color: #ffffff;
+    background-color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -8016,13 +8016,13 @@ body:not(.device-xs):not(.device-xxs):not(.device-sm) .col-md-2 .product .produc
 }
 
 .cart-product-quantity .minus, .cart-product-quantity .plus {
-    border: 1px solid #eeeeee;
+    border: 1px solid rgb(238, 238, 238);
     margin: 0 -4px;
     padding: 5px 12px;
 }
 
 .cart-product-quantity .qty {
-    border: 1px solid #eeeeee;
+    border: 1px solid rgb(238, 238, 238);
     max-width: 40px;
     padding: 5px;
     text-align: center;
@@ -8074,17 +8074,17 @@ body:not(.device-xs):not(.device-xxs):not(.device-sm) .col-md-2 .product .produc
 }
 
 .product-size li label span {
-    border: 1px solid #eeeeee;
-    color: #909090;
+    border: 1px solid rgb(238, 238, 238);
+    color: rgb(144, 144, 144);
 }
 
 .product-size li label span:hover {
-    border-color: #909090;
+    border-color: rgb(144, 144, 144);
 }
 
 .product-size li label input:checked + span {
-    background-color: #eeeeee;
-    border-color: #eeeeee;
+    background-color: rgb(238, 238, 238);
+    border-color: rgb(238, 238, 238);
 }
 
 .product .comment .product-rate {
@@ -8108,7 +8108,7 @@ body:not(.device-xs):not(.device-xxs):not(.device-sm) .col-md-2 .product .produc
 
 .widget-shop .product {
     position: relative;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid rgb(238, 238, 238);
     float: left;
     margin-bottom: 12px;
     min-height: 96px;
@@ -8175,7 +8175,7 @@ body:not(.device-xs):not(.device-xxs):not(.device-sm) .col-md-2 .product .produc
 }
 
 #footer .widget-categories a {
-    color: #888888;
+    color: rgb(136, 136, 136);
 }
 
 /*
@@ -8220,7 +8220,7 @@ body:not(.device-xs):not(.device-xxs):not(.device-sm) .col-md-2 .product .produc
     min-height: 360px;
     background-repeat: no-repeat;
     padding: 50px;
-    border: 8px solid #eeeeee;
+    border: 8px solid rgb(238, 238, 238);
 }
 
 .shop-promo-box > h2 {
@@ -8283,7 +8283,7 @@ body.device-xxs .box-fancy [class*='col-'] {
 
 #youtube-background-controls {
     background: none;
-    border: 2px solid #ffffff;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 50%;
     height: 60px;
     position: relative;
@@ -8359,7 +8359,7 @@ body.device-xxs .box-fancy [class*='col-'] {
 }
 
 .inspiro-slider .slide-captions h1, .inspiro-slider .slide-captions h2, .inspiro-slider .slide-captions h3, .inspiro-slider .slide-captions h4, .inspiro-slider .slide-captions h5, .inspiro-slider .slide-captions h6 {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-family: 'Open Sans';
     font-weight: 600;
     letter-spacing: -0.5px;
@@ -8381,7 +8381,7 @@ body.device-xxs .box-fancy [class*='col-'] {
 }
 
 .inspiro-slider .slide-captions .strong {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     display: block;
     font-family: 'Open Sans';
     font-size: 12px !important;
@@ -8394,7 +8394,7 @@ body.device-xxs .box-fancy [class*='col-'] {
 }
 
 .inspiro-slider .slide-captions .strong:after {
-    border-top-color: #ffffff;
+    border-top-color: rgb(255, 255, 255);
     border-top-style: solid;
     border-top-width: 3px;
     content: '';
@@ -8405,7 +8405,7 @@ body.device-xxs .box-fancy [class*='col-'] {
 }
 
 .inspiro-slider .slide-captions .text-dark.strong:after, .inspiro-slider .slide-captions.text-dark .strong:after {
-    border-top-color: #111111;
+    border-top-color: rgb(17, 17, 17);
 }
 
 .inspiro-slider .slide-captions.text-center .strong:after {
@@ -8437,16 +8437,16 @@ body.device-xxs .box-fancy [class*='col-'] {
     background-color: transparent;
     border: 1px solid rgba(180, 180, 180, 0.2);
     border-radius: 3px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     height: 78px;
     margin: 10px;
     width: 76px;
 }
 
 .inspiro-slider.owl-carousel .owl-controls .owl-nav .owl-next:hover, .inspiro-slider.owl-carousel .owl-controls .owl-nav .owl-prev:hover {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     border: 1px solid rgba(180, 180, 180, 0.2);
-    color: #111111;
+    color: rgb(17, 17, 17);
     opacity: 1;
 }
 
@@ -8472,7 +8472,7 @@ body.device-xxs .box-fancy [class*='col-'] {
 }
 
 .inspiro-slider .owl-dots .owl-dot span {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     border-radius: inherit;
     height: 4px;
     width: 30px;
@@ -8488,5 +8488,5 @@ body.device-xxs .box-fancy [class*='col-'] {
 }
 
 .inspiro-slider .owl-dots .owl-dot span:after {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }

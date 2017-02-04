@@ -9,7 +9,6 @@ const debug = require('debug');
 let error = debug('app:error');
 let passport = require('passport');
 const mongoose = require('mongoose');
-let Promise = require("bluebird");
 mongoose.Promise = require('bluebird');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -18,18 +17,27 @@ const routes = require('./config/routes');
 const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 const app = express();
+
 let logger = require("./config/logger");
+
 var i18n = require('./config/i18n');
 
-app.set('views', path.join(__dirname, 'views/dev'));
-app.set('view engine', 'ejs');
+global.config = {
+    port : 2096,
+    env : 'dev'
+};
 
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+
+
+app.set('views', path.join(__dirname, 'views/'+global.config.env));
+app.set('view engine', 'ejs');
+app.use(favicon(path.join(__dirname, global.config.env, 'images/favicon.png')));
 app.use(logging('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'dev')));
+app.use(express.static(path.join(__dirname, global.config.env)));
 app.use(i18n);
 app.use(session({
     secret: 'shhsecret',
@@ -47,7 +55,6 @@ app.use(session({
 
 
 
-
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -57,6 +64,7 @@ app.use(function (req, res, next) {
     next();
 });
 app.use('/', routes);
+
 
 
 
@@ -76,9 +84,6 @@ if (app.get('env') === 'development') {
         });
     });
 }
-
-
-
 
 
 app.use(function (err, req, res, next) {
