@@ -3,15 +3,12 @@
  */
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
-var watch = require('gulp-watch');
-var batch = require('gulp-batch');
 var $ = gulpLoadPlugins();
 const del = require('del');
 var csscomb = require('gulp-csscomb');
 var gutil = require('gulp-util');
 var useref = require('gulp-useref');
 var changed = require('gulp-changed');
-var hex2rgb = require('hex2rgb');
 var gs      = require('gulp-selectors');
 var closureCompiler = require('google-closure-compiler').gulp();
 
@@ -76,17 +73,18 @@ gulp.task('statics', () =>
     })
 );
 
-function isHex(h) {
-    var a = parseInt(h,16);
-    return (a.toString(16) === h)
-}
-
-gulp.task('hexConvert', () => {
-    gulp.src('./public/css/combined-custom.css')
-        .pipe(find(new RegExp('^#(?:[0-9a-fA-F]{3}){1,2}$', 'g'))
-        .pipe($.replace(), ''))
-
-});
+gulp.task('delete_statics', () =>
+    new Promise(function (resolve, reject) {
+        del(['public/**', 'public/languages/**', 'views/public/**'])
+            .then(function(){
+                console.log('Public folders removed');
+                resolve();
+            })
+            .catch(function(){
+                reject();
+            });
+    })
+);
 
 gulp.task('muncher', () => {
     return gulp.src(['./public/css/combined-custom.css', './views/public/**/*.ejs', './public/js/**/*.js'])
