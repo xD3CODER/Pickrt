@@ -20,12 +20,12 @@
     {
         "gender" : {
           "base" : "You're ... ?",
-          "isGirl" : "You're a girl ?",
+          "isGirl" : "You're a woman ?",
           "isMan" : "You're a man ?",
-          "Girl" : "I'm a girl",
+          "Girl" : "I'm a woman",
           "Man" : "I'm a man",
           "tileMan" : "a Man",
-          "tileGirl" : "a Girl"
+          "tileGirl" : "a Woman"
         },
       "pagination" :  {
         "next" : "Next",
@@ -42,7 +42,7 @@
         "birthday_placeholder" : "Tap your birth date",
         "password_label" : "Choose a password",
         "password_placeholder" : "Tap a password",
-        "passwordConfirm_label" : "Confirm password",
+        "passwordConfirm_label" : "Password confirmation",
         "passwordConfirm_placeholder" : "Retap the password",
         "signup_button" : "Sign Up !"
       }

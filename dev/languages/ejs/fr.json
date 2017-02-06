@@ -4,9 +4,9 @@
 			"bloc_header": "Se connecter à Pickrt",
 			"form": {
 				"adress_label": "Adresse mail",
-				"adress_placeholder": "Entrez votre adresse mail",
+				"adress_placeholder": "Entre ton adresse mail",
 				"password_label": "Mot de passe",
-				"password_placeholder": "Entrez votre mot de passe",
+				"password_placeholder": "Entre ton mot de passe",
 				"password_lost": "Mot de passe perdu ?",
 				"remember_me": "Se souvenir de moi",
 				"signin_button": "Se connecter",
@@ -16,5 +16,35 @@
 			"create_account": "Creer un compte maintenent"
 		}
 	},
-	"register": "register"
+	"register" :
+    {
+        "gender" : {
+          "base" : "Tu es ... ?",
+          "isGirl" : "Tu es une femme ?",
+          "isMan" : "tu es un homme ?",
+          "Girl" : "Je suis une femme",
+          "Man" : "Je suis un homme",
+          "tileMan" : "un Homme",
+          "tileGirl" : "une Femme"
+        },
+      "pagination" :  {
+        "next" : "Suivant",
+        "prev" : "Retour"
+      },
+      "form" : {
+        "firstname_label" : "Prénom",
+        "firstname_placeholder" : "Entre ton prénom",
+        "lastname_label" : "Nom",
+        "lastname_placeholder" : "Entre ton nom",
+        "adress_label" : "Adresse mail",
+        "adress_placeholder" : "Entre ton adresse mail",
+        "birthday_label" : "Date de naissance",
+        "birthday_placeholder" : "Entre ta date de naissance",
+        "password_label" : "Mot de Passe",
+        "password_placeholder" : "Entre ton mot de passe",
+        "passwordConfirm_label" : "Confrimation du mot de passe",
+        "passwordConfirm_placeholder" : "Confirme ton mot de passe",
+        "signup_button" : "S'inscrire !"
+      }
+    }
 }
