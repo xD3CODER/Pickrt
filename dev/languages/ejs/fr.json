@@ -42,7 +42,7 @@
         "birthday_placeholder" : "Entre ta date de naissance",
         "password_label" : "Mot de Passe",
         "password_placeholder" : "Entre ton mot de passe",
-        "passwordConfirm_label" : "Confrimation du mot de passe",
+        "passwordConfirm_label" : "Confirmation du mot de passe",
         "passwordConfirm_placeholder" : "Confirme ton mot de passe",
         "signup_button" : "S'inscrire !"
       }
