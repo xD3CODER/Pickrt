@@ -3,7 +3,8 @@
 /**
  * Module dependencies.
  */
-const app = require('../app');
+const app_client = require('../app');
+const app_server = require('../api/api');
 const debug = require('debug')('Pickrt:server');
 let http = require('http');
 
@@ -21,9 +22,11 @@ const SSLKey = fs.readFileSync('/var/www/pickrt/conf/pickrt.com.key');
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || global.config.port);
+const port_client = normalizePort(process.env.PORT || global.config.port);
+const port_server = normalizePort(process.env.PORT || 2087);
 
-app.set('port', port);
+app_client.set('port', port_client);
+app_server.set('port', port_server);
 
 /**
  * Create HTTP server.
@@ -34,20 +37,33 @@ app.set('port', port);
 /**
  * Listen on provided port, on all network interfaces.
  */
-const server = https.createServer({
+const server_client = https.createServer({
     key: SSLKey,
     cert: SSLCert
-}, app);
+}, app_client);
 
-server.listen(port, function () {
-  console.log('App listening on port ' + port);
+server_client.listen(port_client, function () {
+  console.log('App listening on port ' + port_client);
 });
 
+const server_api = https.createServer({
+    key: SSLKey,
+    cert: SSLCert
+}, app_server);
+
+server_api.listen(port_server, function () {
+    console.log('APi listening on port ' + port_server);
+});
+
+server_api.on('error', onError);
+server_api.on('listening', onListening);
+
+server_client.on('error', onError);
+server_client.on('listening', onListening);
 
 
 
-server.on('error', onError);
-server.on('listening', onListening);
+
 
 /**
  * Normalize a port into a number, string, or false.
@@ -78,9 +94,9 @@ function onError(error) {
     throw error;
   }
 
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  const bind = typeof port_client === 'string'
+    ? 'Pipe ' + port_client
+    : 'Port ' + port_client;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -98,12 +114,13 @@ function onError(error) {
 }
 
 
+
 /**
  * Event listener for HTTP server "listening" event.
  */
 
 function onListening() {
-  let addr = server.address();
+  let addr = server_client.address();
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
