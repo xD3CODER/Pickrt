@@ -15,16 +15,12 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const routes = require('./config/routes');
 const configDB = require('./config/database.js');
+mongoose.connect(configDB.url);
 const app = express();
 
 let logger = require("./config/logger");
 
 var i18n = require('./config/i18n');
-
-global.config = {
-    port : 2096,
-    env : 'dev'
-};
 
 
 

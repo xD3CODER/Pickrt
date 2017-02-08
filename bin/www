@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 const app_client = require('../app');
-const app_server = require('../api/api');
+const app_server = require('../api');
 const debug = require('debug')('Pickrt:server');
 let http = require('http');
 
