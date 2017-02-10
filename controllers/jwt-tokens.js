@@ -5,6 +5,8 @@ const ExtractJwt = passportJWT.ExtractJwt;
 const passport = require('passport');
 const jwtOptions = [];
 jwtOptions.cookieName = 'p_usr';
+const User = require('./../models/user');
+let Promise = require('bluebird');
 
 const cookieExtractor = function (req) {
     let token = null;
@@ -22,7 +24,7 @@ const headerExtractor = function (req) {
             token = parted[1];
         }
     }
-        return token;
+    return token;
 };
 
 
@@ -30,36 +32,49 @@ jwtOptions.jwtFromRequest = ExtractJwt.fromExtractors([cookieExtractor]);
 jwtOptions.secretOrKey = 'secretpass';
 
 
-
-const createJwt = function(req, cbk){
-    const payload = {};
-    payload._id = req.user._id;
-    logger.debug(payload);
-    cbk(jwt.sign(payload , jwtOptions.secretOrKey, { expiresIn: 60*60 , algorithm: 'HS512'}));
+const createJwt = function (req) {
+    return new Promise(function (done, reject) {
+        const payload = {};
+        payload._id = req.user._id;
+        logger.debug('CreateJwt => ' + payload);
+        done(jwt.sign(payload, jwtOptions.secretOrKey, {expiresIn: 60 * 60 * 3600, algorithm: 'HS512'}), function(err, token) {
+            if (err){return reject(new Error(err))}
+            return done(token)
+        });
+    });
 };
 
 
-function isConnected (req, res, next){
-    passport.authenticate('jwt', {session: false}, function (err, user, info) {
-        logger.debug('authentication');
-        if (err) {
-            logger.error(err);
-            return next(err);
-        }
-        if (info)
-        {
-            logger.error(info.message);
-        }
-        if (!user) {
-            return res.redirect('/login');
-        }
-        req.user = user;
-        next();
-    })(req, res, next);
+const isConnected = function (token) {
+    return new Promise(function (done, reject) {
+        jwt.verify(token, jwtOptions.secretOrKey, function (err, decoded) {
+            if (err) {
+                return reject(new Error(err))
+            }
+            try {
+                User.findOne({'_id': decoded._id}, function (err, user) {
+                    if (err) {
+                        return reject(new Error(err));
+                    }
+                    else if (user) {
+                        return done(user);
+                    }
+                    else {
+                        return reject(new Error("User not found"));
+                    }
+                });
+            }
+            catch (err) {
+                reject(new Error(err))
+            }
+        });
+
+    });
 }
 
 module.exports = {
     jwtOptions,
     createJwt,
-    isConnected
+    isConnected,
+    headerExtractor
 };

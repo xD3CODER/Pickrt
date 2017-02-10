@@ -1,8 +1,8 @@
 node_modules/
 .idea/
 testing/
-dev/bower_components/
-dev/vendor/
+client/dev/bower_components/
+client/dev/vendor/
 public/
 views/public
 

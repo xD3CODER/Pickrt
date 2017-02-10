@@ -10,18 +10,12 @@ let error = debug('app:error');
 let passport = require('passport');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const flash = require('connect-flash');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 const routes = require('./config/routes');
 const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 const app = express();
 
 let logger = require("./config/logger");
-
-var i18n = require('./config/i18n');
-
 
 
 
@@ -33,33 +27,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, global.config.env)));
-app.use(i18n);
-app.use(session({
-    secret: 'shhsecret',
-    resave: false,
-    saveUninitialized: false,
-    cookie: {maxAge: 600000},
-    store: new MongoStore({
-        url: configDB.url,
-        //touchAfter: 24 * 3600,
-        autoRemove: 'interval',
-        autoRemoveInterval: 60
-    })
 
-}));
 
 
 
 app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
 require('./controllers/passport')(passport);
 app.use(function (req, res, next) {
     res.setHeader('charset', 'utf-8');
     next();
 });
 app.use('/', routes);
-
 
 
 

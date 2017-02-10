@@ -89,52 +89,6 @@ function addSpam(req, res)
         }
 }
 
-
-/*
-function addSpam(req, res)
-{
-    return new Promise(function(done, reject) {
-        Spam.findOne({'ip_adress': req.headers['x-forwarded-for']}, function (err, user) {
-            logger.debug('authentication');
-            if (err) {
-                logger.error(err);
-                return reject(new Error(err));
-            }
-            if (!user) {
-                return done('no_user');
-            }
-            else
-            {
-                return done(user);
-            }
-        });
-    }).then(function(rep){
-        if (rep == 'no_user')
-        {
-            logger.success("This user have never spammed");
-            const newSpam = new Spam();
-            newSpam.ip_adress = req.headers['x-forwarded-for'];
-            newSpam.attempts = new Date();
-            newSpam.save(function(err) {
-                if (err)
-                    throw err;
-            });
-        }
-        else
-        {
-            logger.debug("This user have already spammed "+ rep);
-            Spam.findOneAndUpdate(
-                {_id: rep.id},
-                {$push: {attempts: new Date()}},
-                {safe: true, upsert: true},
-                function(err, model) {
-                    console.log(err);
-                }
-            );
-        }
-    })
-}
-*/
 module.exports = {
     checkSpam,
     addSpam

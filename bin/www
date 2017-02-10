@@ -3,9 +3,10 @@
 /**
  * Module dependencies.
  */
-const app_client = require('../app');
+const app_client = require('../client/app');
 const app_server = require('../api');
-const debug = require('debug')('Pickrt:server');
+const debug = require('debug')('Pickrt');
+
 let http = require('http');
 
 const fs = require('fs');

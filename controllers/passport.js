@@ -1,16 +1,11 @@
 const LocalStrategy = require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('./../models/user');
-
 const configAuth = require('./../config/auth');
 const logger = require('./../config/logger.js');
 const data = require('./remotedata');
-const jwtTokens = require ('./jwt-tokens');
-const passportJWT = require("passport-jwt");
-const JwtStrategy = passportJWT.Strategy;
 let images = require("./images");
 let Promise = require("bluebird");
-
 
 
 
@@ -25,30 +20,6 @@ module.exports = function(passport) {
       done(err, user);
     });
   });
-
-
-  passport.use(new JwtStrategy(jwtTokens.jwtOptions, function (jwt_payload, next) {
-      try {
-          User.findOne({'_id': jwt_payload._id}, function (err, user) {
-              if (err) {
-                  logger.debug("Error");
-                  return next(err, false);
-              }
-              else if (user) {
-                  logger.debug("Found");
-                  next(null, user);
-              }
-              else {
-                  logger.debug("Not found");
-                  return next(null, false);
-              }
-          });
-      }
-      catch (err) {
-          logger.debug(err);
-      }
-
-  }));
 
 
 
@@ -166,7 +137,6 @@ module.exports = function(passport) {
                 .catch(function (e) {
                     logger.error("Catch handler " + e)
                 });
-
         }
       });
     });
