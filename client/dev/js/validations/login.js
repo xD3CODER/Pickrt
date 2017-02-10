@@ -92,7 +92,7 @@ jQuery(document).ready(function () {
             $.ajax({
                 type: "POST",
                 dataType: 'json',
-                url: "login",
+                url: "https://api.loocalhost.tk/login",
                 data: createRequest($submitedForm.serializeArray()),
                 success: function (rep) {
                     rep = (handleResponse((rep)));

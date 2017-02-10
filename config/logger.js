@@ -5,10 +5,10 @@
 
 var debug = require('debug');
 
-var error = debug('   [ERROR] ->'),
-    log =   debug('   [INFO] ->'),
-    success = debug('   [SUCCESS] ->'),
-    debug = debug('   [DEBUG] ->');
+var error = debug(' (SRV)[ERROR] ->'),
+    log =   debug(' (SRV)[INFO] ->'),
+    success = debug(' (SRV) [SUCCESS] ->'),
+    debug = debug(' (SRV)[DEBUG] ->');
 
 log.color = 3;
 success.color = 2;

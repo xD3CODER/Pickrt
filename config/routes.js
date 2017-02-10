@@ -37,7 +37,7 @@ removeParam = function (key, sourceURL) {
  Check if user is connected
  */
 
-router.post('/restricted', function (req, res) {
+router.get('/user', function (req, res) {
     let tok = jwtTokens.headerExtractor(req);
     jwtTokens.isConnected(tok).then(function (result) {
         logger.success(result);
@@ -127,20 +127,19 @@ function e(array) {
     return finalReq;
 }
 
-router.post('/login', function (req, res, next) {
+router.post('/login', decryptRequest, function (req, res, next) {
     if (req.params.nextTest) {
         spam.addSpam(req, res);
         return res.json(e({"_spam": req.params.nextTest, "_captcha": req.params.needCaptcha}));
     }
     logger.debug(req.body.login_adress);
     passport.authenticate('local-login', function (err, user, info) {
-
         if (err) {
             return res.json({"_error": err});
         }
         if (info) {
             logger.error(info);
-            //  return res.json({"_error": info});
+            return res.json({"_error": info});
         }
         if (!user) {
             spam.addSpam(req, res);
@@ -151,12 +150,14 @@ router.post('/login', function (req, res, next) {
                 return next(err);
             }
             jwtTokens.createJwt(req).then(function (token) {
+                logger.success('/login => ' + token);
+                return res.json(e({_state: "user_connected"}));
                 const cookieAge = 1000 * 60 * 60 * 24 * 365;
                 res.cookie(jwtTokens.jwtOptions.cookieName, token, {maxAge: cookieAge, httpOnly: true, secure: true});
-                return res.json({"_state": "user_connected"});
-            }).catch(function (e) {
-                logger.error('/login => ' + e);
-                return res.json({"_state": "internal_error"});
+
+            }).catch(function (err) {
+                logger.error('/login => ' + err);
+                return res.json({_state: "internal_error"});
             });
         });
     })(req, res, next);

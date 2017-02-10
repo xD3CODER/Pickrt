@@ -37,7 +37,7 @@ const createJwt = function (req) {
         const payload = {};
         payload._id = req.user._id;
         logger.debug('CreateJwt => ' + payload);
-        done(jwt.sign(payload, jwtOptions.secretOrKey, {expiresIn: 60 * 60 * 3600, algorithm: 'HS512'}), function(err, token) {
+        jwt.sign(payload, jwtOptions.secretOrKey, {expiresIn: 60 * 60 * 3600, algorithm: 'HS512'}, function(err, token) {
             if (err){return reject(new Error(err))}
             return done(token)
         });
