@@ -3,35 +3,29 @@
 /**
  * Module dependencies.
  */
-const app_client = require('../client/app');
-const app_server = require('../api');
-const debug = require('debug')('Pickrt');
+const config = require("../config");
+const app_client = require("../client/app");
+const app_server = require("../api");
+const debug_server = require("debug")("Pickrt:server");
+const debug_client = require("debug")("Pickrt:client");
 
-let http = require('http');
-
-const fs = require('fs');
-const https = require('https');
-
-
-const SSLCert = fs.readFileSync('/var/www/pickrt/conf/pickrt.com.cert');
-const SSLKey = fs.readFileSync('/var/www/pickrt/conf/pickrt.com.key');
+const fs = require("fs");
+const https = require("https");
 
 
+const SSLCert = fs.readFileSync("/var/www/pickrt/conf/pickrt.com.cert");
+const SSLKey = fs.readFileSync("/var/www/pickrt/conf/pickrt.com.key");
 
 
 
 /**
  * Get port from environment and store in Express.
  */
-const port_client = normalizePort(process.env.PORT || global.config.port);
-const port_server = normalizePort(process.env.PORT || 2087);
+const port_client = normalizePort(process.env.PORT || config.client.port);
+const port_server = normalizePort(process.env.PORT || config.server.port);
 
-app_client.set('port', port_client);
-app_server.set('port', port_server);
-
-/**
- * Create HTTP server.
- */
+app_client.set("port", port_client);
+app_server.set("port", port_server);
 
 
 
@@ -39,28 +33,74 @@ app_server.set('port', port_server);
  * Listen on provided port, on all network interfaces.
  */
 const server_client = https.createServer({
-    key: SSLKey,
-    cert: SSLCert
+	key: SSLKey,
+	cert: SSLCert
 }, app_client);
 
-server_client.listen(port_client, function () {
-  console.log('App listening on port ' + port_client);
-});
+
 
 const server_api = https.createServer({
-    key: SSLKey,
-    cert: SSLCert
+	key: SSLKey,
+	cert: SSLCert
 }, app_server);
 
-server_api.listen(port_server, function () {
-    console.log('APi listening on port ' + port_server);
+server_client.listen(port_client);
+server_api.listen(port_server);
+
+
+server_api.on("error", function (error) {
+	if (error.syscall !== "listen") {
+		throw error;
+	}
+	const bind = typeof port_server === "string"
+        ? "Pipe " + port_server
+        : "Port " + port_server;
+
+	switch (error.code) {
+	case "EACCES":
+		debug_server(bind + " requires elevated privileges");
+		process.exit(1);
+		break;
+	case "EADDRINUSE":
+		debug_server(bind + " is already in use");
+		process.exit(1);
+		break;
+	default:
+		throw error;
+	}
 });
 
-server_api.on('error', onError);
-server_api.on('listening', onListening);
 
-server_client.on('error', onError);
-server_client.on('listening', onListening);
+server_api.on("listening", function(){
+	debug_server("API listening on 2097");
+});
+
+server_client.on("error", function (error) {
+	if (error.syscall !== "listen") {
+		throw error;
+	}
+	const bind = typeof port_client === "string"
+        ? "Pipe " + port_client
+        : "Port " + port_client;
+
+	switch (error.code) {
+	case "EACCES":
+		debug_client(bind + " requires elevated privileges");
+		process.exit(1);
+		break;
+	case "EADDRINUSE":
+		debug_client(bind + " is already in use");
+		process.exit(1);
+		break;
+	default:
+		throw error;
+	}
+});
+
+
+server_client.on("listening", function(){
+	debug_client("App listening on 2087");
+});
 
 
 
@@ -71,59 +111,18 @@ server_client.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  const port = parseInt(val, 10);
+	const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
+	if (isNaN(port)) {
+        // named pipe
+		return val;
+	}
 
-  if (port >= 0) {
-    // port number
-    return port;
-  }
+	if (port >= 0) {
+        // port number
+		return port;
+	}
 
-  return false;
+	return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  const bind = typeof port_client === 'string'
-    ? 'Pipe ' + port_client
-    : 'Port ' + port_client;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      debug(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      debug(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  let addr = server_client.address();
-  const bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}

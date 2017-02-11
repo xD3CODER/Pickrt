@@ -3,12 +3,12 @@
  */
 "use strict";
 
-var debug = require('debug');
+const debugg = require("debug");
 
-var error = debug(' (SRV)[ERROR] ->'),
-    log =   debug(' (SRV)[INFO] ->'),
-    success = debug(' (SRV) [SUCCESS] ->'),
-    debug = debug(' (SRV)[DEBUG] ->');
+const error = debugg(" (SRV)[ERROR] ->"),
+    log = debugg(" (SRV)[INFO] ->"),
+    success = debugg(" (SRV) [SUCCESS] ->"),
+    debug = debugg(" (SRV)[DEBUG] ->");
 
 log.color = 3;
 success.color = 2;

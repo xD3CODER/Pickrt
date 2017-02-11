@@ -6,5 +6,5 @@ let options = {
 };
 
 module.exports = {
-    url: 'mongodb://'+options.user+':'+options.pass+'@localhost:'+options.port+'/'+options.database+'?authSource=admin'
+    url: "mongodb://"+options.user+":"+options.pass+"@localhost:"+options.port+"/"+options.database+"?authSource=admin"
 };

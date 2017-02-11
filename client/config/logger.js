@@ -3,17 +3,17 @@
  */
 "use strict";
 
-var debug = require('debug');
+const debugg = require("debug");
 
-var error = debug('   [ERROR] ->'),
-    log =   debug('   [INFO] ->'),
-    success = debug('   [SUCCESS] ->'),
-    debug = debug('   [DEBUG] ->');
+const error = debugg("   [ERROR] ->"),
+    log = debugg("   [INFO] ->"),
+    success = debugg("   [SUCCESS] ->"),
+    debug = debugg("   [DEBUG] ->");
 
 log.color = 3;
 success.color = 2;
-error.color= 1;
-debug.color= 5;
+error.color = 1;
+debug.color = 5;
 
 module.exports = {
     error,

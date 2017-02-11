@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const spamSchema = mongoose.Schema({
     browser: String,
@@ -6,4 +6,4 @@ const spamSchema = mongoose.Schema({
     attempts: Array
 });
 
-module.exports = mongoose.model('Spam', spamSchema);
+module.exports = mongoose.model("Spam", spamSchema);

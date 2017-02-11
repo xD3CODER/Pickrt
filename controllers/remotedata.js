@@ -2,16 +2,16 @@
  * Created by xD3VHAX on 09/11/2016.
  */
 
-const rp = require('request-promise');
-const S = require('string');
-const oxford = require('project-oxford'),
-    emotion = new oxford.Client('e4578efe8d664d70bb14f6361f48e0dd'),
-    vision = new oxford.Client('adaafea50f804bf1afc4fb1ccd201bb7');
-const logger = require('./../config/logger');
-let  Promise = require('bluebird');
+const rp = require("request-promise");
+const S = require("string");
+const oxford = require("project-oxford"),
+    emotion = new oxford.Client("e4578efe8d664d70bb14f6361f48e0dd"),
+    vision = new oxford.Client("adaafea50f804bf1afc4fb1ccd201bb7");
+const logger = require("./../config/logger");
+let  Promise = require("bluebird");
 
 function base64ToBinary(base64Data){
-    return new Buffer(base64Data.replace(/data.*base64,/, ''), 'base64');
+    return new Buffer(base64Data.replace(/data.*base64,/, ""), "base64");
 }
 
 let emotionMessages =
@@ -49,28 +49,28 @@ function analyzeContent(jsonObject, callback)
         result = {
             "state" : 3,
             "message" : "you are banned for porn"
-        }
+        };
     }
     else if((jsonObject.adult.racyScore > 0.5 && jsonObject.adult.adultScore > 0.15) || jsonObject.adult.racyScore > 0.8)
     {
         result = {
             "state" : 2,
             "message" : "Explicit content detected"
-        }
+        };
     }
     else if(jsonObject.adult.racyScore > 0.5 && jsonObject.adult.adultScore < 0.15)
     {
         result = {
             "state" : 1,
             "message" : "Tu met tes atouts en avant dis donc"
-        }
+        };
     }
     else
     {
         result = {
             "state" : 1,
             "message" : "Good content"
-        }
+        };
     }
     callback(null, result);
 }
@@ -113,7 +113,7 @@ function analyzeContent(jsonObject, callback)
 let checkEmotion = function(method, image){
     return new Promise(function(done, reject) {
         switch (method) {
-            case 'url' :
+            case "url" :
                 emotion.emotion.analyzeEmotion({
                     url: image
                 }).then(function (response) {
@@ -121,10 +121,10 @@ let checkEmotion = function(method, image){
                       done(res);
                     });
                 }).catch(function (err) {
-                    reject(new Error(err))
+                    reject(new Error(err));
                 });
                 break;
-            case 'base64' :
+            case "base64" :
                 emotion.emotion.analyzeEmotion({
                     data: base64ToBinary(image)
                 }).then(function (response) {
@@ -132,10 +132,10 @@ let checkEmotion = function(method, image){
                         done(res);
                     });
                 }).catch(function (err) {
-                    reject(new Error(err))
+                    reject(new Error(err));
                 });
                 break;
-            case 'file' :
+            case "file" :
                 emotion.emotion.analyzeEmotion({
                     path: image
                 }).then(function (response) {
@@ -143,7 +143,7 @@ let checkEmotion = function(method, image){
                         done(res);
                     });
                 }).catch(function (err) {
-                    reject(new Error(err))
+                    reject(new Error(err));
                 });
                 break;
         }
@@ -155,7 +155,7 @@ let checkExplicit = function(method, image){
 
     return new Promise(function(done, reject) {
         switch (method){
-            case 'url' :
+            case "url" :
                 vision.vision.analyzeImage({
                     url: image,
                     Adult : true
@@ -165,10 +165,10 @@ let checkExplicit = function(method, image){
                     });
                 }).catch(function(err){
 
-                    reject(new Error(err))
+                    reject(new Error(err));
                 });
                 break;
-            case 'base64' :
+            case "base64" :
                 vision.vision.analyzeImage({
                     data: base64ToBinary(image),
                     Adult : true
@@ -177,10 +177,10 @@ let checkExplicit = function(method, image){
                         done(res);
                     });
                 }).catch(function(err){
-                    reject(new Error(err))
+                    reject(new Error(err));
                 });
                 break;
-            case 'file' :
+            case "file" :
                 vision.vision.analyzeImage({
                     path: image,
                     Adult : true
@@ -189,7 +189,7 @@ let checkExplicit = function(method, image){
                         done(res);
                     });
                 }).catch(function(err){
-                    reject(new Error(err))
+                    reject(new Error(err));
                 });
                 break;
         }
@@ -199,9 +199,9 @@ let checkExplicit = function(method, image){
 let images = {};
 
     images.facebook = function (user_id) {
-        return new Promise(function(done, reject) {
+        return new Promise(function (done, reject) {
             rp({
-                uri: 'https://graph.facebook.com/' + user_id + '/picture?redirect=false&height=650',
+                uri: "https://graph.facebook.com/" + user_id + "/picture?redirect=false&height=650",
                 json: true
             }).then(function (remoteURL) {
                 if (S(remoteURL.data.url).count(".jpg") < 1) {
@@ -211,7 +211,7 @@ let images = {};
                     done(remoteURL.data.url);
                 }
             }).catch(function (err) {
-                reject(new Error(err))
+                reject(new Error(err));
             });
         });
     };
