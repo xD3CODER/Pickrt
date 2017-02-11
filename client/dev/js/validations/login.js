@@ -91,6 +91,8 @@ jQuery(document).ready(function () {
         submitHandler: function () {
             $.ajax({
                 type: "POST",
+                crossDomain: true,
+                xhrFields: { withCredentials: true },
                 dataType: 'json',
                 url: "https://api.loocalhost.tk/login",
                 data: createRequest($submitedForm.serializeArray()),

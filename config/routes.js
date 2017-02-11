@@ -1,10 +1,10 @@
-const express = require('express');
-const passport = require('passport');
+const express = require("express");
+const passport = require("passport");
 const router = express.Router();
-const images = require('../controllers/images');
-let fs = require('fs');
-const logger = require('../config/logger');
-const jwtTokens = require('../controllers/jwt-tokens');
+const images = require("../controllers/images");
+let fs = require("fs");
+const logger = require("../config/logger");
+const jwtTokens = require("../controllers/jwt-tokens");
 const spam = require("./../controllers/spam");
 var CryptoJS = require("crypto-js");
 
@@ -37,9 +37,9 @@ removeParam = function (key, sourceURL) {
  Check if user is connected
  */
 
-router.get('/user', function (req, res) {
-    let tok = jwtTokens.headerExtractor(req);
-    jwtTokens.isConnected(tok).then(function (result) {
+router.get("/connexion", function (req, res) {
+    let token = jwtTokens.headerExtractor(req);
+    jwtTokens.isConnected(token).then(function (result) {
         logger.success(result);
         res.json(result);
     }).catch(function (e) {
@@ -47,62 +47,63 @@ router.get('/user', function (req, res) {
     });
 });
 
-router.get('/test', function (req, res) {
-    res.json({test: 'get'});
+
+router.get("/test", function (req, res) {
+    res.json({test: "get"});
 });
 
 
 // Language switcher
-router.get('/*', function (req,res,next) {
-    let languages = ['en', 'fr'];
+router.get("/*", function (req,res,next) {
+    let languages = ["en", "fr"];
     if (req.query.l) {
         if (languages.indexOf(req.query.l) > -1) {
             if (req.cookies.lang != req.query.l) {
-                res.cookie('lang', req.query.l, { expires: new Date(Date.now() + 99999999999), httpOnly: true, secure: true });
+                res.cookie("lang", req.query.l, { expires: new Date(Date.now() + 99999999999), httpOnly: true, secure: true });
                 logger.log("Language switched");
             }
         }
-        res.redirect(302, removeParam('l', req.originalUrl));
+        res.redirect(302, removeParam("l", req.originalUrl));
     }else {
-        next()
+        next();
     }
 });
 
-router.get('/', function(req, res, next) {
-  res.render('index.ejs', { title: 'Express' });
-  console.info('Current session = ' + req.session.id);
+router.get("/", function(req, res, next) {
+  res.render("index.ejs", { title: "Express" });
+  console.info("Current session = " + req.session.id);
 
 });
 
-router.get('/vc', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/vc", function(req, res, next) {
+  res.render("index", { title: "Express" });
 });
 
 
-    router.get('/login', function(req, res, next) {
+    router.get("/login", function(req, res, next) {
 
-    res.render('login.ejs', {message: req.flash('loginMessage')});
+    res.render("login.ejs", {message: req.flash("loginMessage")});
 
 });
 
 
-router.get('/signup', function(req, res) {
-  res.render('signup.ejs', { message: req.flash('registerMessage') });
+router.get("/signup", function(req, res) {
+  res.render("signup.ejs", { message: req.flash("registerMessage") });
 });
 
 
-router.get('/profile', jwtTokens.isConnected, function(req, res) {
-  res.render('profile.ejs', { user: req.user });
+router.get("/profile", jwtTokens.isConnected, function(req, res) {
+  res.render("profile.ejs", { user: req.user });
 });
 
-router.get('/logout', function(req, res) {
+router.get("/logout", function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect("/");
 });
 
-router.post('/signup',decryptRequest, passport.authenticate('local-signup', {
-  successRedirect: '/profile',
-  failureRedirect: '/signup',
+router.post("/signup",decryptRequest, passport.authenticate("local-signup", {
+  successRedirect: "/profile",
+  failureRedirect: "/signup",
   failureFlash: true,
 }));
 
@@ -127,13 +128,13 @@ function e(array) {
     return finalReq;
 }
 
-router.post('/login', decryptRequest, function (req, res, next) {
+router.post("/login", decryptRequest, function (req, res, next) {
     if (req.params.nextTest) {
         spam.addSpam(req, res);
         return res.json(e({"_spam": req.params.nextTest, "_captcha": req.params.needCaptcha}));
     }
     logger.debug(req.body.login_adress);
-    passport.authenticate('local-login', function (err, user, info) {
+    passport.authenticate("local-login", function (err, user, info) {
         if (err) {
             return res.json({"_error": err});
         }
@@ -150,45 +151,49 @@ router.post('/login', decryptRequest, function (req, res, next) {
                 return next(err);
             }
             jwtTokens.createJwt(req).then(function (token) {
-                logger.success('/login => ' + token);
-                return res.json(e({_state: "user_connected"}));
+                logger.success("/login => " + token);
                 const cookieAge = 1000 * 60 * 60 * 24 * 365;
-                res.cookie(jwtTokens.jwtOptions.cookieName, token, {maxAge: cookieAge, httpOnly: true, secure: true});
+                res.cookie("p_usr", token, {
+                    httpOnly: true,
+                    expires: new Date(Date.now() + 99999999999),
+                    domain: "loocalhost.tk"
+                });
+                return res.json(e({_state: "user_connected"}));
 
             }).catch(function (err) {
-                logger.error('/login => ' + err);
+                logger.error("/login => " + err);
                 return res.json({_state: "internal_error"});
             });
         });
     })(req, res, next);
 });
 
-router.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'user_birthday']}));
+router.get("/auth/facebook", passport.authenticate("facebook", {scope: ["email", "user_birthday"]}));
 
-router.get('/auth/facebook/callback', passport.authenticate('facebook'), function (req, res) {
+router.get("/auth/facebook/callback", passport.authenticate("facebook"), function (req, res) {
     jwtTokens.createJwt(req, function (token) {
         res.cookie(jwtTokens.jwtOptions.cookieName, token, {
             maxAge: 1000 * 60 * 60 * 24 * 365,
             httpOnly: true,
             secure: true
         });
-        res.redirect('/profile');
+        res.redirect("/profile");
     });
     //res.redirect('/profile');
 });
 
-router.get('/auth/twitter', passport.authenticate('twitter'));
+router.get("/auth/twitter", passport.authenticate("twitter"));
 
-router.get('/auth/twitter/callback', passport.authenticate('twitter', {
-    successRedirect: '/profile',
-    failureRedirect: '/',
+router.get("/auth/twitter/callback", passport.authenticate("twitter", {
+    successRedirect: "/profile",
+    failureRedirect: "/",
 }));
 
-router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+router.get("/auth/google", passport.authenticate("google", {scope: ["profile", "email"]}));
 
-router.get('/auth/google/callback', passport.authenticate('google', {
-    successRedirect: '/profile',
-    failureRedirect: '/',
+router.get("/auth/google/callback", passport.authenticate("google", {
+    successRedirect: "/profile",
+    failureRedirect: "/",
 }));
 
 module.exports = router;

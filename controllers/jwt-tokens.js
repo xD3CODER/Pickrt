@@ -1,19 +1,8 @@
 const jwt = require("jsonwebtoken");
-const passportJWT = require("passport-jwt");
 const logger = require("../config/logger");
-const ExtractJwt = passportJWT.ExtractJwt;
 const jwtOptions = [];
-jwtOptions.cookieName = "p_usr";
 const User = require("./../models/user");
 let Promise = require("bluebird");
-
-const cookieExtractor = function (req) {
-    let token = null;
-    if (req && req.cookies && req.cookies[jwtOptions.cookieName]) {
-        token = req.cookies[jwtOptions.cookieName];
-    }
-    return token;
-};
 
 const headerExtractor = function (req) {
     let token = null;
@@ -26,8 +15,6 @@ const headerExtractor = function (req) {
     return token;
 };
 
-
-jwtOptions.jwtFromRequest = ExtractJwt.fromExtractors([cookieExtractor]);
 jwtOptions.secretOrKey = "secretpass";
 
 

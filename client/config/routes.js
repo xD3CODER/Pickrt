@@ -60,12 +60,21 @@ router.get("/vc", function (req, res, next) {
     res.render("index", {title: "Express"});
 });
 
+let cookieName = "p_usr";
+const cookieExtractor = function (req) {
+    let token = null;
+    if (req && req.cookies && req.cookies[cookieName]) {
+        token = req.cookies[cookieName];
+    }
+    return token;
+};
+
 var getUser = function (req, res, next) {
     return new Promise(function (done, reject) {
         rp({
-            uri: "https://api.loocalhost.tk/user",
+            uri: "https://api.loocalhost.tk/connexion",
             headers: {
-                "Authorization": "JWT eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODljYzM4NTU5MTI5ODU0MTMzZjM2MTYiLCJpYXQiOjE0ODY2NzY4NzcsImV4cCI6MTQ5OTYzNjg3N30.zCM0V_wgO0GvIHi2_j26jdUUGv0LolssfDluTmLXO11r9jtabfviFdjDYr7TD5w-hF6lrxYdiRHUYsse8aS1zg"
+                "Authorization": req.cookies[cookieName]
             },
             json: true
         }).then(function (user) {
