@@ -2,7 +2,7 @@ module.exports = {
   facebookAuth: {
     clientID: "1127715074016196",
     clientSecret: "7a8d72e2d0eb48a2702c277b0a593c78",
-    callbackURL: "https://loocalhost.tk/auth/facebook/callback",
+    callbackURL: "https://api.loocalhost.tk/auth/facebook/callback",
   },
   twitterAuth: {
     consumerKey: "sOM9aZpoEyNAXKqvEUHd2O7cN",

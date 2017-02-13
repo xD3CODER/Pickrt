@@ -91,14 +91,16 @@ jQuery(document).ready(function () {
         submitHandler: function () {
             $.ajax({
                 type: "POST",
-                crossDomain: true,
-                xhrFields: { withCredentials: true },
                 dataType: 'json',
+                crossDomain: true,
+                xhrFields: {
+                    withCredentials: true
+                },
                 url: "https://api.loocalhost.tk/login",
                 data: createRequest($submitedForm.serializeArray()),
-                success: function (rep) {
+
+                success: function (rep, status, xhr) {
                     rep = (handleResponse((rep)));
-                  //  alert(JSON.stringify(rep));
                     if (rep._spam) {
                         if (rep._captcha) {
                             if (!$("#captcha-container").hasClass('hide')) {
@@ -137,6 +139,7 @@ jQuery(document).ready(function () {
                         });
                     }
                     else if (rep._state == 'user_connected'){
+
                         Notify({
                             type: 'success',
                             message: '<strong>Connexion réussie !</strong>, redirection en cours...<strong id="count"></strong>'

@@ -68,6 +68,7 @@
     "animsition": "^4.0.2",
     "jquery-validation": "jquery-validate#^1.16.0",
     "jquery.stellar": "^0.6.2",
-    "eonasdan-bootstrap-datetimepicker": "bootstrap3-datetimepicker#^4.17.45"
+    "eonasdan-bootstrap-datetimepicker": "bootstrap3-datetimepicker#^4.17.45",
+    "js-cookie": "^2.1.3"
   }
 }

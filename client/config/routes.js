@@ -70,11 +70,12 @@ const cookieExtractor = function (req) {
 };
 
 var getUser = function (req, res, next) {
+    logger.debug(req.cookies[cookieName]);
     return new Promise(function (done, reject) {
         rp({
             uri: "https://api.loocalhost.tk/connexion",
             headers: {
-                "Authorization": req.cookies[cookieName]
+                "Authorization": "JWT "+req.cookies[cookieName]
             },
             json: true
         }).then(function (user) {
@@ -93,9 +94,14 @@ router.get("/profile", getUser, function (req, res) {
 
 
 router.get("/login", function (req, res, next) {
-
+    if(req.query.setCookie){
+        res.cookie("p_usr", req.query.setCookie, {
+            httpOnly: true,
+            expires: new Date(Date.now() + 99999999999)
+        });
+        res.redirect("https://loocalhost.tk/profile");
+    }
     res.render("login.ejs");
-
 });
 
 
@@ -150,19 +156,6 @@ router.get("/auth/facebook/callback", passport.authenticate("facebook"), functio
     //res.redirect('/profile');
 });
 
-router.get("/auth/twitter", passport.authenticate("twitter"));
-
-router.get("/auth/twitter/callback", passport.authenticate("twitter", {
-    successRedirect: "/profile",
-    failureRedirect: "/",
-}));
-
-router.get("/auth/google", passport.authenticate("google", {scope: ["profile", "email"]}));
-
-router.get("/auth/google/callback", passport.authenticate("google", {
-    successRedirect: "/profile",
-    failureRedirect: "/",
-}));
 
 module.exports = router;
 

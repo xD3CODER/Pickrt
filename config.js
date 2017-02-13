@@ -5,11 +5,13 @@
 let config = {
 	client : {
 		port : 2096,
-		env : "dev"
+		env : "dev",
+		url : "loocalhost.tk"
 	},
 	server : {
 		port : 2087,
-		env : "dev"
+		env : "dev",
+        url : "api.loocalhost.tk"
 	},
 	morgan_level : "dev"
 };

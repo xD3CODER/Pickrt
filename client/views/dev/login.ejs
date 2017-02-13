@@ -143,13 +143,17 @@
                                     <button class="button medium btn-primary button-3d effect fill-vertical col-xs-12"
                                             type="submit"><span><%= __('login').static.form.signin_button %></span>
                                     </button>
-                                    <button class="button medium btn-primary button-3d effect icon-top fill-vertical col-xs-12"
-                                            href=""><span><i
-                                                    class="fa fa-facebook text-center"></i><%= __('login').static.form.facebook_button %></span>
-                                    </button>
                                 </div>
                             </div>
                         </form>
+                        <div class="row">
+                        <div class="form-group col-xs-10 center" id="buttons-block">
+                        <a class="button medium btn-primary button-3d effect icon-top fill-vertical col-xs-12"
+                                href="https://api.loocalhost.tk/auth/facebook" id="fb"><span><i
+                                        class="fa fa-facebook text-center"></i><%= __('login').static.form.facebook_button %></span>
+                        </a>
+                        </div>
+                        </div>
                     </div>
                   <p class="text-center bottom-clause"><%= __('login').static.new_user %> <a class="link" href="#"><%= __('login').static.create_account %></a></p>
             </div>
@@ -193,6 +197,7 @@
 <script src="vendor/animsition/animsition.min.js"></script>
 <script src="vendor/jrespond/jRespond.js"></script>
 <script src="vendor/jquery.stellar/jquery.stellar.js"></script>
+<script src="vendor/js-cookie/js.cookie.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
 <!-- build:js(./dev/) ../../public/js/combined.js -->
 <script src="/js/theme-functions.js"></script>

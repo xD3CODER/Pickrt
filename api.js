@@ -12,8 +12,18 @@ const routes = require("./config/routes");
 const configDB = require("./config/database.js");
 mongoose.connect(configDB.url);
 const app = express();
+const cors = require('cors');
 
 
+
+
+app.use(cors({
+    "origin": ["https://loocalhost.tk", "https://192.168.0.6"],
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204,
+    "credentials": true
+}));
 app.set("views", path.join(__dirname, "views/" + config.server.env));
 app.set("view engine", "ejs");
 app.use(logging(config.morgan_level));

@@ -1,3 +1,4 @@
+const config = require("../config");
 const express = require("express");
 const passport = require("passport");
 const router = express.Router();
@@ -114,11 +115,10 @@ function decryptRequest(req,res,next){
             CryptoJS.enc.Utf8.stringify(CryptoJS.enc.Base64.parse(req.body[attributename]));
     }
     req.body = finalReq;
-    console.log(finalReq);
     next();
 }
 
-function e(array) {
+function encryptRequest(array) {
     let finalReq = {};
     for (var attributename in array) {
         finalReq[CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(attributename))] =
@@ -131,20 +131,20 @@ function e(array) {
 router.post("/login", decryptRequest, function (req, res, next) {
     if (req.params.nextTest) {
         spam.addSpam(req, res);
-        return res.json(e({"_spam": req.params.nextTest, "_captcha": req.params.needCaptcha}));
+        return res.json(encryptRequest({"_spam": req.params.nextTest, "_captcha": req.params.needCaptcha}));
     }
     logger.debug(req.body.login_adress);
     passport.authenticate("local-login", function (err, user, info) {
         if (err) {
-            return res.json({"_error": err});
+            return res.json(encryptRequest({"_error": err}));
         }
         if (info) {
             logger.error(info);
-            return res.json({"_error": info});
+            return res.json(encryptRequest({"_error": info}));
         }
         if (!user) {
             spam.addSpam(req, res);
-            return res.json(e({"_state": "user_notfound"}));
+            return res.json(encryptRequest({"_state": "user_notfound"}));
         }
         req.logIn(user, function (err) {
             if (err) {
@@ -152,34 +152,40 @@ router.post("/login", decryptRequest, function (req, res, next) {
             }
             jwtTokens.createJwt(req).then(function (token) {
                 logger.success("/login => " + token);
-                const cookieAge = 1000 * 60 * 60 * 24 * 365;
                 res.cookie("p_usr", token, {
                     httpOnly: true,
-                    expires: new Date(Date.now() + 99999999999),
-                    domain: "loocalhost.tk"
+                    Path:"/",
+                    domain: config.client.url,
+                   expires: new Date(Date.now() + 99999999999)
                 });
-                return res.json(e({_state: "user_connected"}));
+                 res.json(encryptRequest({_state: "user_connected", _cookie: token}));
 
             }).catch(function (err) {
                 logger.error("/login => " + err);
-                return res.json({_state: "internal_error"});
+                return res.json(encryptRequest({_state: "internal_error"}));
             });
         });
     })(req, res, next);
 });
 
-router.get("/auth/facebook", passport.authenticate("facebook", {scope: ["email", "user_birthday"]}));
+router.get("/auth/facebook", function (req, res, next) {
+    passport.authenticate("facebook", {scope: ["email", "user_birthday"]})(req, res, next);
+    logger.debug("dsf");
+});
+router.get("/auth/facebook/callback", function (req, res, next) {
+    passport.authenticate("facebook", function (err, user, info) {
+        req.user = user;
+        jwtTokens.createJwt(req).then(function (token) {
+            logger.success("/auth/facebook/callback => " + token);
+        //    res.send('<script>window.location = "http://loocalhost.tk/login?setCookie='+token+'";</script>');
 
-router.get("/auth/facebook/callback", passport.authenticate("facebook"), function (req, res) {
-    jwtTokens.createJwt(req, function (token) {
-        res.cookie(jwtTokens.jwtOptions.cookieName, token, {
-            maxAge: 1000 * 60 * 60 * 24 * 365,
-            httpOnly: true,
-            secure: true
+             res.redirect('https://loocalhost.tk/login?setCookie='+token);
+
+        }).catch(function (err) {
+            logger.error("/login => " + err);
+            return res.json(encryptRequest({_state: "internal_error"}));
         });
-        res.redirect("/profile");
-    });
-    //res.redirect('/profile');
+    })(req, res, next);
 });
 
 router.get("/auth/twitter", passport.authenticate("twitter"));
