@@ -72,8 +72,6 @@ router.get("/*", function (req,res,next) {
 
 router.get("/", function(req, res, next) {
   res.render("index.ejs", { title: "Express" });
-  console.info("Current session = " + req.session.id);
-
 });
 
 router.get("/vc", function(req, res, next) {
@@ -128,10 +126,18 @@ function encryptRequest(array) {
     return finalReq;
 }
 
-router.post("/login", decryptRequest, function (req, res, next) {
+router.use(function(req, res, next) {
+    res.json.crypt = function(response) {
+        return res.json(config.encryptResponse(response));
+    };
+    next();
+});
+
+
+router.post("/login", config.decryptRequest, function (req, res, next) {
     if (req.params.nextTest) {
         spam.addSpam(req, res);
-        return res.json(encryptRequest({"_spam": req.params.nextTest, "_captcha": req.params.needCaptcha}));
+        return res.json.crypt({"_spam": req.params.nextTest, "_captcha": req.params.needCaptcha});
     }
     logger.debug(req.body.login_adress);
     passport.authenticate("local-login", function (err, user, info) {
@@ -140,11 +146,11 @@ router.post("/login", decryptRequest, function (req, res, next) {
         }
         if (info) {
             logger.error(info);
-            return res.json(encryptRequest({"_error": info}));
+            return res.json.crypt({"_error": info});
         }
         if (!user) {
             spam.addSpam(req, res);
-            return res.json(encryptRequest({"_state": "user_notfound"}));
+            return res.json.crypt({"_state": "user_notfound"});
         }
         req.logIn(user, function (err) {
             if (err) {
@@ -158,11 +164,11 @@ router.post("/login", decryptRequest, function (req, res, next) {
                     domain: config.client.url,
                    expires: new Date(Date.now() + 99999999999)
                 });
-                 res.json(encryptRequest({_state: "user_connected", _cookie: token}));
+                res.json.crypt({_state: "user_connected", _cookie: token});
 
             }).catch(function (err) {
                 logger.error("/login => " + err);
-                return res.json(encryptRequest({_state: "internal_error"}));
+                return res.json.crypt({_state: "internal_error"});
             });
         });
     })(req, res, next);
@@ -179,11 +185,11 @@ router.get("/auth/facebook/callback", function (req, res, next) {
             logger.success("/auth/facebook/callback => " + token);
         //    res.send('<script>window.location = "http://loocalhost.tk/login?setCookie='+token+'";</script>');
 
-             res.redirect('https://loocalhost.tk/login?setCookie='+token);
+             res.redirect("https://loocalhost.tk/login?setCookie="+token);
 
         }).catch(function (err) {
             logger.error("/login => " + err);
-            return res.json(encryptRequest({_state: "internal_error"}));
+            return res.json.crypt({_state: "internal_error"});
         });
     })(req, res, next);
 });
