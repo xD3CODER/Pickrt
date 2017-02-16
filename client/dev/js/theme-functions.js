@@ -171,6 +171,7 @@ const INSPIRO = {};
     //----------------------------------------------------/
     // PAGE LOADER
     //----------------------------------------------------/
+    /*
     INSPIRO.loader = function () {
 
         if (!$body.hasClass('no-page-loader')) {
@@ -216,7 +217,7 @@ const INSPIRO = {};
             }, 5000);
         }
     };
-
+*/
     //----------------------------------------------------/
     // SCREEN SIZE CONTROL
     //----------------------------------------------------/
@@ -1767,7 +1768,7 @@ const INSPIRO = {};
 
     //Document ready functions
     $document.ready(
-        INSPIRO.loader(),
+        //INSPIRO.loader(),
         INSPIRO.responsiveClasses(),
         INSPIRO.mainMenu(),
         INSPIRO.stickyHeader(),
