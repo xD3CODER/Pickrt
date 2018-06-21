@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www --ignore 'public/*'",
-    "debug": "DEBUG=*,-opencv,-express:*,-nodemon:*,-morgan,-send,-body-parser:*,-morgan:* nodemon ./bin/www --ignore 'public/*'"
+    "debug": "DEBUG=*,-opencv,-express:*,-nodemon:*,-morgan,-send,-body-parser:*,-morgan:* nodemon ./bin/www --ignore 'public/*'",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
@@ -37,7 +39,8 @@
     "request-promise": "^4.1.1",
     "serve-favicon": "^2.3.2",
     "string": "^3.3.3",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "snyk": "^1.83.0"
   },
   "description": "Compare, and choose !",
   "main": "bin/www",
@@ -82,5 +85,6 @@
   "bugs": {
     "url": "https://github.com/xD3VHAX/Pickrt/issues"
   },
-  "homepage": "https://github.com/xD3VHAX/Pickrt#readme"
+  "homepage": "https://github.com/xD3VHAX/Pickrt#readme",
+  "snyk": true
 }
