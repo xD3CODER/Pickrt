@@ -23,7 +23,7 @@
     "imagemagick-native": "^1.9.3",
     "jquery": "^3.1.1",
     "jsonwebtoken": "latest",
-    "mongoose": "^4.8.1",
+    "mongoose": "^5.7.5",
     "morgan": "~1.8.0",
     "opencv": "^6.0.0",
     "passport": "^0.3.2",
